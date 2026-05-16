@@ -1,0 +1,47 @@
+[
+  {
+    "rank": 1,
+    "name": "ใส่ชื่อสินค้าอันดับ 1",
+    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=สินค้า+1",
+    "price": 299,
+    "originalPrice": 599,
+    "discount": 50,
+    "sold": "10k+",
+    "rating": 4.9,
+    "score": 9.8,
+    "shopeeUrl": "https://s.shopee.co.th/ใส่-affiliate-link",
+    "highlight": "อันดับ 1 ขายดีที่สุด",
+    "reason": "ใส่เหตุผลสั้นๆ ว่าทำไมถึงแนะนำสินค้านี้ เช่น คุณภาพดี ราคาคุ้ม",
+    "pros": ["จุดเด่น 1", "จุดเด่น 2", "จุดเด่น 3"]
+  },
+  {
+    "rank": 2,
+    "name": "ใส่ชื่อสินค้าอันดับ 2",
+    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=สินค้า+2",
+    "price": 199,
+    "originalPrice": 399,
+    "discount": 50,
+    "sold": "8k+",
+    "rating": 4.8,
+    "score": 9.4,
+    "shopeeUrl": "https://s.shopee.co.th/ใส่-affiliate-link",
+    "highlight": "",
+    "reason": "ใส่เหตุผลสั้นๆ ว่าทำไมถึงแนะนำสินค้านี้",
+    "pros": ["จุดเด่น 1", "จุดเด่น 2", "จุดเด่น 3"]
+  },
+  {
+    "rank": 3,
+    "name": "ใส่ชื่อสินค้าอันดับ 3",
+    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=สินค้า+3",
+    "price": 149,
+    "originalPrice": 249,
+    "discount": 40,
+    "sold": "6k+",
+    "rating": 4.7,
+    "score": 9.1,
+    "shopeeUrl": "https://s.shopee.co.th/ใส่-affiliate-link",
+    "highlight": "",
+    "reason": "ใส่เหตุผลสั้นๆ ว่าทำไมถึงแนะนำสินค้านี้",
+    "pros": ["จุดเด่น 1", "จุดเด่น 2", "จุดเด่น 3"]
+  }
+]
