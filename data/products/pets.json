@@ -1,47 +1,202 @@
 [
   {
     "rank": 1,
-    "name": "ใส่ชื่อสินค้าอันดับ 1",
-    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=สินค้า+1",
-    "price": 299,
-    "originalPrice": 599,
-    "discount": 50,
-    "sold": "10k+",
-    "rating": 4.9,
+    "name": "Royal Canin Kitten Food 2kg",
+    "image": "https://placehold.co/400x400/fff3e0/e65100?text=Royal+Canin",
+    "price": 650,
+    "originalPrice": 850,
+    "discount": 24,
+    "sold": "8k+",
+    "rating": 5.0,
     "score": 9.8,
-    "shopeeUrl": "https://s.shopee.co.th/ใส่-affiliate-link",
-    "highlight": "อันดับ 1 ขายดีที่สุด",
-    "reason": "ใส่เหตุผลสั้นๆ ว่าทำไมถึงแนะนำสินค้านี้ เช่น คุณภาพดี ราคาคุ้ม",
-    "pros": ["จุดเด่น 1", "จุดเด่น 2", "จุดเด่น 3"]
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Royal+Canin+Kitten",
+    "lazadaUrl": "",
+    "highlight": "ขายดีที่สุด",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
   },
   {
     "rank": 2,
-    "name": "ใส่ชื่อสินค้าอันดับ 2",
-    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=สินค้า+2",
-    "price": 199,
-    "originalPrice": 399,
-    "discount": 50,
-    "sold": "8k+",
-    "rating": 4.8,
-    "score": 9.4,
-    "shopeeUrl": "https://s.shopee.co.th/ใส่-affiliate-link",
+    "name": "Nekko Wet Cat Food 70g x 12",
+    "image": "https://placehold.co/400x400/fff3e0/e65100?text=Nekko",
+    "price": 195,
+    "originalPrice": 240,
+    "discount": 19,
+    "sold": "50k+",
+    "rating": 4.9,
+    "score": 9.5,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Nekko+Wet+Food",
+    "lazadaUrl": "",
     "highlight": "",
-    "reason": "ใส่เหตุผลสั้นๆ ว่าทำไมถึงแนะนำสินค้านี้",
-    "pros": ["จุดเด่น 1", "จุดเด่น 2", "จุดเด่น 3"]
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
   },
   {
     "rank": 3,
-    "name": "ใส่ชื่อสินค้าอันดับ 3",
-    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=สินค้า+3",
-    "price": 149,
-    "originalPrice": 249,
-    "discount": 40,
-    "sold": "6k+",
-    "rating": 4.7,
-    "score": 9.1,
-    "shopeeUrl": "https://s.shopee.co.th/ใส่-affiliate-link",
+    "name": "Kasty Tofu Cat Litter 6L",
+    "image": "https://placehold.co/400x400/fff3e0/e65100?text=Kasty",
+    "price": 230,
+    "originalPrice": 280,
+    "discount": 18,
+    "sold": "20k+",
+    "rating": 5.0,
+    "score": 9.2,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Kasty+Tofu",
+    "lazadaUrl": "",
     "highlight": "",
-    "reason": "ใส่เหตุผลสั้นๆ ว่าทำไมถึงแนะนำสินค้านี้",
-    "pros": ["จุดเด่น 1", "จุดเด่น 2", "จุดเด่น 3"]
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 4,
+    "name": "Smart Pet Water Fountain Wireless",
+    "image": "https://placehold.co/400x400/fff3e0/e65100?text=Fountain",
+    "price": 590,
+    "originalPrice": 1290,
+    "discount": 54,
+    "sold": "5k+",
+    "rating": 4.9,
+    "score": 8.9,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Smart+Water+Fountain",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 5,
+    "name": "O3vit Hairball Vitamin for Cats",
+    "image": "https://placehold.co/400x400/fff3e0/e65100?text=O3vit",
+    "price": 85,
+    "originalPrice": 150,
+    "discount": 43,
+    "sold": "15k+",
+    "rating": 4.9,
+    "score": 8.6,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=O3vit",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 6,
+    "name": "Automatic Self-Cleaning Litter Box",
+    "image": "https://placehold.co/400x400/fff3e0/e65100?text=Auto+Litter+Box",
+    "price": 4500,
+    "originalPrice": 8900,
+    "discount": 49,
+    "sold": "1k+",
+    "rating": 4.8,
+    "score": 8.3,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Automatic+Litter+Box",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 7,
+    "name": "Pomeranian Puppy Food Premium",
+    "image": "https://placehold.co/400x400/fff3e0/e65100?text=Puppy+Food",
+    "price": 350,
+    "originalPrice": 550,
+    "discount": 36,
+    "sold": "3k+",
+    "rating": 4.9,
+    "score": 8.0,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Pomeranian+Food",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 8,
+    "name": "Slicker Brush for Pets Easy Clean",
+    "image": "https://placehold.co/400x400/fff3e0/e65100?text=Slicker+Brush",
+    "price": 59,
+    "originalPrice": 120,
+    "discount": 51,
+    "sold": "10k+",
+    "rating": 4.8,
+    "score": 7.7,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Slicker+Brush",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 9,
+    "name": "Modern Wood Cat Condo 3-Tier",
+    "image": "https://placehold.co/400x400/fff3e0/e65100?text=Cat+Condo",
+    "price": 1290,
+    "originalPrice": 2500,
+    "discount": 48,
+    "sold": "2k+",
+    "rating": 4.7,
+    "score": 7.4,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Cat+Condo",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 10,
+    "name": "Sirichai Goat Milk Powder 400g",
+    "image": "https://placehold.co/400x400/fff3e0/e65100?text=Goat+Milk",
+    "price": 185,
+    "originalPrice": 250,
+    "discount": 26,
+    "sold": "7k+",
+    "rating": 4.9,
+    "score": 7.1,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Sirichai+Goat+Milk",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
   }
 ]

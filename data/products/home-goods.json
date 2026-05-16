@@ -1,47 +1,202 @@
 [
   {
     "rank": 1,
-    "name": "ใส่ชื่อสินค้าอันดับ 1",
-    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=สินค้า+1",
-    "price": 299,
-    "originalPrice": 599,
-    "discount": 50,
-    "sold": "10k+",
+    "name": "Xiaomi Vacuum Cleaner P30 Wireless",
+    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=Xiaomi+P30",
+    "price": 2200,
+    "originalPrice": 3990,
+    "discount": 45,
+    "sold": "5k+",
     "rating": 4.9,
     "score": 9.8,
-    "shopeeUrl": "https://s.shopee.co.th/ใส่-affiliate-link",
-    "highlight": "อันดับ 1 ขายดีที่สุด",
-    "reason": "ใส่เหตุผลสั้นๆ ว่าทำไมถึงแนะนำสินค้านี้ เช่น คุณภาพดี ราคาคุ้ม",
-    "pros": ["จุดเด่น 1", "จุดเด่น 2", "จุดเด่น 3"]
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Xiaomi+P30",
+    "lazadaUrl": "",
+    "highlight": "ขายดีที่สุด",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
   },
   {
     "rank": 2,
-    "name": "ใส่ชื่อสินค้าอันดับ 2",
-    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=สินค้า+2",
-    "price": 199,
-    "originalPrice": 399,
-    "discount": 50,
+    "name": "Xiaomi Air Purifier 4 Compact",
+    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=Air+Purifier",
+    "price": 2590,
+    "originalPrice": 4590,
+    "discount": 43,
     "sold": "8k+",
-    "rating": 4.8,
-    "score": 9.4,
-    "shopeeUrl": "https://s.shopee.co.th/ใส่-affiliate-link",
+    "rating": 5.0,
+    "score": 9.5,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Xiaomi+Air+Purifier",
+    "lazadaUrl": "",
     "highlight": "",
-    "reason": "ใส่เหตุผลสั้นๆ ว่าทำไมถึงแนะนำสินค้านี้",
-    "pros": ["จุดเด่น 1", "จุดเด่น 2", "จุดเด่น 3"]
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
   },
   {
     "rank": 3,
-    "name": "ใส่ชื่อสินค้าอันดับ 3",
-    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=สินค้า+3",
-    "price": 149,
-    "originalPrice": 249,
-    "discount": 40,
-    "sold": "6k+",
-    "rating": 4.7,
-    "score": 9.1,
-    "shopeeUrl": "https://s.shopee.co.th/ใส่-affiliate-link",
+    "name": "Simplus Air Fryer 5L Visual Window",
+    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=Air+Fryer",
+    "price": 999,
+    "originalPrice": 2190,
+    "discount": 54,
+    "sold": "12k+",
+    "rating": 4.8,
+    "score": 9.2,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Simplus+Air+Fryer",
+    "lazadaUrl": "",
     "highlight": "",
-    "reason": "ใส่เหตุผลสั้นๆ ว่าทำไมถึงแนะนำสินค้านี้",
-    "pros": ["จุดเด่น 1", "จุดเด่น 2", "จุดเด่น 3"]
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 4,
+    "name": "Spin Mop Bucket Set Stainless",
+    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=Spin+Mop",
+    "price": 259,
+    "originalPrice": 590,
+    "discount": 56,
+    "sold": "50k+",
+    "rating": 4.7,
+    "score": 8.9,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Spin+Mop",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 5,
+    "name": "HomeHuk Modular Storage Box",
+    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=Storage+Box",
+    "price": 89,
+    "originalPrice": 199,
+    "discount": 55,
+    "sold": "30k+",
+    "rating": 4.8,
+    "score": 8.6,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=HomeHuk+Storage",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 6,
+    "name": "3D Foam Brick Wallpaper Self-Adhesive",
+    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=3D+Wallpaper",
+    "price": 15,
+    "originalPrice": 35,
+    "discount": 57,
+    "sold": "200k+",
+    "rating": 4.6,
+    "score": 8.3,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=3D+Wallpaper",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 7,
+    "name": "Electric Food Chopper 2L",
+    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=Food+Chopper",
+    "price": 199,
+    "originalPrice": 450,
+    "discount": 56,
+    "sold": "15k+",
+    "rating": 4.7,
+    "score": 8.0,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Food+Chopper",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 8,
+    "name": "Glass Electric Kettle 1.8L",
+    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=Electric+Kettle",
+    "price": 289,
+    "originalPrice": 590,
+    "discount": 51,
+    "sold": "10k+",
+    "rating": 4.8,
+    "score": 7.7,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Electric+Kettle",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 9,
+    "name": "Xiaomi Robot Vacuum S40 Pro",
+    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=Xiaomi+S40",
+    "price": 5200,
+    "originalPrice": 8900,
+    "discount": 42,
+    "sold": "3k+",
+    "rating": 4.9,
+    "score": 7.4,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Xiaomi+S40",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 10,
+    "name": "Handheld Garment Steamer Portable",
+    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=Garment+Steamer",
+    "price": 350,
+    "originalPrice": 790,
+    "discount": 56,
+    "sold": "7k+",
+    "rating": 4.8,
+    "score": 7.1,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Garment+Steamer",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
   }
 ]

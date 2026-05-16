@@ -1,47 +1,202 @@
 [
   {
     "rank": 1,
-    "name": "ใส่ชื่อสินค้าอันดับ 1",
-    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=สินค้า+1",
-    "price": 299,
-    "originalPrice": 599,
-    "discount": 50,
-    "sold": "10k+",
-    "rating": 4.9,
+    "name": "Cha Tra Mue Thai Tea Mix 500g",
+    "image": "https://placehold.co/400x400/efebe9/4e342e?text=ChaTraMue",
+    "price": 145,
+    "originalPrice": 175,
+    "discount": 17,
+    "sold": "30k+",
+    "rating": 5.0,
     "score": 9.8,
-    "shopeeUrl": "https://s.shopee.co.th/ใส่-affiliate-link",
-    "highlight": "อันดับ 1 ขายดีที่สุด",
-    "reason": "ใส่เหตุผลสั้นๆ ว่าทำไมถึงแนะนำสินค้านี้ เช่น คุณภาพดี ราคาคุ้ม",
-    "pros": ["จุดเด่น 1", "จุดเด่น 2", "จุดเด่น 3"]
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Cha+Tra+Mue",
+    "lazadaUrl": "",
+    "highlight": "ขายดีที่สุด",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
   },
   {
     "rank": 2,
-    "name": "ใส่ชื่อสินค้าอันดับ 2",
-    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=สินค้า+2",
-    "price": 199,
-    "originalPrice": 399,
-    "discount": 50,
-    "sold": "8k+",
-    "rating": 4.8,
-    "score": 9.4,
-    "shopeeUrl": "https://s.shopee.co.th/ใส่-affiliate-link",
+    "name": "Ensure Gold Nutritional Supplement",
+    "image": "https://placehold.co/400x400/efebe9/4e342e?text=Ensure+Gold",
+    "price": 950,
+    "originalPrice": 1150,
+    "discount": 17,
+    "sold": "20k+",
+    "rating": 5.0,
+    "score": 9.5,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Ensure+Gold",
+    "lazadaUrl": "",
     "highlight": "",
-    "reason": "ใส่เหตุผลสั้นๆ ว่าทำไมถึงแนะนำสินค้านี้",
-    "pros": ["จุดเด่น 1", "จุดเด่น 2", "จุดเด่น 3"]
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
   },
   {
     "rank": 3,
-    "name": "ใส่ชื่อสินค้าอันดับ 3",
-    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=สินค้า+3",
-    "price": 149,
-    "originalPrice": 249,
-    "discount": 40,
-    "sold": "6k+",
-    "rating": 4.7,
-    "score": 9.1,
-    "shopeeUrl": "https://s.shopee.co.th/ใส่-affiliate-link",
+    "name": "Le Ros Instant Boat Noodles",
+    "image": "https://placehold.co/400x400/efebe9/4e342e?text=Le+Ros",
+    "price": 35,
+    "originalPrice": 50,
+    "discount": 30,
+    "sold": "100k+",
+    "rating": 4.8,
+    "score": 9.2,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Le+Ros+Boat+Noodles",
+    "lazadaUrl": "",
     "highlight": "",
-    "reason": "ใส่เหตุผลสั้นๆ ว่าทำไมถึงแนะนำสินค้านี้",
-    "pros": ["จุดเด่น 1", "จุดเด่น 2", "จุดเด่น 3"]
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 4,
+    "name": "Pistachio Butter Spread No Sugar",
+    "image": "https://placehold.co/400x400/efebe9/4e342e?text=Pistachio+Butter",
+    "price": 250,
+    "originalPrice": 450,
+    "discount": 44,
+    "sold": "5k+",
+    "rating": 4.9,
+    "score": 8.9,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Pistachio+Spread",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 5,
+    "name": "Samyang Buldak Ramen Multi-pack",
+    "image": "https://placehold.co/400x400/efebe9/4e342e?text=Samyang",
+    "price": 185,
+    "originalPrice": 250,
+    "discount": 26,
+    "sold": "40k+",
+    "rating": 4.9,
+    "score": 8.6,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Samyang+Buldak",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 6,
+    "name": "Freeze-Dried Durian Premium 100g",
+    "image": "https://placehold.co/400x400/efebe9/4e342e?text=Dried+Durian",
+    "price": 290,
+    "originalPrice": 450,
+    "discount": 35,
+    "sold": "12k+",
+    "rating": 4.9,
+    "score": 8.3,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Dried+Durian",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 7,
+    "name": "Ceremonial Grade Uji Matcha Powder",
+    "image": "https://placehold.co/400x400/efebe9/4e342e?text=Matcha",
+    "price": 390,
+    "originalPrice": 650,
+    "discount": 40,
+    "sold": "4k+",
+    "rating": 5.0,
+    "score": 8.0,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Uji+Matcha",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 8,
+    "name": "Oishi Green Tea 1.5L x 6",
+    "image": "https://placehold.co/400x400/efebe9/4e342e?text=Oishi",
+    "price": 155,
+    "originalPrice": 210,
+    "discount": 26,
+    "sold": "15k+",
+    "rating": 4.9,
+    "score": 7.7,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Oishi+Green+Tea",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 9,
+    "name": "Maepranom Thai Chili Paste 513g",
+    "image": "https://placehold.co/400x400/efebe9/4e342e?text=Maepranom",
+    "price": 75,
+    "originalPrice": 95,
+    "discount": 21,
+    "sold": "10k+",
+    "rating": 5.0,
+    "score": 7.4,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Maepranom",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 10,
+    "name": "Crispy Taro Sticks Original Flavor",
+    "image": "https://placehold.co/400x400/efebe9/4e342e?text=Taro+Snack",
+    "price": 45,
+    "originalPrice": 65,
+    "discount": 30,
+    "sold": "20k+",
+    "rating": 4.8,
+    "score": 7.1,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Taro+Sticks",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
   }
 ]

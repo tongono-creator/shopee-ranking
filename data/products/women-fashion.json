@@ -1,47 +1,202 @@
 [
   {
     "rank": 1,
-    "name": "ใส่ชื่อสินค้าอันดับ 1",
-    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=สินค้า+1",
-    "price": 299,
-    "originalPrice": 599,
-    "discount": 50,
-    "sold": "10k+",
-    "rating": 4.9,
+    "name": "Floral Maxi Dress Summer Vibes",
+    "image": "https://placehold.co/400x400/fce4ec/880e4f?text=Floral+Dress",
+    "price": 250,
+    "originalPrice": 490,
+    "discount": 49,
+    "sold": "5k+",
+    "rating": 4.8,
     "score": 9.8,
-    "shopeeUrl": "https://s.shopee.co.th/ใส่-affiliate-link",
-    "highlight": "อันดับ 1 ขายดีที่สุด",
-    "reason": "ใส่เหตุผลสั้นๆ ว่าทำไมถึงแนะนำสินค้านี้ เช่น คุณภาพดี ราคาคุ้ม",
-    "pros": ["จุดเด่น 1", "จุดเด่น 2", "จุดเด่น 3"]
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Floral+Maxi+Dress",
+    "lazadaUrl": "",
+    "highlight": "ขายดีที่สุด",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
   },
   {
     "rank": 2,
-    "name": "ใส่ชื่อสินค้าอันดับ 2",
-    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=สินค้า+2",
-    "price": 199,
-    "originalPrice": 399,
+    "name": "Authentic Thai Elephant Pants",
+    "image": "https://placehold.co/400x400/fce4ec/880e4f?text=Elephant+Pants",
+    "price": 99,
+    "originalPrice": 199,
     "discount": 50,
-    "sold": "8k+",
-    "rating": 4.8,
-    "score": 9.4,
-    "shopeeUrl": "https://s.shopee.co.th/ใส่-affiliate-link",
+    "sold": "50k+",
+    "rating": 4.7,
+    "score": 9.5,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Elephant+Pants",
+    "lazadaUrl": "",
     "highlight": "",
-    "reason": "ใส่เหตุผลสั้นๆ ว่าทำไมถึงแนะนำสินค้านี้",
-    "pros": ["จุดเด่น 1", "จุดเด่น 2", "จุดเด่น 3"]
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
   },
   {
     "rank": 3,
-    "name": "ใส่ชื่อสินค้าอันดับ 3",
-    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=สินค้า+3",
-    "price": 149,
-    "originalPrice": 249,
-    "discount": 40,
-    "sold": "6k+",
-    "rating": 4.7,
-    "score": 9.1,
-    "shopeeUrl": "https://s.shopee.co.th/ใส่-affiliate-link",
+    "name": "Yuedpao Oversized Cotton T-shirt",
+    "image": "https://placehold.co/400x400/fce4ec/880e4f?text=Yuedpao",
+    "price": 190,
+    "originalPrice": 350,
+    "discount": 46,
+    "sold": "20k+",
+    "rating": 4.9,
+    "score": 9.2,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Yuedpao",
+    "lazadaUrl": "",
     "highlight": "",
-    "reason": "ใส่เหตุผลสั้นๆ ว่าทำไมถึงแนะนำสินค้านี้",
-    "pros": ["จุดเด่น 1", "จุดเด่น 2", "จุดเด่น 3"]
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 4,
+    "name": "Minimalist Linen Balloon Pants",
+    "image": "https://placehold.co/400x400/fce4ec/880e4f?text=Linen+Pants",
+    "price": 189,
+    "originalPrice": 390,
+    "discount": 52,
+    "sold": "10k+",
+    "rating": 4.8,
+    "score": 8.9,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Linen+Balloon+Pants",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 5,
+    "name": "Gentlewoman Canvas Tote Bag",
+    "image": "https://placehold.co/400x400/fce4ec/880e4f?text=Gentlewoman",
+    "price": 390,
+    "originalPrice": 590,
+    "discount": 34,
+    "sold": "15k+",
+    "rating": 4.9,
+    "score": 8.6,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Gentlewoman+Tote",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 6,
+    "name": "Sheer Lace Blouse French Style",
+    "image": "https://placehold.co/400x400/fce4ec/880e4f?text=Lace+Blouse",
+    "price": 159,
+    "originalPrice": 290,
+    "discount": 45,
+    "sold": "8k+",
+    "rating": 4.7,
+    "score": 8.3,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Sheer+Lace+Blouse",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 7,
+    "name": "High Waist Wide Leg Denim Jeans",
+    "image": "https://placehold.co/400x400/fce4ec/880e4f?text=Wide+Leg+Jeans",
+    "price": 299,
+    "originalPrice": 590,
+    "discount": 49,
+    "sold": "12k+",
+    "rating": 4.8,
+    "score": 8.0,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Wide+Leg+Jeans",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 8,
+    "name": "Linen Matching Co-ord Set",
+    "image": "https://placehold.co/400x400/fce4ec/880e4f?text=Co-ord+Set",
+    "price": 350,
+    "originalPrice": 690,
+    "discount": 49,
+    "sold": "4k+",
+    "rating": 4.7,
+    "score": 7.7,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Linen+Co-ord+Set",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 9,
+    "name": "Chunky Platform Sandals Beige",
+    "image": "https://placehold.co/400x400/fce4ec/880e4f?text=Platform+Sandals",
+    "price": 199,
+    "originalPrice": 390,
+    "discount": 49,
+    "sold": "20k+",
+    "rating": 4.8,
+    "score": 7.4,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Platform+Sandals",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 10,
+    "name": "Cropped Knit Cardigan Macaron",
+    "image": "https://placehold.co/400x400/fce4ec/880e4f?text=Cardigan",
+    "price": 129,
+    "originalPrice": 250,
+    "discount": 48,
+    "sold": "15k+",
+    "rating": 4.7,
+    "score": 7.1,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Knit+Cardigan",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
   }
 ]

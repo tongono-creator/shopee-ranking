@@ -1,47 +1,202 @@
 [
   {
     "rank": 1,
-    "name": "ใส่ชื่อสินค้าอันดับ 1",
-    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=สินค้า+1",
-    "price": 299,
-    "originalPrice": 599,
-    "discount": 50,
-    "sold": "10k+",
-    "rating": 4.9,
+    "name": "Portable Air Conditioner 9000BTU",
+    "image": "https://placehold.co/400x400/e3f2fd/0d47a1?text=Portable+AC",
+    "price": 6500,
+    "originalPrice": 12900,
+    "discount": 49,
+    "sold": "2k+",
+    "rating": 4.8,
     "score": 9.8,
-    "shopeeUrl": "https://s.shopee.co.th/ใส่-affiliate-link",
-    "highlight": "อันดับ 1 ขายดีที่สุด",
-    "reason": "ใส่เหตุผลสั้นๆ ว่าทำไมถึงแนะนำสินค้านี้ เช่น คุณภาพดี ราคาคุ้ม",
-    "pros": ["จุดเด่น 1", "จุดเด่น 2", "จุดเด่น 3"]
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Portable+Air+Conditioner",
+    "lazadaUrl": "",
+    "highlight": "ขายดีที่สุด",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
   },
   {
     "rank": 2,
-    "name": "ใส่ชื่อสินค้าอันดับ 2",
-    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=สินค้า+2",
-    "price": 199,
-    "originalPrice": 399,
-    "discount": 50,
-    "sold": "8k+",
-    "rating": 4.8,
-    "score": 9.4,
-    "shopeeUrl": "https://s.shopee.co.th/ใส่-affiliate-link",
+    "name": "Samsung Inverter Refrigerator 8.4Q",
+    "image": "https://placehold.co/400x400/e3f2fd/0d47a1?text=Samsung+Fridge",
+    "price": 7500,
+    "originalPrice": 10900,
+    "discount": 31,
+    "sold": "1k+",
+    "rating": 4.9,
+    "score": 9.5,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Samsung+Refrigerator",
+    "lazadaUrl": "",
     "highlight": "",
-    "reason": "ใส่เหตุผลสั้นๆ ว่าทำไมถึงแนะนำสินค้านี้",
-    "pros": ["จุดเด่น 1", "จุดเด่น 2", "จุดเด่น 3"]
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
   },
   {
     "rank": 3,
-    "name": "ใส่ชื่อสินค้าอันดับ 3",
-    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=สินค้า+3",
-    "price": 149,
-    "originalPrice": 249,
-    "discount": 40,
-    "sold": "6k+",
-    "rating": 4.7,
-    "score": 9.1,
-    "shopeeUrl": "https://s.shopee.co.th/ใส่-affiliate-link",
+    "name": "Top Load Washing Machine 10kg",
+    "image": "https://placehold.co/400x400/e3f2fd/0d47a1?text=Washing+Machine",
+    "price": 5500,
+    "originalPrice": 8900,
+    "discount": 38,
+    "sold": "1.5k+",
+    "rating": 4.8,
+    "score": 9.2,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Washing+Machine",
+    "lazadaUrl": "",
     "highlight": "",
-    "reason": "ใส่เหตุผลสั้นๆ ว่าทำไมถึงแนะนำสินค้านี้",
-    "pros": ["จุดเด่น 1", "จุดเด่น 2", "จุดเด่น 3"]
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 4,
+    "name": "Samsung Microwave MS23K3513AW",
+    "image": "https://placehold.co/400x400/e3f2fd/0d47a1?text=Microwave",
+    "price": 2490,
+    "originalPrice": 3590,
+    "discount": 30,
+    "sold": "4k+",
+    "rating": 4.9,
+    "score": 8.9,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Samsung+Microwave",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 5,
+    "name": "Hatari Electric Fan 16-inch",
+    "image": "https://placehold.co/400x400/e3f2fd/0d47a1?text=Hatari+Fan",
+    "price": 850,
+    "originalPrice": 1150,
+    "discount": 26,
+    "sold": "20k+",
+    "rating": 4.9,
+    "score": 8.6,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Hatari+Fan",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 6,
+    "name": "Digital Rice Cooker 1.8L",
+    "image": "https://placehold.co/400x400/e3f2fd/0d47a1?text=Rice+Cooker",
+    "price": 890,
+    "originalPrice": 1590,
+    "discount": 44,
+    "sold": "10k+",
+    "rating": 4.8,
+    "score": 8.3,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Digital+Rice+Cooker",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 7,
+    "name": "Portable Induction Cooker 2000W",
+    "image": "https://placehold.co/400x400/e3f2fd/0d47a1?text=Induction+Cooker",
+    "price": 590,
+    "originalPrice": 1290,
+    "discount": 54,
+    "sold": "8k+",
+    "rating": 4.7,
+    "score": 8.0,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Induction+Cooker",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 8,
+    "name": "Portable Blender USB Rechargeable",
+    "image": "https://placehold.co/400x400/e3f2fd/0d47a1?text=Blender",
+    "price": 259,
+    "originalPrice": 490,
+    "discount": 47,
+    "sold": "15k+",
+    "rating": 4.6,
+    "score": 7.7,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Portable+Blender",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 9,
+    "name": "Philips Water Purifier Tap Filter",
+    "image": "https://placehold.co/400x400/e3f2fd/0d47a1?text=Water+Filter",
+    "price": 890,
+    "originalPrice": 1590,
+    "discount": 44,
+    "sold": "5k+",
+    "rating": 4.8,
+    "score": 7.4,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Philips+Water+Filter",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
+  },
+  {
+    "rank": 10,
+    "name": "Steam Iron with Non-Stick Plate",
+    "image": "https://placehold.co/400x400/e3f2fd/0d47a1?text=Steam+Iron",
+    "price": 450,
+    "originalPrice": 890,
+    "discount": 49,
+    "sold": "12k+",
+    "rating": 4.7,
+    "score": 7.1,
+    "shopeeUrl": "https://shopee.co.th/search?keyword=Steam+Iron",
+    "lazadaUrl": "",
+    "highlight": "",
+    "reason": "",
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
   }
 ]
