@@ -25,7 +25,7 @@ export default function CategoryNav() {
             <Link
               key={cat.slug}
               href={`/${cat.slug}`}
-              className={`flex-shrink-0 px-3 py-1.5 rounded-full text-sm font-medium transition-colors whitespace-nowrap ${
+              className={`flex-shrink-0 px-2.5 py-1.5 rounded-full text-xs font-medium transition-colors whitespace-nowrap ${
                 pathname === `/${cat.slug}`
                   ? "bg-[#2d6a4f] text-white"
                   : "text-gray-600 hover:bg-[#d8f3dc] hover:text-[#2d6a4f]"
