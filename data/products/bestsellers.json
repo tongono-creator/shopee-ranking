@@ -1,202 +1,162 @@
 [
   {
     "rank": 1,
-    "name": "GaN Charger 65W Fast Charge",
-    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=GaN+Charger",
+    "name": "Essager หัวชาร์จ GaN 65W ชาร์จเร็ว Type-C/USB-A 2-in-1",
+    "image": "https://down-th.img.susercontent.com/file/cn-11134207-820l4-mnb922dj77cwef",
     "price": 450,
     "originalPrice": 890,
     "discount": 49,
     "sold": "10k+",
     "rating": 4.9,
     "score": 9.8,
-    "shopeeUrl": "https://s.shopee.co.th/1qYuw4ZUNH",
+    "shopeeUrl": "https://shopee.co.th/product/220655562/40030272268",
     "lazadaUrl": "",
     "highlight": "ขายดีที่สุด",
     "reason": "",
-    "pros": [
-      "คุณภาพดี",
-      "ราคาคุ้มค่า",
-      "ส่งเร็ว"
-    ]
+    "pros": ["ชาร์จเร็ว GaN", "2 พอร์ต", "พกพาง่าย"]
   },
   {
     "rank": 2,
-    "name": "Biore UV Aqua Rich Watery Essence",
-    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=Biore+UV",
+    "name": "Biore UV Aqua Rich กันแดดน้ำหนักเบา SPF50+ PA++++ 50g",
+    "image": "https://down-th.img.susercontent.com/file/th-11134207-7r98w-lslu3gyxf23yfc",
     "price": 290,
     "originalPrice": 450,
     "discount": 35,
     "sold": "50k+",
     "rating": 5.0,
     "score": 9.5,
-    "shopeeUrl": "https://shopee.co.th/search?keyword=Biore+UV",
+    "shopeeUrl": "https://shopee.co.th/product/1449018616/44952321154",
     "lazadaUrl": "",
     "highlight": "",
     "reason": "",
-    "pros": [
-      "คุณภาพดี",
-      "ราคาคุ้มค่า",
-      "ส่งเร็ว"
-    ]
+    "pros": ["เนื้อบางเบา", "กันแดดสูง", "ไม่เหนียว"]
   },
   {
     "rank": 3,
-    "name": "Acrylic Shoe Box Stackable",
-    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=Shoe+Box",
+    "name": "กล่องรองเท้าอะคริลิคใส วางซ้อนกันได้ จัดระเบียบ",
+    "image": "https://down-th.img.susercontent.com/file/th-11134207-7ras9-m6z1xjlyawq7f1",
     "price": 45,
     "originalPrice": 99,
     "discount": 54,
     "sold": "100k+",
     "rating": 4.8,
     "score": 9.2,
-    "shopeeUrl": "https://shopee.co.th/search?keyword=Acrylic+Shoe+Box",
+    "shopeeUrl": "https://shopee.co.th/product/1449018616/48652640295",
     "lazadaUrl": "",
     "highlight": "",
     "reason": "",
-    "pros": [
-      "คุณภาพดี",
-      "ราคาคุ้มค่า",
-      "ส่งเร็ว"
-    ]
+    "pros": ["ซ้อนได้", "เห็นรองเท้าชัด", "ประหยัดพื้นที่"]
   },
   {
     "rank": 4,
-    "name": "Baseus Bowie WM02 TWS Earbuds",
-    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=Earbuds",
+    "name": "Baseus Bowie MP1 หูฟัง True Wireless Bluetooth ไร้สาย",
+    "image": "https://down-th.img.susercontent.com/file/cn-11134207-820l4-mkvw1o19tgxvce",
     "price": 399,
     "originalPrice": 990,
     "discount": 60,
     "sold": "20k+",
     "rating": 4.9,
     "score": 8.9,
-    "shopeeUrl": "https://shopee.co.th/search?keyword=Baseus+Bowie",
+    "shopeeUrl": "https://shopee.co.th/product/131196738/44506306844",
     "lazadaUrl": "",
     "highlight": "",
     "reason": "",
-    "pros": [
-      "คุณภาพดี",
-      "ราคาคุ้มค่า",
-      "ส่งเร็ว"
-    ]
+    "pros": ["เสียงดี Hi-Fi", "แบตทน", "ราคาคุ้ม"]
   },
   {
     "rank": 5,
-    "name": "Platform Sandals Minimalist",
-    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=Sandals",
+    "name": "รองเท้าแมรี่เจน พื้นนุ่ม กันลื่น สไตล์มินิมอล",
+    "image": "https://down-th.img.susercontent.com/file/sg-11134201-820l4-mo1xr79xoc1u82",
     "price": 159,
     "originalPrice": 350,
     "discount": 54,
     "sold": "30k+",
     "rating": 4.7,
     "score": 8.6,
-    "shopeeUrl": "https://shopee.co.th/search?keyword=Platform+Sandals",
+    "shopeeUrl": "https://shopee.co.th/product/1788603523/44710263134",
     "lazadaUrl": "",
     "highlight": "",
     "reason": "",
-    "pros": [
-      "คุณภาพดี",
-      "ราคาคุ้มค่า",
-      "ส่งเร็ว"
-    ]
+    "pros": ["ดูสูง", "ใส่สบาย", "ดีไซน์เรียบ"]
   },
   {
     "rank": 6,
-    "name": "Eloop E29 Power Bank 30000mAh",
-    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=Power+Bank",
+    "name": "Orsen by Eloop E29 แบตสำรอง 30000mAh QC3.0 PD 45W",
+    "image": "https://down-th.img.susercontent.com/file/th-11134207-81ztk-mf3icfya2sqx61",
     "price": 799,
     "originalPrice": 1590,
     "discount": 50,
     "sold": "15k+",
     "rating": 4.9,
     "score": 8.3,
-    "shopeeUrl": "https://shopee.co.th/search?keyword=Eloop+E29",
+    "shopeeUrl": "https://shopee.co.th/product/374944741/26642070475",
     "lazadaUrl": "",
     "highlight": "",
     "reason": "",
-    "pros": [
-      "คุณภาพดี",
-      "ราคาคุ้มค่า",
-      "ส่งเร็ว"
-    ]
+    "pros": ["ความจุสูง", "ชาร์จเร็ว", "ของแท้"]
   },
   {
     "rank": 7,
-    "name": "Gaabor Air Fryer 4L Digital",
-    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=Air+Fryer",
+    "name": "Gaabor หม้อทอดไร้น้ำมัน 4 ลิตร AF-35M รุ่น Official",
+    "image": "https://down-th.img.susercontent.com/file/sg-11134201-824h3-melb6ein0vsx74",
     "price": 890,
     "originalPrice": 2590,
     "discount": 65,
     "sold": "10k+",
     "rating": 4.8,
     "score": 8.0,
-    "shopeeUrl": "https://shopee.co.th/search?keyword=Gaabor+Air+Fryer",
+    "shopeeUrl": "https://shopee.co.th/product/1449018616/57553920102",
     "lazadaUrl": "",
     "highlight": "",
     "reason": "",
-    "pros": [
-      "คุณภาพดี",
-      "ราคาคุ้มค่า",
-      "ส่งเร็ว"
-    ]
+    "pros": ["ไม่ใช้น้ำมัน", "จุ 4 ลิตร", "ประหยัดพลังงาน"]
   },
   {
     "rank": 8,
-    "name": "DHC Vitamin C 60 Days",
-    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=Vitamin+C",
+    "name": "DHC วิตามินซี Zinc อาหารเสริมบำรุงผิว นำเข้าจากญี่ปุ่น",
+    "image": "https://down-th.img.susercontent.com/file/th-11134207-81ztc-mjqnk9rp0mpsde",
     "price": 145,
     "originalPrice": 250,
     "discount": 42,
     "sold": "40k+",
     "rating": 5.0,
     "score": 7.7,
-    "shopeeUrl": "https://shopee.co.th/search?keyword=DHC+Vitamin+C",
+    "shopeeUrl": "https://shopee.co.th/product/1067287238/25085242999",
     "lazadaUrl": "",
     "highlight": "",
     "reason": "",
-    "pros": [
-      "คุณภาพดี",
-      "ราคาคุ้มค่า",
-      "ส่งเร็ว"
-    ]
+    "pros": ["นำเข้าจากญี่ปุ่น", "ของแท้", "บำรุงผิว"]
   },
   {
     "rank": 9,
-    "name": "Automatic Pet Feeder 3L",
-    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=Pet+Feeder",
+    "name": "เครื่องให้อาหารสัตว์เลี้ยงอัตโนมัติ 4 ลิตร ตั้งเวลาผ่านมือถือ",
+    "image": "https://down-th.img.susercontent.com/file/th-11134201-81zte-mjzsmqntnqpv28",
     "price": 1290,
     "originalPrice": 2990,
     "discount": 56,
     "sold": "5k+",
     "rating": 4.9,
     "score": 7.4,
-    "shopeeUrl": "https://shopee.co.th/search?keyword=Pet+Feeder",
+    "shopeeUrl": "https://shopee.co.th/product/598114375/55105420215",
     "lazadaUrl": "",
     "highlight": "",
     "reason": "",
-    "pros": [
-      "คุณภาพดี",
-      "ราคาคุ้มค่า",
-      "ส่งเร็ว"
-    ]
+    "pros": ["ตั้งเวลาได้", "ควบคุมผ่าน App", "ความจุเยอะ"]
   },
   {
     "rank": 10,
-    "name": "Baseus LED Desk Lamp Magnetic",
-    "image": "https://placehold.co/400x400/e8f5e9/2d6a4f?text=Desk+Lamp",
+    "name": "Baseus โคมไฟตั้งโต๊ะ LED แม่เหล็กไร้สาย Magnetic",
+    "image": "https://down-th.img.susercontent.com/file/24124b5e47a0316f8c5a3a52ca18b699",
     "price": 350,
     "originalPrice": 690,
     "discount": 49,
     "sold": "8k+",
     "rating": 4.9,
     "score": 7.1,
-    "shopeeUrl": "https://shopee.co.th/search?keyword=Baseus+Desk+Lamp",
+    "shopeeUrl": "https://shopee.co.th/product/80716556/5878725844",
     "lazadaUrl": "",
     "highlight": "",
     "reason": "",
-    "pros": [
-      "คุณภาพดี",
-      "ราคาคุ้มค่า",
-      "ส่งเร็ว"
-    ]
+    "pros": ["ปรับความสว่างได้", "ถนอมสายตา", "พกพาได้"]
   }
 ]

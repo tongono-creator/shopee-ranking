@@ -1,202 +1,162 @@
 [
   {
     "rank": 1,
-    "name": "Portable Air Conditioner 9000BTU",
-    "image": "https://placehold.co/400x400/e3f2fd/0d47a1?text=Portable+AC",
+    "name": "แอร์เคลื่อนที่ 9000 BTU Haier รุ่น HP-09WTA05 ไม่ต้องเจาะผนัง",
+    "image": "https://down-th.img.susercontent.com/file/th-11134207-81zth-mlxa2t5kcidda8",
     "price": 6500,
     "originalPrice": 12900,
     "discount": 49,
     "sold": "2k+",
     "rating": 4.8,
     "score": 9.8,
-    "shopeeUrl": "https://shopee.co.th/search?keyword=Portable+Air+Conditioner",
+    "shopeeUrl": "https://shopee.co.th/product/184920733/45957376273",
     "lazadaUrl": "",
     "highlight": "ขายดีที่สุด",
     "reason": "",
-    "pros": [
-      "คุณภาพดี",
-      "ราคาคุ้มค่า",
-      "ส่งเร็ว"
-    ]
+    "pros": ["ไม่ต้องเจาะผนัง", "เคลื่อนย้ายได้", "ประหยัดไฟ"]
   },
   {
     "rank": 2,
-    "name": "Samsung Inverter Refrigerator 8.4Q",
-    "image": "https://placehold.co/400x400/e3f2fd/0d47a1?text=Samsung+Fridge",
+    "name": "ตู้เย็น 2 ประตู Samsung Inverter 8.4 คิว รุ่น RT22FGRADB1",
+    "image": "https://down-th.img.susercontent.com/file/th-11134207-7ra0l-md00nwkhjbi828",
     "price": 7500,
-    "originalPrice": 10900,
-    "discount": 31,
+    "originalPrice": 14900,
+    "discount": 49,
     "sold": "1k+",
     "rating": 4.9,
     "score": 9.5,
-    "shopeeUrl": "https://shopee.co.th/search?keyword=Samsung+Refrigerator",
+    "shopeeUrl": "https://shopee.co.th/product/77734723/40361460897",
     "lazadaUrl": "",
     "highlight": "",
     "reason": "",
-    "pros": [
-      "คุณภาพดี",
-      "ราคาคุ้มค่า",
-      "ส่งเร็ว"
-    ]
+    "pros": ["Inverter ประหยัดไฟ", "ความจุใหญ่", "ประกันศูนย์"]
   },
   {
     "rank": 3,
-    "name": "Top Load Washing Machine 10kg",
-    "image": "https://placehold.co/400x400/e3f2fd/0d47a1?text=Washing+Machine",
+    "name": "เครื่องซักผ้าฝาบน Hitachi 10 กก. รุ่น LTL 10M00",
+    "image": "https://down-th.img.susercontent.com/file/th-11134207-81zto-mj3o5fjb124g6d",
     "price": 5500,
-    "originalPrice": 8900,
-    "discount": 38,
+    "originalPrice": 9900,
+    "discount": 44,
     "sold": "1.5k+",
     "rating": 4.8,
     "score": 9.2,
-    "shopeeUrl": "https://shopee.co.th/search?keyword=Washing+Machine",
+    "shopeeUrl": "https://shopee.co.th/product/669016075/24275133197",
     "lazadaUrl": "",
     "highlight": "",
     "reason": "",
-    "pros": [
-      "คุณภาพดี",
-      "ราคาคุ้มค่า",
-      "ส่งเร็ว"
-    ]
+    "pros": ["ความจุ 10 กก.", "ซักสะอาด", "ประหยัดน้ำ"]
   },
   {
     "rank": 4,
-    "name": "Samsung Microwave MS23K3513AW",
-    "image": "https://placehold.co/400x400/e3f2fd/0d47a1?text=Microwave",
+    "name": "ไมโครเวฟ Midea 20 ลิตร รุ่น MM720CJ9-1 ใช้งานง่าย",
+    "image": "https://down-th.img.susercontent.com/file/th-11134207-7ra0n-mckcge19gnut18",
     "price": 2490,
-    "originalPrice": 3590,
-    "discount": 30,
+    "originalPrice": 4990,
+    "discount": 50,
     "sold": "4k+",
     "rating": 4.9,
     "score": 8.9,
-    "shopeeUrl": "https://shopee.co.th/search?keyword=Samsung+Microwave",
+    "shopeeUrl": "https://shopee.co.th/product/76526105/40659980388",
     "lazadaUrl": "",
     "highlight": "",
     "reason": "",
-    "pros": [
-      "คุณภาพดี",
-      "ราคาคุ้มค่า",
-      "ส่งเร็ว"
-    ]
+    "pros": ["20 ลิตร", "ใช้งานง่าย", "ราคาคุ้ม"]
   },
   {
     "rank": 5,
-    "name": "Hatari Electric Fan 16-inch",
-    "image": "https://placehold.co/400x400/e3f2fd/0d47a1?text=Hatari+Fan",
+    "name": "พัดลมปรับระดับ Hatari 16 นิ้ว รุ่น S16M7 เสียงเบา",
+    "image": "https://down-th.img.susercontent.com/file/sg-11134253-7rdy5-mdsl89ocke5g92",
     "price": 850,
-    "originalPrice": 1150,
-    "discount": 26,
+    "originalPrice": 1690,
+    "discount": 49,
     "sold": "20k+",
     "rating": 4.9,
     "score": 8.6,
-    "shopeeUrl": "https://shopee.co.th/search?keyword=Hatari+Fan",
+    "shopeeUrl": "https://shopee.co.th/product/1449018616/40665224814",
     "lazadaUrl": "",
     "highlight": "",
     "reason": "",
-    "pros": [
-      "คุณภาพดี",
-      "ราคาคุ้มค่า",
-      "ส่งเร็ว"
-    ]
+    "pros": ["เสียงเบา", "ลมแรง", "ปรับระดับได้"]
   },
   {
     "rank": 6,
-    "name": "Digital Rice Cooker 1.8L",
-    "image": "https://placehold.co/400x400/e3f2fd/0d47a1?text=Rice+Cooker",
+    "name": "หม้อหุงข้าวดิจิตอล Toshiba 1.8 ลิตร รุ่น RC-18DRVTH",
+    "image": "https://down-th.img.susercontent.com/file/th-11134207-81ztn-mkpceb9hodmu9b",
     "price": 890,
-    "originalPrice": 1590,
-    "discount": 44,
+    "originalPrice": 1990,
+    "discount": 55,
     "sold": "10k+",
     "rating": 4.8,
     "score": 8.3,
-    "shopeeUrl": "https://shopee.co.th/search?keyword=Digital+Rice+Cooker",
+    "shopeeUrl": "https://shopee.co.th/product/88562549/53056204278",
     "lazadaUrl": "",
     "highlight": "",
     "reason": "",
-    "pros": [
-      "คุณภาพดี",
-      "ราคาคุ้มค่า",
-      "ส่งเร็ว"
-    ]
+    "pros": ["หุงอัตโนมัติ", "ดิจิตอล", "ประหยัดไฟ"]
   },
   {
     "rank": 7,
-    "name": "Portable Induction Cooker 2000W",
-    "image": "https://placehold.co/400x400/e3f2fd/0d47a1?text=Induction+Cooker",
+    "name": "เตาแม่เหล็กไฟฟ้า 2000W TOPWISH รุ่น AIH-201A",
+    "image": "https://down-th.img.susercontent.com/file/sg-11134201-820nm-mo3rf30kn75v1c",
     "price": 590,
     "originalPrice": 1290,
     "discount": 54,
     "sold": "8k+",
     "rating": 4.7,
     "score": 8.0,
-    "shopeeUrl": "https://shopee.co.th/search?keyword=Induction+Cooker",
+    "shopeeUrl": "https://shopee.co.th/product/1776025935/47860321899",
     "lazadaUrl": "",
     "highlight": "",
     "reason": "",
-    "pros": [
-      "คุณภาพดี",
-      "ราคาคุ้มค่า",
-      "ส่งเร็ว"
-    ]
+    "pros": ["กำลังสูง", "พกพาได้", "ประหยัดพลังงาน"]
   },
   {
     "rank": 8,
-    "name": "Portable Blender USB Rechargeable",
-    "image": "https://placehold.co/400x400/e3f2fd/0d47a1?text=Blender",
+    "name": "เครื่องปั่นกระเทียม/พริก ไร้สาย USB ชาร์จได้ 350ml",
+    "image": "https://down-th.img.susercontent.com/file/sg-11134253-7raup-macab9kx068e33",
     "price": 259,
-    "originalPrice": 490,
-    "discount": 47,
+    "originalPrice": 590,
+    "discount": 56,
     "sold": "15k+",
     "rating": 4.6,
     "score": 7.7,
-    "shopeeUrl": "https://shopee.co.th/search?keyword=Portable+Blender",
+    "shopeeUrl": "https://shopee.co.th/product/1449018616/28636898914",
     "lazadaUrl": "",
     "highlight": "",
     "reason": "",
-    "pros": [
-      "คุณภาพดี",
-      "ราคาคุ้มค่า",
-      "ส่งเร็ว"
-    ]
+    "pros": ["ไร้สาย", "ชาร์จ USB", "พกพาได้"]
   },
   {
     "rank": 9,
-    "name": "Philips Water Purifier Tap Filter",
-    "image": "https://placehold.co/400x400/e3f2fd/0d47a1?text=Water+Filter",
+    "name": "Philips เครื่องกรองน้ำก๊อก รุ่น AWP1830 ติดตั้งง่าย",
+    "image": "https://down-th.img.susercontent.com/file/th-11134207-81ztg-mo571hfc0qv93b",
     "price": 890,
-    "originalPrice": 1590,
-    "discount": 44,
+    "originalPrice": 1990,
+    "discount": 55,
     "sold": "5k+",
     "rating": 4.8,
     "score": 7.4,
-    "shopeeUrl": "https://shopee.co.th/search?keyword=Philips+Water+Filter",
+    "shopeeUrl": "https://shopee.co.th/product/310902722/15393334935",
     "lazadaUrl": "",
     "highlight": "",
     "reason": "",
-    "pros": [
-      "คุณภาพดี",
-      "ราคาคุ้มค่า",
-      "ส่งเร็ว"
-    ]
+    "pros": ["กรองสะอาด", "ติดก๊อกได้เลย", "ประหยัด"]
   },
   {
     "rank": 10,
-    "name": "Steam Iron with Non-Stick Plate",
-    "image": "https://placehold.co/400x400/e3f2fd/0d47a1?text=Steam+Iron",
+    "name": "เตารีดไอน้ำเคลือบเทฟล่อน AIKO รุ่น EL-2018B",
+    "image": "https://down-th.img.susercontent.com/file/th-11134207-7ra0t-mc8vtc2o3p6s1d",
     "price": 450,
-    "originalPrice": 890,
-    "discount": 49,
+    "originalPrice": 990,
+    "discount": 54,
     "sold": "12k+",
     "rating": 4.7,
     "score": 7.1,
-    "shopeeUrl": "https://shopee.co.th/search?keyword=Steam+Iron",
+    "shopeeUrl": "https://shopee.co.th/product/22637356/42958681791",
     "lazadaUrl": "",
     "highlight": "",
     "reason": "",
-    "pros": [
-      "คุณภาพดี",
-      "ราคาคุ้มค่า",
-      "ส่งเร็ว"
-    ]
+    "pros": ["ไม่ติดผ้า", "ไอน้ำแรง", "น้ำหนักเบา"]
   }
 ]
