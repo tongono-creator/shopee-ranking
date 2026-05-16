@@ -88,23 +88,8 @@ export default function ProductCard({ product }: { product: Product }) {
             </div>
           )}
 
-          {/* Price + CTA */}
+          {/* CTA */}
           <div className="mt-4">
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-2xl font-black text-[#2d6a4f]">
-                ฿{product.price.toLocaleString()}
-              </span>
-              {product.originalPrice > product.price && (
-                <>
-                  <span className="text-sm text-gray-400 line-through">
-                    ฿{product.originalPrice.toLocaleString()}
-                  </span>
-                  <span className="text-xs font-bold text-white bg-red-500 px-2 py-0.5 rounded-md">
-                    -{product.discount}%
-                  </span>
-                </>
-              )}
-            </div>
             <div className="flex gap-2">
               <a
                 href={product.shopeeUrl}
