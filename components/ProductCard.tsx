@@ -89,8 +89,8 @@ export default function ProductCard({ product }: { product: Product }) {
           )}
 
           {/* Price + CTA */}
-          <div className="mt-4 flex items-center justify-between">
-            <div className="flex items-center gap-2">
+          <div className="mt-4">
+            <div className="flex items-center gap-2 mb-3">
               <span className="text-2xl font-black text-[#2d6a4f]">
                 ฿{product.price.toLocaleString()}
               </span>
@@ -105,15 +105,28 @@ export default function ProductCard({ product }: { product: Product }) {
                 </>
               )}
             </div>
-            <a
-              href={product.shopeeUrl}
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="flex items-center gap-2 bg-[#2d6a4f] hover:bg-[#1b4332] text-white font-semibold text-sm px-4 py-2.5 rounded-xl transition-colors"
-            >
-              <span>🛒</span>
-              <span>ดูราคา Shopee</span>
-            </a>
+            <div className="flex gap-2">
+              <a
+                href={product.shopeeUrl}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="flex-1 flex items-center justify-center gap-1.5 bg-[#2d6a4f] hover:bg-[#1b4332] text-white font-semibold text-sm px-3 py-2.5 rounded-xl transition-colors"
+              >
+                <span>🛒</span>
+                <span>Shopee</span>
+              </a>
+              {product.lazadaUrl && (
+                <a
+                  href={product.lazadaUrl}
+                  target="_blank"
+                  rel="noopener noreferrer sponsored"
+                  className="flex-1 flex items-center justify-center gap-1.5 bg-[#F85606] hover:bg-[#d94b05] text-white font-semibold text-sm px-3 py-2.5 rounded-xl transition-colors"
+                >
+                  <span>🛍️</span>
+                  <span>Lazada</span>
+                </a>
+              )}
+            </div>
           </div>
         </div>
       </div>

@@ -11,6 +11,7 @@ export type Product = {
   rating: number;
   score: number;
   shopeeUrl: string;
+  lazadaUrl: string;
   highlight: string;
   reason: string;
   pros: string[];
