@@ -13,15 +13,19 @@
     "lazadaUrl": "",
     "highlight": "ขายดีที่สุด",
     "reason": "",
-    "pros": ["ไม่ต้องเจาะผนัง", "เคลื่อนย้ายได้", "ประหยัดไฟ"]
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
   },
   {
     "rank": 2,
     "name": "ตู้เย็น 2 ประตู Samsung Inverter 8.4 คิว รุ่น RT22FGRADB1",
     "image": "https://down-th.img.susercontent.com/file/th-11134207-7ra0l-md00nwkhjbi828",
     "price": 7500,
-    "originalPrice": 14900,
-    "discount": 49,
+    "originalPrice": 10900,
+    "discount": 31,
     "sold": "1k+",
     "rating": 4.9,
     "score": 9.5,
@@ -29,15 +33,19 @@
     "lazadaUrl": "",
     "highlight": "",
     "reason": "",
-    "pros": ["Inverter ประหยัดไฟ", "ความจุใหญ่", "ประกันศูนย์"]
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
   },
   {
     "rank": 3,
     "name": "เครื่องซักผ้าฝาบน Hitachi 10 กก. รุ่น LTL 10M00",
     "image": "https://down-th.img.susercontent.com/file/th-11134207-81zto-mj3o5fjb124g6d",
     "price": 5500,
-    "originalPrice": 9900,
-    "discount": 44,
+    "originalPrice": 8900,
+    "discount": 38,
     "sold": "1.5k+",
     "rating": 4.8,
     "score": 9.2,
@@ -45,15 +53,19 @@
     "lazadaUrl": "",
     "highlight": "",
     "reason": "",
-    "pros": ["ความจุ 10 กก.", "ซักสะอาด", "ประหยัดน้ำ"]
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
   },
   {
     "rank": 4,
     "name": "ไมโครเวฟ Midea 20 ลิตร รุ่น MM720CJ9-1 ใช้งานง่าย",
     "image": "https://down-th.img.susercontent.com/file/th-11134207-7ra0n-mckcge19gnut18",
     "price": 2490,
-    "originalPrice": 4990,
-    "discount": 50,
+    "originalPrice": 3590,
+    "discount": 30,
     "sold": "4k+",
     "rating": 4.9,
     "score": 8.9,
@@ -61,15 +73,19 @@
     "lazadaUrl": "",
     "highlight": "",
     "reason": "",
-    "pros": ["20 ลิตร", "ใช้งานง่าย", "ราคาคุ้ม"]
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
   },
   {
     "rank": 5,
     "name": "พัดลมปรับระดับ Hatari 16 นิ้ว รุ่น S16M7 เสียงเบา",
     "image": "https://down-th.img.susercontent.com/file/sg-11134253-7rdy5-mdsl89ocke5g92",
     "price": 850,
-    "originalPrice": 1690,
-    "discount": 49,
+    "originalPrice": 1150,
+    "discount": 26,
     "sold": "20k+",
     "rating": 4.9,
     "score": 8.6,
@@ -77,15 +93,19 @@
     "lazadaUrl": "",
     "highlight": "",
     "reason": "",
-    "pros": ["เสียงเบา", "ลมแรง", "ปรับระดับได้"]
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
   },
   {
     "rank": 6,
     "name": "หม้อหุงข้าวดิจิตอล Toshiba 1.8 ลิตร รุ่น RC-18DRVTH",
     "image": "https://down-th.img.susercontent.com/file/th-11134207-81ztn-mkpceb9hodmu9b",
     "price": 890,
-    "originalPrice": 1990,
-    "discount": 55,
+    "originalPrice": 1590,
+    "discount": 44,
     "sold": "10k+",
     "rating": 4.8,
     "score": 8.3,
@@ -93,7 +113,11 @@
     "lazadaUrl": "",
     "highlight": "",
     "reason": "",
-    "pros": ["หุงอัตโนมัติ", "ดิจิตอล", "ประหยัดไฟ"]
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
   },
   {
     "rank": 7,
@@ -109,15 +133,19 @@
     "lazadaUrl": "",
     "highlight": "",
     "reason": "",
-    "pros": ["กำลังสูง", "พกพาได้", "ประหยัดพลังงาน"]
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
   },
   {
     "rank": 8,
     "name": "เครื่องปั่นกระเทียม/พริก ไร้สาย USB ชาร์จได้ 350ml",
     "image": "https://down-th.img.susercontent.com/file/sg-11134253-7raup-macab9kx068e33",
     "price": 259,
-    "originalPrice": 590,
-    "discount": 56,
+    "originalPrice": 490,
+    "discount": 47,
     "sold": "15k+",
     "rating": 4.6,
     "score": 7.7,
@@ -125,15 +153,19 @@
     "lazadaUrl": "",
     "highlight": "",
     "reason": "",
-    "pros": ["ไร้สาย", "ชาร์จ USB", "พกพาได้"]
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
   },
   {
     "rank": 9,
     "name": "Philips เครื่องกรองน้ำก๊อก รุ่น AWP1830 ติดตั้งง่าย",
     "image": "https://down-th.img.susercontent.com/file/th-11134207-81ztg-mo571hfc0qv93b",
     "price": 890,
-    "originalPrice": 1990,
-    "discount": 55,
+    "originalPrice": 1590,
+    "discount": 44,
     "sold": "5k+",
     "rating": 4.8,
     "score": 7.4,
@@ -141,15 +173,19 @@
     "lazadaUrl": "",
     "highlight": "",
     "reason": "",
-    "pros": ["กรองสะอาด", "ติดก๊อกได้เลย", "ประหยัด"]
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
   },
   {
     "rank": 10,
     "name": "เตารีดไอน้ำเคลือบเทฟล่อน AIKO รุ่น EL-2018B",
     "image": "https://down-th.img.susercontent.com/file/th-11134207-7ra0t-mc8vtc2o3p6s1d",
     "price": 450,
-    "originalPrice": 990,
-    "discount": 54,
+    "originalPrice": 890,
+    "discount": 49,
     "sold": "12k+",
     "rating": 4.7,
     "score": 7.1,
@@ -157,6 +193,10 @@
     "lazadaUrl": "",
     "highlight": "",
     "reason": "",
-    "pros": ["ไม่ติดผ้า", "ไอน้ำแรง", "น้ำหนักเบา"]
+    "pros": [
+      "คุณภาพดี",
+      "ราคาคุ้มค่า",
+      "ส่งเร็ว"
+    ]
   }
 ]
