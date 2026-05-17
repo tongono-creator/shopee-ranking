@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans_Thai } from "next/font/google";
 import "./globals.css";
 import CategoryNav from "@/components/CategoryNav";
+import { Analytics } from "@vercel/analytics/next";
 
 const notoSansThai = Noto_Sans_Thai({
   subsets: ["thai", "latin"],
@@ -51,6 +52,7 @@ export default function RootLayout({
         <footer className="text-center text-gray-400 text-xs py-8 mt-8 border-t">
           <p>เว็บนี้มีลิงก์ affiliate จาก Shopee — เมื่อซื้อสินค้าผ่านลิงก์นี้ เราจะได้รับค่าคอมมิชชั่นเล็กน้อย</p>
         </footer>
+        <Analytics />
       </body>
     </html>
   );
