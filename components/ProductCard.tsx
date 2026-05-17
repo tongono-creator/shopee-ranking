@@ -1,5 +1,4 @@
 import { Product } from "@/lib/products";
-import Image from "next/image";
 
 const rankColors: Record<number, string> = {
   1: "bg-yellow-400 text-yellow-900",
@@ -33,17 +32,17 @@ export default function ProductCard({ product }: { product: Product }) {
         </div>
 
         {/* Content */}
-        <div className="flex-1 py-5 pr-4">
+        <div className="flex-1 py-4 pr-4">
           {/* Top: image + info */}
-          <div className="flex gap-4">
-            {/* Image */}
-            <div className="relative flex-shrink-0 w-28 h-28 rounded-xl overflow-hidden bg-gray-100 border border-gray-100">
-              <Image
+          <div className="flex gap-3">
+            {/* Image — larger */}
+            <div className="relative flex-shrink-0 w-36 h-36 rounded-xl overflow-hidden bg-gray-100 border border-gray-100">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src={product.image}
                 alt={product.name}
-                fill
-                className="object-cover"
-                sizes="112px"
+                className="w-full h-full object-cover"
+                loading="lazy"
               />
               {product.highlight && (
                 <div className="absolute bottom-0 left-0 right-0 bg-[#2d6a4f] text-white text-[10px] text-center py-0.5 font-medium">
@@ -76,11 +75,11 @@ export default function ProductCard({ product }: { product: Product }) {
 
           {/* Pros */}
           {product.pros?.length > 0 && (
-            <div className="mt-3 flex flex-wrap gap-2">
+            <div className="mt-3 flex flex-wrap gap-1.5">
               {product.pros.map((pro, i) => (
                 <span
                   key={i}
-                  className="inline-flex items-center gap-1 text-xs text-[#2d6a4f] bg-[#d8f3dc] px-2.5 py-1 rounded-full font-medium"
+                  className="inline-flex items-center gap-1 text-xs text-[#2d6a4f] bg-[#d8f3dc] px-2 py-0.5 rounded-full font-medium"
                 >
                   <span>✓</span> {pro}
                 </span>
@@ -88,30 +87,28 @@ export default function ProductCard({ product }: { product: Product }) {
             </div>
           )}
 
-          {/* CTA */}
-          <div className="mt-4">
-            <div className="flex gap-2">
+          {/* CTA — compact buttons */}
+          <div className="mt-3 flex gap-2">
+            <a
+              href={product.shopeeUrl}
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              className="flex-1 flex items-center justify-center gap-1 bg-[#2d6a4f] hover:bg-[#1b4332] text-white font-semibold text-xs px-2 py-1.5 rounded-lg transition-colors"
+            >
+              <span>🛒</span>
+              <span>Shopee</span>
+            </a>
+            {product.lazadaUrl && (
               <a
-                href={product.shopeeUrl}
+                href={product.lazadaUrl}
                 target="_blank"
                 rel="noopener noreferrer sponsored"
-                className="flex-1 flex items-center justify-center gap-1.5 bg-[#2d6a4f] hover:bg-[#1b4332] text-white font-semibold text-sm px-3 py-2.5 rounded-xl transition-colors"
+                className="flex-1 flex items-center justify-center gap-1 bg-[#F85606] hover:bg-[#d94b05] text-white font-semibold text-xs px-2 py-1.5 rounded-lg transition-colors"
               >
-                <span>🛒</span>
-                <span>Shopee</span>
+                <span>🛍️</span>
+                <span>Lazada</span>
               </a>
-              {product.lazadaUrl && (
-                <a
-                  href={product.lazadaUrl}
-                  target="_blank"
-                  rel="noopener noreferrer sponsored"
-                  className="flex-1 flex items-center justify-center gap-1.5 bg-[#F85606] hover:bg-[#d94b05] text-white font-semibold text-sm px-3 py-2.5 rounded-xl transition-colors"
-                >
-                  <span>🛍️</span>
-                  <span>Lazada</span>
-                </a>
-              )}
-            </div>
+            )}
           </div>
         </div>
       </div>
