@@ -103,7 +103,7 @@ export default function ProductCard({ product }: { product: Product }) {
                 href={product.lazadaUrl}
                 target="_blank"
                 rel="noopener noreferrer sponsored"
-                className="flex-1 flex items-center justify-center gap-1 bg-[#F85606] hover:bg-[#d94b05] text-white font-semibold text-xs px-2 py-1.5 rounded-lg transition-colors"
+                className="flex-1 flex items-center justify-center gap-1 bg-[#2d6a4f] hover:bg-[#1b4332] text-white font-semibold text-xs px-2 py-1.5 rounded-lg transition-colors"
               >
                 <span>🛍️</span>
                 <span>Lazada</span>
