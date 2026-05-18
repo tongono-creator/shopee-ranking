@@ -55,6 +55,12 @@ export default function RootLayout({
         </footer>
         <Analytics />
         <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2859165380870012"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+        <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-TCKQT785RP"
           strategy="afterInteractive"
         />
