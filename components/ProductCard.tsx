@@ -43,6 +43,7 @@ export default function ProductCard({ product }: { product: Product }) {
                 alt={product.name}
                 className="w-full h-full object-cover"
                 loading="lazy"
+                referrerPolicy="no-referrer"
               />
               {product.highlight && (
                 <div className="absolute bottom-0 left-0 right-0 bg-[#2d6a4f] text-white text-[10px] text-center py-0.5 font-medium">
