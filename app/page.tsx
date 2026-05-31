@@ -15,7 +15,7 @@ export default async function HomePage() {
       >
         <p className="text-green-200 text-sm font-medium mb-1">🔥 อัพเดทเดือนพฤษภาคม 2026</p>
         <h2 className="text-2xl font-black leading-tight mb-2">
-          Top 10 สินค้าขายดี<br />บน Shopee ไทย
+          Top 20 สินค้าขายดี<br />บน Shopee ไทย
         </h2>
         <p className="text-green-100 text-sm">
           คัดมาแล้ว · ราคาดี · ส่งเร็ว · รีวิวจริง
@@ -32,7 +32,7 @@ export default async function HomePage() {
             href="/bestsellers"
             className="text-[#2d6a4f] text-sm font-semibold hover:underline"
           >
-            ดูทั้งหมด 10 อันดับ →
+            ดูทั้งหมด 20 อันดับ →
           </Link>
         </div>
         <div className="space-y-3">
@@ -44,7 +44,7 @@ export default async function HomePage() {
           href="/bestsellers"
           className="mt-4 flex items-center justify-center gap-2 w-full py-3 rounded-xl border-2 border-[#2d6a4f] text-[#2d6a4f] font-semibold hover:bg-[#d8f3dc] transition-colors"
         >
-          ดูครบ 10 อันดับ →
+          ดูครบ 20 อันดับ →
         </Link>
       </section>
 
@@ -62,7 +62,7 @@ export default async function HomePage() {
               <p className="font-bold text-gray-800 text-sm group-hover:text-[#2d6a4f] transition-colors leading-snug">
                 {cat.name}
               </p>
-              <p className="text-xs text-gray-400 mt-1">Top 10</p>
+              <p className="text-xs text-gray-400 mt-1">Top 20</p>
             </Link>
           ))}
         </div>
