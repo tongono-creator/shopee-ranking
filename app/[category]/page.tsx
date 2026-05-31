@@ -72,26 +72,47 @@ export default async function CategoryPage({
           })
         }}
       />
-      <div>
-        <div className="mb-6">
-          <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-            <span>{cat.icon}</span>
-            <span>Top 20 {cat.name}</span>
-          </h1>
-          <p className="text-gray-500 text-sm mt-1">{cat.description}</p>
+      <div className="space-y-8">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-slate-100 pb-8">
+          <div>
+            <div className="flex items-center gap-2 text-[#2d6a4f] font-black text-[10px] uppercase tracking-[0.2em] mb-3">
+              <span className="w-8 h-[2px] bg-[#2d6a4f]"></span>
+              Product Ranking
+            </div>
+            <h1 className="text-3xl sm:text-4xl font-rubik font-black text-slate-900 flex items-center gap-3">
+              <span className="drop-shadow-sm">{cat.icon}</span>
+              <span>Top 20 {cat.name}</span>
+            </h1>
+            <p className="text-slate-500 font-medium mt-3 max-w-2xl leading-relaxed">{cat.description}</p>
+          </div>
+          <div className="flex-shrink-0">
+            <div className="bg-white border-2 border-slate-100 px-4 py-2 rounded-2xl shadow-sm flex items-center gap-3">
+              <div className="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center text-[#2d6a4f] font-black">
+                {products.length}
+              </div>
+              <div className="text-[11px] font-black uppercase tracking-wider text-slate-400">
+                รายการสินค้า<br />ที่คัดสรรแล้ว
+              </div>
+            </div>
+          </div>
         </div>
 
         {products.length === 0 ? (
-          <div className="text-center py-16 text-gray-400">
-            <p className="text-4xl mb-3">📦</p>
-            <p>ยังไม่มีสินค้าในหมวดนี้</p>
+          <div className="bg-white rounded-3xl border border-dashed border-slate-200 py-24 text-center">
+            <p className="text-6xl mb-6 grayscale opacity-50">📦</p>
+            <h3 className="text-xl font-rubik font-black text-slate-900 mb-2">ยังไม่มีข้อมูลสินค้า</h3>
+            <p className="text-slate-400 font-medium">เรากำลังรวบรวมข้อมูลและจะอัพเดทให้เร็วๆ นี้</p>
           </div>
         ) : (
-          <div className="space-y-3">
+          <div className="space-y-6">
             {products.map((product) => (
-              <div key={product.rank}>
+              <div key={product.rank} className="relative">
                 <ProductCard product={product} />
-                {product.rank % 5 === 0 && <AdBanner />}
+                {product.rank % 5 === 0 && (
+                  <div className="py-4">
+                    <AdBanner />
+                  </div>
+                )}
               </div>
             ))}
           </div>

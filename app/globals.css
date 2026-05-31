@@ -1,20 +1,21 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;900&family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap');
 
 :root {
-  --green-900: #1b4332;
-  --green-800: #2d6a4f;
-  --green-700: #40916c;
-  --green-600: #52b788;
-  --green-100: #d8f3dc;
-  --green-50: #f0faf3;
-  --background: #f4f7f5;
-  --foreground: #1a1a1a;
+  --background: #F8FAFC;
+  --foreground: #1E293B;
+  --primary: #2d6a4f;
+  --accent: #f97316;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+  font-family: 'Nunito Sans', sans-serif;
 }
+
+.font-rubik { font-family: 'Rubik', sans-serif; }
+.font-nunito { font-family: 'Nunito Sans', sans-serif; }
 
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
