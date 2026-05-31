@@ -17,7 +17,7 @@ export async function generateMetadata({
   const cat = getCategoryBySlug(category);
   if (!cat) return {};
   return {
-    title: `Top 10 ${cat.name} บน Shopee ไทย`,
+    title: `Top 20 ${cat.name} บน Shopee ไทย`,
     description: cat.description,
   };
 }
@@ -38,7 +38,7 @@ export default async function CategoryPage({
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
           <span>{cat.icon}</span>
-          <span>Top 10 {cat.name}</span>
+          <span>Top 20 {cat.name}</span>
         </h1>
         <p className="text-gray-500 text-sm mt-1">{cat.description}</p>
       </div>
