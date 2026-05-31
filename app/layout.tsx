@@ -13,7 +13,7 @@ const rubik = Rubik({
 });
 
 const nunito = Nunito_Sans({
-  subsets: ["latin", "thai"],
+  subsets: ["latin"],
   weight: ["300", "400", "600", "700", "800", "900"],
   variable: "--font-nunito",
 });
