@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "**.shopee.co.th" },
       { protocol: "https", hostname: "cf.shopee.co.th" },
       { protocol: "https", hostname: "down-th.img.susercontent.com" },
+      { protocol: "https", hostname: "down-bs-th.img.susercontent.com" },
     ],
   },
 };
