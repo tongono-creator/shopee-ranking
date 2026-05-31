@@ -74,24 +74,27 @@ export default function ProductCard({ product }: { product: Product }) {
         </div>
 
         {/* CTA */}
-        <a
-          href={product.shopeeUrl}
-          target="_blank"
-          rel="noopener noreferrer sponsored"
-          className="w-full flex items-center justify-center gap-1.5 bg-[#f97316] hover:bg-[#ea6c0a] text-white font-rubik font-black text-xs py-2.5 rounded-xl transition-all active:scale-[0.98] mt-1"
-        >
-          ไปที่ Shopee
-        </a>
-        {product.lazadaUrl && (
+        <div className="flex gap-2 mt-1">
           <a
-            href={product.lazadaUrl}
+            href={product.shopeeUrl}
             target="_blank"
             rel="noopener noreferrer sponsored"
-            className="w-full flex items-center justify-center gap-1.5 bg-[#0f1923] hover:bg-[#1a2530] text-white font-rubik font-black text-xs py-2 rounded-xl transition-all"
+            className="flex-1 flex items-center justify-center gap-1 bg-[#2d6a4f] hover:bg-[#1b4332] text-white font-semibold text-[11px] py-2 rounded-lg transition-colors"
           >
-            Lazada
+            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+            Shopee
           </a>
-        )}
+          {product.lazadaUrl && (
+            <a
+              href={product.lazadaUrl}
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              className="flex-1 flex items-center justify-center text-[11px] font-semibold py-2 rounded-lg border border-slate-200 text-slate-600 hover:border-slate-400 transition-colors"
+            >
+              Lazada
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );
