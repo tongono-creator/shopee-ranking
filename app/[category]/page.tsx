@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { categories } from "@/data/categories";
 import { getProducts, getCategoryBySlug } from "@/lib/products";
 import ProductCard from "@/components/ProductCard";
+import AdBanner from "@/components/AdBanner";
 import type { Metadata } from "next";
 
 export async function generateStaticParams() {
@@ -51,7 +52,10 @@ export default async function CategoryPage({
       ) : (
         <div className="space-y-3">
           {products.map((product) => (
-            <ProductCard key={product.rank} product={product} />
+            <>
+              <ProductCard key={product.rank} product={product} />
+              {product.rank % 5 === 0 && <AdBanner key={`ad-${product.rank}`} />}
+            </>
           ))}
         </div>
       )}
