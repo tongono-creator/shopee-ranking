@@ -19,7 +19,7 @@ export default function ProductCard({ product }: { product: Product }) {
   return (
     <div className={`group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 ${accentClass}`}>
       {/* IMAGE - large, full width, square */}
-      <div className="relative w-full aspect-square overflow-hidden bg-slate-50">
+      <a href={product.shopeeUrl} target="_blank" rel="noopener noreferrer sponsored" className="relative block w-full aspect-square overflow-hidden bg-slate-50">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={product.image}
@@ -48,7 +48,7 @@ export default function ProductCard({ product }: { product: Product }) {
             -{product.discount}%
           </div>
         )}
-      </div>
+      </a>
 
       {/* CONTENT */}
       <div className="p-3 flex flex-col gap-2">
