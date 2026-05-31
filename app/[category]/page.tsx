@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { categories } from "@/data/categories";
 import { getProducts, getCategoryBySlug } from "@/lib/products";
+import { Fragment } from "react";
 import ProductCard from "@/components/ProductCard";
 import AdBanner from "@/components/AdBanner";
 import type { Metadata } from "next";
@@ -104,16 +105,18 @@ export default async function CategoryPage({
             <p className="text-slate-400 font-medium">เรากำลังรวบรวมข้อมูลและจะอัพเดทให้เร็วๆ นี้</p>
           </div>
         ) : (
-          <div className="space-y-6">
+          <div className="grid grid-cols-2 gap-4">
             {products.map((product) => (
-              <div key={product.rank} className="relative">
-                <ProductCard product={product} />
+              <Fragment key={product.rank}>
+                <div className="relative">
+                  <ProductCard product={product} />
+                </div>
                 {product.rank % 5 === 0 && (
-                  <div className="py-4">
+                  <div className="col-span-2 py-4">
                     <AdBanner />
                   </div>
                 )}
-              </div>
+              </Fragment>
             ))}
           </div>
         )}
