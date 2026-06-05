@@ -1,56 +1,192 @@
 import Link from "next/link";
+import Image from "next/image";
 import { categories } from "@/data/categories";
 import { getProducts } from "@/lib/products";
 import ProductCard from "@/components/ProductCard";
 
+const stats = [
+  {
+    label: "หมวดหมู่ยอดฮิต",
+    value: "6 หมวดหมู่",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+        <path d="M9 22V12h6v10" />
+      </svg>
+    ),
+  },
+  {
+    label: "สินค้าที่ผ่านการคัดเลือก",
+    value: "120+ รายการ",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z" />
+      </svg>
+    ),
+  },
+  {
+    label: "อัพเดทข้อมูลล่าสุด",
+    value: "อัพเดทสม่ำเสมอ",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 12a9 9 0 1 1-2.64-6.36" />
+        <path d="M21 4v5h-5" />
+      </svg>
+    ),
+  },
+];
+
 export default async function HomePage() {
   const bestsellers = await getProducts("bestsellers");
 
-  return (
-    <div className="space-y-12">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#1b4332] via-[#2d6a4f] to-[#52b788] p-8 sm:p-12 text-white min-h-[300px] flex items-center shadow-2xl shadow-green-100">
-        {/* Decorative Patterns */}
-        <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '24px 24px' }}></div>
-        <div className="absolute -right-20 -top-20 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
-        <div className="absolute -left-20 -bottom-20 w-64 h-64 bg-green-400/20 rounded-full blur-3xl"></div>
+  const featured = bestsellers[0];
+  const sideTiles = bestsellers.slice(1, 4);
 
-        <div className="relative z-10 grid sm:grid-cols-2 gap-8 items-center w-full">
+  return (
+    <div className="space-y-14">
+      {/* Hero Section — dark cinematic + featured product + annotations */}
+      <section className="relative overflow-hidden rounded-[2rem] bg-[#08130d] text-white min-h-[560px] sm:min-h-[600px] flex items-center px-7 py-14 sm:px-12 sm:py-16 ring-1 ring-white/5">
+        {/* Generated atmospheric backdrop */}
+        <Image
+          src="/hero-bg.png"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-80"
+        />
+        {/* Atmospheric layers */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0c2419]/80 via-[#08130d]/85 to-[#02080a]/90" />
+        <div className="absolute -top-32 -left-20 w-[34rem] h-[34rem] bg-emerald-500/20 rounded-full blur-[130px]" />
+        <div className="absolute bottom-[-12rem] right-[-4rem] w-[32rem] h-[32rem] bg-emerald-400/10 rounded-full blur-[130px]" />
+        <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-amber-400/10 rounded-full blur-[110px]" />
+        <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "28px 28px" }} />
+
+        <div className="relative z-10 grid lg:grid-cols-[1fr_0.95fr] gap-12 items-center w-full">
+          {/* Left — copy */}
           <div>
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-widest mb-4">
-              <span className="flex h-2 w-2 rounded-full bg-green-400 animate-pulse"></span>
+            <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md ring-1 ring-white/10 px-3.5 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-100/80 mb-7">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+              </span>
               อัพเดทพฤษภาคม 2026
             </div>
-            <h1 className="text-4xl sm:text-5xl font-rubik font-black leading-[1.1] mb-6 tracking-tight">
-              เจาะลึก <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-emerald-100">Shopee Top 20</span> สินค้าขายดีที่สุด
+            <h1 className="font-rubik font-black leading-[1.04] tracking-tight text-5xl sm:text-6xl lg:text-7xl">
+              <span className="block text-white/95">สินค้าขายดี</span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-[#52b788] to-amber-200">
+                ตัวจริงเสียงจริง
+              </span>
             </h1>
-            <p className="text-green-50/80 text-lg font-medium mb-8 max-w-md leading-relaxed">
-              เรารวบรวมข้อมูลยอดขายจริงจาก Shopee คัดสรรเฉพาะของดี รีวิวเยี่ยม มาให้คุณตัดสินใจง่ายๆ ในที่เดียว
+            <p className="mt-6 text-emerald-50/55 text-lg font-medium leading-relaxed max-w-md">
+              รวมอันดับ Top 20 จากยอดขายจริงทุกหมวด คัดเฉพาะของดี รีวิวเยี่ยม ในที่เดียว
             </p>
-            <div className="flex flex-wrap gap-4">
-              <a href="#bestsellers" className="bg-[#f97316] hover:bg-[#ea6c0a] text-white font-rubik font-black px-8 py-4 rounded-2xl shadow-lg shadow-orange-900/20 transition-all hover:-translate-y-1 active:translate-y-0">
-                🚀 ดูสินค้าแนะนำ
+            <div className="mt-9 flex flex-wrap items-center gap-3">
+              <a
+                href="#bestsellers"
+                className="group inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-[#06120c] font-rubik font-black px-7 py-3.5 rounded-full shadow-lg shadow-emerald-500/20 transition-all hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+              >
+                ดูสินค้าแนะนำ
+                <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 transition-transform group-hover:translate-x-1" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
               </a>
+              <Link
+                href="/bestsellers"
+                className="inline-flex items-center gap-2 text-white/85 font-bold px-6 py-3.5 rounded-full ring-1 ring-white/15 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors cursor-pointer"
+              >
+                ดู 20 อันดับ
+              </Link>
             </div>
           </div>
-          <div className="hidden sm:flex justify-center relative">
-            <div className="text-[180px] leading-none select-none drop-shadow-2xl animate-bounce-slow">
-              🏆
+
+          {/* Right — featured product with glow + annotations */}
+          {featured && (
+            <div className="relative hidden lg:block h-[420px]">
+              {/* Neon ring glow */}
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full bg-emerald-400/25 blur-[80px]" />
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full ring-1 ring-emerald-300/30" />
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full ring-1 ring-white/5" />
+
+              {/* Featured image card */}
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-56 h-56 rounded-[1.5rem] overflow-hidden ring-1 ring-white/15 shadow-2xl shadow-black/50 bg-white/5">
+                <Image
+                  src={featured.image}
+                  alt={featured.name}
+                  fill
+                  sizes="240px"
+                  priority
+                  className="object-cover"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+              </div>
+
+              {/* Rank badge */}
+              <div className="absolute left-1/2 top-1/2 -translate-x-[6.5rem] -translate-y-[6.5rem] flex items-center gap-1.5 bg-gradient-to-r from-amber-400 to-yellow-300 text-[#3a2a00] text-xs font-black px-3 py-1.5 rounded-full shadow-lg shadow-amber-500/30">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z" /></svg>
+                อันดับ 1
+              </div>
+
+              {/* Annotation: rating (top-right) */}
+              <div className="absolute right-2 top-8 flex items-center gap-2">
+                <div className="bg-white/8 backdrop-blur-md ring-1 ring-white/15 rounded-xl px-3 py-2">
+                  <p className="text-[10px] text-emerald-100/60 font-bold uppercase tracking-wider">เรตติ้ง</p>
+                  <p className="text-base font-rubik font-black text-white flex items-center gap-1">
+                    <svg viewBox="0 0 24 24" fill="#fbbf24" className="w-4 h-4"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z" /></svg>
+                    {featured.rating}
+                  </p>
+                </div>
+                <span className="h-px w-8 bg-gradient-to-r from-white/40 to-transparent" />
+              </div>
+
+              {/* Annotation: score (bottom-left) */}
+              <div className="absolute left-0 bottom-10 flex items-center gap-2">
+                <span className="h-px w-8 bg-gradient-to-l from-white/40 to-transparent order-2" />
+                <div className="bg-white/8 backdrop-blur-md ring-1 ring-white/15 rounded-xl px-3 py-2 order-1">
+                  <p className="text-[10px] text-emerald-100/60 font-bold uppercase tracking-wider">คะแนนรวม</p>
+                  <p className="text-base font-rubik font-black text-emerald-300">{featured.score}/10</p>
+                </div>
+              </div>
+
+              {/* Annotation: highlight pill (bottom-right) */}
+              {featured.highlight && (
+                <div className="absolute right-6 bottom-2 bg-emerald-500/15 ring-1 ring-emerald-400/30 text-emerald-200 text-xs font-bold px-3 py-1.5 rounded-full backdrop-blur-sm">
+                  {featured.highlight}
+                </div>
+              )}
+
+              {/* Floating secondary product tiles */}
+              {sideTiles[0] && (
+                <div className="absolute -left-2 top-2 w-20 h-20 rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-xl shadow-black/40 bg-white/5 rotate-[-8deg]">
+                  <Image src={sideTiles[0].image} alt="" fill sizes="80px" className="object-cover" referrerPolicy="no-referrer" />
+                </div>
+              )}
+              {sideTiles[1] && (
+                <div className="absolute right-8 bottom-16 w-16 h-16 rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-xl shadow-black/40 bg-white/5 rotate-[6deg]">
+                  <Image src={sideTiles[1].image} alt="" fill sizes="64px" className="object-cover" referrerPolicy="no-referrer" />
+                </div>
+              )}
             </div>
-            <div className="absolute inset-0 bg-green-400/20 blur-[100px] rounded-full"></div>
-          </div>
+          )}
         </div>
+
+        {/* Mobile featured */}
+        {featured && (
+          <div className="lg:hidden absolute -right-10 bottom-4 w-40 h-40 rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-2xl shadow-black/50 opacity-40 rotate-6">
+            <Image src={featured.image} alt="" fill sizes="160px" className="object-cover" referrerPolicy="no-referrer" />
+          </div>
+        )}
       </section>
 
       {/* Stats Bar */}
-      <section className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        {[
-          { icon: "📦", label: "หมวดหมู่ยอดฮิต", value: "6 หมวดหมู่" },
-          { icon: "✨", label: "สินค้าที่ผ่านการคัดเลือก", value: "120+ รายการ" },
-          { icon: "✅", label: "อัพเดทข้อมูลล่าสุด", value: "อัพเดทสม่ำเสมอ" },
-        ].map((stat, i) => (
-          <div key={i} className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-4 hover:shadow-md transition-shadow">
-            <div className="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center text-2xl">
+      <section className="grid grid-cols-1 sm:grid-cols-3 gap-4 -mt-6">
+        {stats.map((stat, i) => (
+          <div
+            key={i}
+            className="group bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-4 hover:shadow-lg hover:shadow-green-900/5 hover:border-[#2d6a4f]/20 transition-all"
+          >
+            <div className="w-12 h-12 bg-gradient-to-br from-green-50 to-emerald-100 text-[#2d6a4f] rounded-xl flex items-center justify-center ring-1 ring-green-100 group-hover:scale-105 transition-transform">
               {stat.icon}
             </div>
             <div>
