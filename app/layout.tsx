@@ -46,7 +46,7 @@ export default function RootLayout({
     <html lang="th" className={`${rubik.variable} ${nunito.variable}`}>
       <body className={`${nunito.className} min-h-screen antialiased`} style={{background: "var(--background)"}}>
         <header className="bg-white sticky top-0 z-50 shadow-sm border-b border-gray-100">
-          <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
             <Link href="/" className="flex items-center gap-3 group">
               <div className="w-11 h-11 bg-[#2d6a4f] rounded-2xl flex items-center justify-center text-2xl shadow-lg shadow-green-100 group-hover:scale-105 transition-transform duration-200">
                 🏆
@@ -68,9 +68,9 @@ export default function RootLayout({
           </div>
         </header>
         <CategoryNav />
-        <main className="max-w-4xl mx-auto px-4 py-8">{children}</main>
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8">{children}</main>
         <footer className="bg-slate-900 text-slate-400 py-12 mt-12">
-          <div className="max-w-4xl mx-auto px-4 text-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
             <div className="text-3xl mb-4">🏆</div>
             <h2 className="text-white font-rubik font-bold text-xl mb-2">ShopeeTop</h2>
             <p className="max-w-md mx-auto text-sm leading-relaxed mb-8">
