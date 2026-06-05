@@ -102,19 +102,19 @@ export default async function HomePage() {
 
           {/* Right — featured product with glow + annotations */}
           {featured && (
-            <div className="relative hidden lg:block h-[420px]">
+            <div className="relative hidden lg:block h-[480px]">
               {/* Neon ring glow */}
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full bg-emerald-400/25 blur-[80px]" />
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full ring-1 ring-emerald-300/30" />
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full ring-1 ring-white/5" />
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-emerald-400/25 blur-[90px]" />
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full ring-1 ring-emerald-300/30" />
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[26rem] h-[26rem] rounded-full ring-1 ring-white/5" />
 
               {/* Featured image card */}
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-56 h-56 rounded-[1.5rem] overflow-hidden ring-1 ring-white/15 shadow-2xl shadow-black/50 bg-white/5">
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-[1.75rem] overflow-hidden ring-1 ring-white/15 shadow-2xl shadow-black/50 bg-white/5">
                 <Image
                   src={featured.image}
                   alt={featured.name}
                   fill
-                  sizes="240px"
+                  sizes="320px"
                   priority
                   className="object-cover"
                   referrerPolicy="no-referrer"
@@ -123,13 +123,13 @@ export default async function HomePage() {
               </div>
 
               {/* Rank badge */}
-              <div className="absolute left-1/2 top-1/2 -translate-x-[6.5rem] -translate-y-[6.5rem] flex items-center gap-1.5 bg-gradient-to-r from-amber-400 to-yellow-300 text-[#3a2a00] text-xs font-black px-3 py-1.5 rounded-full shadow-lg shadow-amber-500/30">
+              <div className="absolute left-1/2 top-1/2 -translate-x-[8.5rem] -translate-y-[8.5rem] flex items-center gap-1.5 bg-gradient-to-r from-amber-400 to-yellow-300 text-[#3a2a00] text-xs font-black px-3 py-1.5 rounded-full shadow-lg shadow-amber-500/30">
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z" /></svg>
                 อันดับ 1
               </div>
 
               {/* Annotation: rating (top-right) */}
-              <div className="absolute right-2 top-8 flex items-center gap-2">
+              <div className="absolute right-0 top-6 flex items-center gap-2">
                 <div className="bg-white/8 backdrop-blur-md ring-1 ring-white/15 rounded-xl px-3 py-2">
                   <p className="text-[10px] text-emerald-100/60 font-bold uppercase tracking-wider">เรตติ้ง</p>
                   <p className="text-base font-rubik font-black text-white flex items-center gap-1">
@@ -137,12 +137,12 @@ export default async function HomePage() {
                     {featured.rating}
                   </p>
                 </div>
-                <span className="h-px w-8 bg-gradient-to-r from-white/40 to-transparent" />
+                <span className="h-px w-12 bg-gradient-to-r from-white/40 to-transparent" />
               </div>
 
               {/* Annotation: score (bottom-left) */}
-              <div className="absolute left-0 bottom-10 flex items-center gap-2">
-                <span className="h-px w-8 bg-gradient-to-l from-white/40 to-transparent order-2" />
+              <div className="absolute left-0 bottom-12 flex items-center gap-2">
+                <span className="h-px w-12 bg-gradient-to-l from-white/40 to-transparent order-2" />
                 <div className="bg-white/8 backdrop-blur-md ring-1 ring-white/15 rounded-xl px-3 py-2 order-1">
                   <p className="text-[10px] text-emerald-100/60 font-bold uppercase tracking-wider">คะแนนรวม</p>
                   <p className="text-base font-rubik font-black text-emerald-300">{featured.score}/10</p>
@@ -158,13 +158,13 @@ export default async function HomePage() {
 
               {/* Floating secondary product tiles */}
               {sideTiles[0] && (
-                <div className="absolute -left-2 top-2 w-20 h-20 rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-xl shadow-black/40 bg-white/5 rotate-[-8deg]">
-                  <Image src={sideTiles[0].image} alt="" fill sizes="80px" className="object-cover" referrerPolicy="no-referrer" />
+                <div className="absolute left-0 top-0 w-24 h-24 rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-xl shadow-black/40 bg-white/5 rotate-[-8deg]">
+                  <Image src={sideTiles[0].image} alt="" fill sizes="96px" className="object-cover" referrerPolicy="no-referrer" />
                 </div>
               )}
               {sideTiles[1] && (
-                <div className="absolute right-8 bottom-16 w-16 h-16 rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-xl shadow-black/40 bg-white/5 rotate-[6deg]">
-                  <Image src={sideTiles[1].image} alt="" fill sizes="64px" className="object-cover" referrerPolicy="no-referrer" />
+                <div className="absolute right-6 bottom-14 w-20 h-20 rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-xl shadow-black/40 bg-white/5 rotate-[6deg]">
+                  <Image src={sideTiles[1].image} alt="" fill sizes="80px" className="object-cover" referrerPolicy="no-referrer" />
                 </div>
               )}
             </div>
