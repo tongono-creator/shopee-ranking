@@ -44,8 +44,8 @@ export default async function HomePage() {
 
   return (
     <div className="space-y-14">
-      {/* Hero Section — dark cinematic + featured product + annotations */}
-      <section className="relative overflow-hidden rounded-[2rem] bg-[#08130d] text-white min-h-[560px] sm:min-h-[600px] flex items-center px-7 py-14 sm:px-12 sm:py-16 ring-1 ring-white/5">
+      {/* Hero Section — full-bleed dark cinematic + featured product + annotations */}
+      <section className="relative overflow-hidden bg-[#08130d] text-white min-h-[560px] sm:min-h-[640px] flex items-center py-14 sm:py-20 -mt-8 left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen">
         {/* Generated atmospheric backdrop */}
         <Image
           src="/hero-bg.png"
@@ -62,7 +62,7 @@ export default async function HomePage() {
         <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-amber-400/10 rounded-full blur-[110px]" />
         <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "28px 28px" }} />
 
-        <div className="relative z-10 grid lg:grid-cols-[1fr_0.95fr] gap-12 items-center w-full">
+        <div className="relative z-10 grid lg:grid-cols-[1fr_0.95fr] gap-12 items-center w-full max-w-7xl mx-auto px-6 sm:px-8">
           {/* Left — copy */}
           <div>
             <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md ring-1 ring-white/10 px-3.5 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-100/80 mb-7">
@@ -212,7 +212,9 @@ export default async function HomePage() {
               href={`/${cat.slug}`}
               className="group bg-white rounded-2xl p-6 border border-gray-100 hover:border-[#2d6a4f] hover:shadow-xl hover:shadow-green-900/5 transition-all text-center flex flex-col items-center"
             >
-              <div className="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300 transform-gpu">{cat.icon}</div>
+              <div className="mb-4 group-hover:scale-110 transition-transform duration-300 transform-gpu">
+                <Image src={cat.image} alt={cat.name} width={72} height={72} className="w-[72px] h-[72px] object-contain drop-shadow-sm" />
+              </div>
               <p className="font-rubik font-bold text-slate-800 text-sm group-hover:text-[#2d6a4f] transition-colors leading-tight mb-1">
                 {cat.name}
               </p>

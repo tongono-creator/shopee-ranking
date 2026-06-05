@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { categories } from "@/data/categories";
 
@@ -25,13 +26,14 @@ export default function CategoryNav() {
             <Link
               key={cat.slug}
               href={`/${cat.slug}`}
-              className={`flex-shrink-0 px-2.5 py-1.5 rounded-full text-xs font-medium transition-colors whitespace-nowrap ${
+              className={`flex-shrink-0 flex items-center gap-1.5 pl-1.5 pr-3 py-1 rounded-full text-xs font-medium transition-colors whitespace-nowrap ${
                 pathname === `/${cat.slug}`
                   ? "bg-[#2d6a4f] text-white"
                   : "text-gray-600 hover:bg-[#d8f3dc] hover:text-[#2d6a4f]"
               }`}
             >
-              {cat.icon} {cat.name}
+              <Image src={cat.image} alt="" width={22} height={22} className="w-[22px] h-[22px] object-contain" />
+              {cat.name}
             </Link>
           ))}
         </div>

@@ -5,6 +5,7 @@ import CategoryNav from "@/components/CategoryNav";
 import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
 import Link from "next/link";
+import Image from "next/image";
 
 const rubik = Rubik({
   subsets: ["latin"],
@@ -19,15 +20,26 @@ const nunito = Nunito_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "🏆 ShopeeTop — สินค้าขายดีอันดับ 1",
+  title: "ShopeeTop — สินค้าขายดีอันดับ 1",
   description:
     "รวม Top 20 สินค้าขายดีบน Shopee ไทย แยกตามหมวดหมู่ อัพเดทรายเดือน",
   keywords: "shopee, สินค้าขายดี, top10, top20, ของดีราคาถูก",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
   openGraph: {
-    title: "🏆 ShopeeTop",
+    title: "ShopeeTop — สินค้าขายดีอันดับ 1",
     description: "รวมสินค้าขายดีบน Shopee อัพเดทรายเดือน",
     locale: "th_TH",
     type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ShopeeTop — สินค้าขายดีอันดับ 1",
+    description: "รวมสินค้าขายดีบน Shopee อัพเดทรายเดือน",
+    images: ["/og-image.png"],
   },
   verification: {
     google: "SiXVEETUtYE9N8rD_DShtamQLnIwHbVkfjaMAuspLN8",
@@ -44,13 +56,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="th" className={`${rubik.variable} ${nunito.variable}`}>
-      <body className={`${nunito.className} min-h-screen antialiased`} style={{background: "var(--background)"}}>
+      <body className={`${nunito.className} min-h-screen antialiased overflow-x-hidden`} style={{background: "var(--background)"}}>
         <header className="bg-white sticky top-0 z-50 shadow-sm border-b border-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="w-11 h-11 bg-[#2d6a4f] rounded-2xl flex items-center justify-center text-2xl shadow-lg shadow-green-100 group-hover:scale-105 transition-transform duration-200">
-                🏆
-              </div>
+              <Image src="/favicon.png" alt="ShopeeTop" width={44} height={44} priority className="w-11 h-11 object-contain group-hover:scale-105 transition-transform duration-200" />
               <div>
                 <h1 className="font-rubik font-black text-2xl leading-none tracking-tight text-slate-900">ShopeeTop</h1>
                 <p className="text-slate-500 text-[11px] font-bold uppercase tracking-wider mt-0.5">Premium Ranking Hub</p>
@@ -71,7 +81,7 @@ export default function RootLayout({
         <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8">{children}</main>
         <footer className="bg-slate-900 text-slate-400 py-12 mt-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
-            <div className="text-3xl mb-4">🏆</div>
+            <Image src="/favicon.png" alt="ShopeeTop" width={56} height={56} className="w-14 h-14 object-contain mx-auto mb-4" />
             <h2 className="text-white font-rubik font-bold text-xl mb-2">ShopeeTop</h2>
             <p className="max-w-md mx-auto text-sm leading-relaxed mb-8">
               รวบรวมและคัดสรรสินค้าคุณภาพที่มียอดขายสูงสุดบน Shopee ไทย เพื่อช่วยให้คุณตัดสินใจเลือกซื้อสินค้าที่ดีที่สุดได้อย่างมั่นใจ

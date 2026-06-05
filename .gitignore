@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# generated image source dumps
+public/3D_glossy_*.jpeg
+public/A_premium_*.jpeg
+public/A_simple_*.jpeg
