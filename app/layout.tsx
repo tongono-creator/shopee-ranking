@@ -85,9 +85,9 @@ export default async function RootLayout({
           </div>
         </header>
         <CategoryNav lang={lang} />
-        <main className="max-w-[1600px] mx-auto px-5 sm:px-8 lg:px-12 py-8">{children}</main>
-        <footer className="bg-slate-900 text-slate-400 py-12 mt-12">
-          <div className="max-w-[1600px] mx-auto px-5 sm:px-8 lg:px-12 text-center">
+        <main className="w-full px-5 sm:px-8 lg:px-12 py-8">{children}</main>
+        <footer className="bg-slate-900 text-slate-400 py-12 mt-12 w-full">
+          <div className="w-full px-5 sm:px-8 lg:px-12 text-center">
             <Image src="/favicon.png" alt="ShopeeTop" width={56} height={56} className="w-14 h-14 object-contain mx-auto mb-4" />
             <h2 className="text-white font-rubik font-bold text-xl mb-2">ShopeeTop</h2>
             <p className="max-w-md mx-auto text-sm leading-relaxed mb-8">
