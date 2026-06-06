@@ -62,7 +62,7 @@ export default async function RootLayout({
   return (
     <html lang={lang} className={`${rubik.variable} ${nunito.variable}`}>
       <body className={`${nunito.className} min-h-screen antialiased overflow-x-hidden`} style={{background: "var(--background)"}}>
-        <header className="bg-white sticky top-0 z-50 shadow-sm border-b border-gray-100">
+        <header className="bg-white border-b border-gray-100">
           <div className="w-full px-5 sm:px-8 lg:px-12 py-4 flex items-center justify-between">
             <Link href="/" className="flex items-center gap-3 group">
               <Image src="/favicon.png" alt="ShopeeTop" width={44} height={44} priority className="w-11 h-11 object-contain group-hover:scale-105 transition-transform duration-200" />

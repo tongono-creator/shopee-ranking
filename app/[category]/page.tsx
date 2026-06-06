@@ -120,14 +120,14 @@ export default async function CategoryPage({
             <p className="text-slate-400 font-medium">{t.emptyCategorySubtitle}</p>
           </div>
         ) : (
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
             {products.map((product) => (
               <Fragment key={product.rank}>
                 <div className="relative">
                   <ProductCard product={product} lang={lang} />
                 </div>
                 {product.rank % 5 === 0 && (
-                  <div className="col-span-2 py-4">
+                  <div className="col-span-full py-4">
                     <AdBanner />
                   </div>
                 )}
