@@ -6,6 +6,7 @@ export const categories = [
     icon: "🔥",
     image: "/icons/bestsellers.png",
     description: "Top 20 สินค้าขายดีที่สุดบน Shopee ประจำเดือนนี้",
+    descriptionEn: "Top 20 best-selling products on Shopee this month",
   },
   {
     slug: "home-goods",
@@ -14,6 +15,7 @@ export const categories = [
     icon: "🏠",
     image: "/icons/home-goods.png",
     description: "Top 20 เครื่องใช้ในบ้านยอดนิยม",
+    descriptionEn: "Top 20 popular home goods and essentials",
   },
   {
     slug: "women-fashion",
@@ -22,6 +24,7 @@ export const categories = [
     icon: "👗",
     image: "/icons/women-fashion.png",
     description: "Top 20 แฟชั่นผู้หญิงที่กำลังมาแรง",
+    descriptionEn: "Top 20 trending women's fashion and apparel",
   },
   {
     slug: "pets",
@@ -30,6 +33,7 @@ export const categories = [
     icon: "🐾",
     image: "/icons/pets.png",
     description: "Top 20 สินค้าสัตว์เลี้ยงขายดี",
+    descriptionEn: "Top 20 best-selling pet supplies and accessories",
   },
   {
     slug: "food-drinks",
@@ -38,6 +42,7 @@ export const categories = [
     icon: "🍜",
     image: "/icons/food-drinks.png",
     description: "Top 20 อาหารและเครื่องดื่มยอดฮิต",
+    descriptionEn: "Top 20 popular food and beverage items",
   },
   {
     slug: "home-appliances",
@@ -46,6 +51,7 @@ export const categories = [
     icon: "⚡",
     image: "/icons/home-appliances.png",
     description: "Top 20 เครื่องใช้ไฟฟ้าขายดีที่สุด",
+    descriptionEn: "Top 20 best-selling home appliances",
   },
 ];
 

@@ -13,6 +13,14 @@ export const dict = {
     updateBadge: "อัพเดท: พฤษภาคม 2026",
     navHome: "หน้าแรก",
 
+    categoryTitlePrefix: "Top 20",
+    categoryTitleSuffix: "บน Shopee ไทย",
+    curatedBadgeLine1: "รายการสินค้า",
+    curatedBadgeLine2: "ที่คัดสรรแล้ว",
+    emptyCategoryTitle: "ยังไม่มีข้อมูลสินค้า",
+    emptyCategorySubtitle: "เรากำลังรวบรวมข้อมูลและจะอัพเดทให้เร็วๆ นี้",
+    soldText: "ขายแล้ว",
+
     heroBadge: "อัพเดทพฤษภาคม 2026",
     heroTitle1: "สินค้าขายดี",
     heroTitle2: "ตัวจริงเสียงจริง",
@@ -56,6 +64,14 @@ export const dict = {
     brandTagline: "Premium Ranking Hub",
     updateBadge: "Updated: May 2026",
     navHome: "Home",
+
+    categoryTitlePrefix: "Top 20 Best",
+    categoryTitleSuffix: "on Shopee Thailand",
+    curatedBadgeLine1: "Curated",
+    curatedBadgeLine2: "Products",
+    emptyCategoryTitle: "No Products Found",
+    emptyCategorySubtitle: "We are currently curating the products. Please check back soon!",
+    soldText: "Sold",
 
     heroBadge: "Updated May 2026",
     heroTitle1: "Best Sellers",

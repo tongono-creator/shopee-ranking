@@ -1,4 +1,5 @@
 import { Product } from "@/lib/products";
+import { Lang } from "@/lib/i18n";
 
 const rankBadges: Record<number, string> = {
   1: "bg-gradient-to-br from-amber-300 to-amber-500 text-amber-900",
@@ -12,9 +13,18 @@ const cardAccents: Record<number, string> = {
   3: "ring-2 ring-orange-300",
 };
 
-export default function ProductCard({ product }: { product: Product }) {
+const getHighlightText = (highlight: string, lang: Lang) => {
+  if (lang !== "en") return highlight;
+  if (highlight === "ขายดีที่สุด") return "Best Seller";
+  if (highlight === "แนะนำ") return "Recommended";
+  if (highlight === "ยอดฮิต") return "Trending";
+  return highlight;
+};
+
+export default function ProductCard({ product, lang = "th" }: { product: Product; lang?: Lang }) {
   const badgeClass = rankBadges[product.rank] || "bg-slate-800 text-white";
   const accentClass = cardAccents[product.rank] || "";
+  const displayHighlight = getHighlightText(product.highlight, lang);
 
   return (
     <div className={`group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 ${accentClass}`}>
@@ -37,9 +47,9 @@ export default function ProductCard({ product }: { product: Product }) {
           {product.score}/10
         </div>
         {/* Highlight badge */}
-        {product.highlight && (
+        {displayHighlight && (
           <div className="absolute bottom-0 left-0 right-0 bg-[#f97316] text-white text-[10px] font-black text-center py-1.5 uppercase tracking-wider">
-            {product.highlight}
+            {displayHighlight}
           </div>
         )}
         {/* Discount badge */}
@@ -57,7 +67,7 @@ export default function ProductCard({ product }: { product: Product }) {
           <span className="text-amber-400">⭐</span>
           <span>{product.rating}</span>
           <span className="text-slate-200">|</span>
-          <span>ขายแล้ว {product.sold}</span>
+          <span>{lang === "en" ? "Sold" : "ขายแล้ว"} {product.sold}</span>
         </div>
 
         {/* Name */}

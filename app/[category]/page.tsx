@@ -5,6 +5,7 @@ import { Fragment } from "react";
 import ProductCard from "@/components/ProductCard";
 import AdBanner from "@/components/AdBanner";
 import type { Metadata } from "next";
+import { getLang, dict } from "@/lib/i18n";
 
 export async function generateStaticParams() {
   return categories.map((cat) => ({ category: cat.slug }));
@@ -18,9 +19,16 @@ export async function generateMetadata({
   const { category } = await params;
   const cat = getCategoryBySlug(category);
   if (!cat) return {};
+  const lang = await getLang();
+  
+  const catName = lang === "en" ? cat.nameEn : cat.name;
+  const catDesc = lang === "en" ? (cat.descriptionEn || cat.description) : cat.description;
+  
   return {
-    title: `Top 20 ${cat.name} บน Shopee ไทย`,
-    description: cat.description,
+    title: lang === "en"
+      ? `Top 20 Best ${catName} on Shopee Thailand`
+      : `Top 20 ${catName} บน Shopee ไทย`,
+    description: catDesc,
   };
 }
 
@@ -34,6 +42,11 @@ export default async function CategoryPage({
   if (!cat) notFound();
 
   const products = await getProducts(category);
+  const lang = await getLang();
+  const t = dict[lang];
+
+  const catName = lang === "en" ? cat.nameEn : cat.name;
+  const catDesc = lang === "en" ? (cat.descriptionEn || cat.description) : cat.description;
 
   return (
     <>
@@ -43,8 +56,8 @@ export default async function CategoryPage({
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'ItemList',
-            name: `Top 20 ${cat.name}`,
-            description: cat.description,
+            name: lang === "en" ? `Top 20 Best ${catName}` : `Top 20 ${catName}`,
+            description: catDesc,
             numberOfItems: products.length,
             itemListElement: products.map((p) => ({
               '@type': 'ListItem',
@@ -82,9 +95,11 @@ export default async function CategoryPage({
             </div>
             <h1 className="text-3xl sm:text-4xl font-rubik font-black text-slate-900 flex items-center gap-3">
               <span className="drop-shadow-sm">{cat.icon}</span>
-              <span>Top 20 {cat.name}</span>
+              <span>
+                {lang === "en" ? `${t.categoryTitlePrefix} ${catName}` : `${t.categoryTitlePrefix} ${catName}`}
+              </span>
             </h1>
-            <p className="text-slate-500 font-medium mt-3 max-w-2xl leading-relaxed">{cat.description}</p>
+            <p className="text-slate-500 font-medium mt-3 max-w-2xl leading-relaxed">{catDesc}</p>
           </div>
           <div className="flex-shrink-0">
             <div className="bg-white border-2 border-slate-100 px-4 py-2 rounded-2xl shadow-sm flex items-center gap-3">
@@ -92,7 +107,7 @@ export default async function CategoryPage({
                 {products.length}
               </div>
               <div className="text-[11px] font-black uppercase tracking-wider text-slate-400">
-                รายการสินค้า<br />ที่คัดสรรแล้ว
+                {t.curatedBadgeLine1}<br />{t.curatedBadgeLine2}
               </div>
             </div>
           </div>
@@ -101,15 +116,15 @@ export default async function CategoryPage({
         {products.length === 0 ? (
           <div className="bg-white rounded-3xl border border-dashed border-slate-200 py-24 text-center">
             <p className="text-6xl mb-6 grayscale opacity-50">📦</p>
-            <h3 className="text-xl font-rubik font-black text-slate-900 mb-2">ยังไม่มีข้อมูลสินค้า</h3>
-            <p className="text-slate-400 font-medium">เรากำลังรวบรวมข้อมูลและจะอัพเดทให้เร็วๆ นี้</p>
+            <h3 className="text-xl font-rubik font-black text-slate-900 mb-2">{t.emptyCategoryTitle}</h3>
+            <p className="text-slate-400 font-medium">{t.emptyCategorySubtitle}</p>
           </div>
         ) : (
           <div className="grid grid-cols-2 gap-4">
             {products.map((product) => (
               <Fragment key={product.rank}>
                 <div className="relative">
-                  <ProductCard product={product} />
+                  <ProductCard product={product} lang={lang} />
                 </div>
                 {product.rank % 5 === 0 && (
                   <div className="col-span-2 py-4">
