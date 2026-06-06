@@ -240,32 +240,7 @@ export default async function HomePage() {
         ))}
       </section>
 
-      {/* Categories Grid (Thumbnails) */}
-      <section>
-        <div className="mb-6">
-          <h2 className="text-xl font-rubik font-black text-slate-900 tracking-tight">{t.catSectionTitle}</h2>
-          <p className="text-slate-500 text-xs font-medium mt-1">{t.catSectionSubtitle}</p>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-          {categories.map((cat) => (
-            <Link
-              key={cat.slug}
-              href={`/${cat.slug}`}
-              className="group bg-white rounded-2xl p-5 border border-slate-100 hover:border-[#2d6a4f] hover:shadow-md transition-all text-center flex flex-col items-center"
-            >
-              <div className="mb-3 group-hover:scale-108 transition-transform duration-300 transform-gpu">
-                <Image src={cat.image} alt={cat.name} width={56} height={56} className="w-[56px] h-[56px] object-contain drop-shadow-sm" />
-              </div>
-              <p className="font-rubik font-bold text-slate-800 text-xs group-hover:text-[#2d6a4f] transition-colors leading-tight mb-1">
-                {lang === "en" ? cat.nameEn : cat.name}
-              </p>
-              <div className="mt-auto inline-flex items-center text-[9px] font-black uppercase tracking-widest text-slate-400 group-hover:text-green-500 transition-colors">
-                {t.catTop20}
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
+
 
       {/* Bestsellers Showcase Section (Tabs + 5 Column Grid) */}
       <section id="showcase" className="pt-4 border-t border-slate-100">
