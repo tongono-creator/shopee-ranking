@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { categories } from "@/data/categories";
 import { getProducts } from "@/lib/products";
 import BestsellerTabs from "@/components/BestsellerTabs";
 import { dict } from "@/lib/i18n";
@@ -57,40 +56,8 @@ export default async function HomePage() {
 
   return (
     <div className="space-y-10">
-      {/* Top Section: Sidebar + Hero Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6 items-start">
-        {/* Left Sidebar - Categories list */}
-        <aside className="hidden lg:block bg-white rounded-3xl border border-slate-100 p-5 shadow-sm space-y-5 h-fit sticky top-20">
-          <div className="border-b border-slate-100 pb-3">
-            <h3 className="font-rubik font-black text-slate-800 text-sm uppercase tracking-wider">
-              {lang === "en" ? "Categories" : "หมวดหมู่สินค้า"}
-            </h3>
-            <p className="text-slate-400 text-[10px] font-bold tracking-widest uppercase mt-0.5">
-              Premium Rankings
-            </p>
-          </div>
-          <div className="flex flex-col gap-1.5">
-            {categories.map((cat) => (
-              <Link
-                key={cat.slug}
-                href={`/${cat.slug}`}
-                className="flex items-center gap-3 p-2 rounded-2xl hover:bg-green-50 text-slate-700 font-bold text-[13px] transition-all group"
-              >
-                <div className="w-8 h-8 bg-slate-50 group-hover:bg-white rounded-xl flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform duration-300">
-                  <Image src={cat.image} alt={cat.name} width={20} height={20} className="w-5 h-5 object-contain" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="leading-tight truncate group-hover:text-[#2d6a4f]">{lang === "en" ? cat.nameEn : cat.name}</p>
-                  <p className="text-[9px] text-slate-400 font-medium truncate mt-0.5">{lang === "en" ? (cat.descriptionEn || cat.description) : cat.description}</p>
-                </div>
-                <span className="text-slate-300 group-hover:text-[#2d6a4f] transition-colors text-xs">→</span>
-              </Link>
-            ))}
-          </div>
-        </aside>
-
-        {/* Right - Hero Banner */}
-        <section className="relative overflow-hidden bg-[#08130d] text-white rounded-[2rem] min-h-[420px] sm:min-h-[480px] flex items-center p-8 sm:p-12 shadow-md">
+      {/* Hero Banner — full width */}
+      <section className="relative overflow-hidden bg-[#08130d] text-white rounded-[2rem] min-h-[460px] sm:min-h-[540px] flex items-center p-8 sm:p-14 shadow-md">
           {/* Atmospheric background */}
           <Image
             src="/hero-bg.png"
@@ -105,7 +72,7 @@ export default async function HomePage() {
           <div className="absolute bottom-[-12rem] right-[-4rem] w-[24rem] h-[24rem] bg-emerald-400/10 rounded-full blur-[100px]" />
           <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "28px 28px" }} />
 
-          <div className="relative z-10 grid md:grid-cols-[1.1fr_0.9fr] gap-8 items-center w-full">
+          <div className="relative z-10 grid md:grid-cols-[1fr_1fr] gap-10 items-center w-full max-w-[1500px] mx-auto">
             {/* Copy */}
             <div>
               <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md ring-1 ring-white/10 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-100/80 mb-5">
@@ -115,7 +82,7 @@ export default async function HomePage() {
                 </span>
                 {t.heroBadge}
               </div>
-              <h1 className="font-rubik font-black leading-[1.05] tracking-tight text-4xl sm:text-5xl lg:text-[4.2rem]">
+              <h1 className="font-rubik font-black leading-[1.04] tracking-tight text-4xl sm:text-6xl lg:text-[5rem]">
                 <span className="block text-white/95">{t.heroTitle1}</span>
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-[#52b788] to-amber-200">
                   {t.heroTitle2}
@@ -166,18 +133,19 @@ export default async function HomePage() {
 
             {/* Featured product badge inside hero */}
             {featured && (
-              <div className="relative flex items-center justify-center h-[280px] sm:h-[320px] lg:h-[360px] w-full max-w-[320px] mx-auto md:max-w-none">
+              <div className="relative hidden md:flex items-center justify-center h-[360px] sm:h-[420px] lg:h-[480px] w-full">
                 {/* Glow ring */}
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[14rem] h-[14rem] sm:w-[18rem] sm:h-[18rem] rounded-full bg-emerald-400/20 blur-[50px]" />
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[12rem] h-[12rem] sm:w-[15rem] sm:h-[15rem] rounded-full ring-1 ring-emerald-300/20" />
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[26rem] h-[26rem] rounded-full bg-emerald-400/25 blur-[90px]" />
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[22rem] h-[22rem] rounded-full ring-1 ring-emerald-300/25" />
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[27rem] h-[27rem] rounded-full ring-1 ring-white/5" />
 
                 {/* Main image */}
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[10rem] h-[10rem] sm:w-[13rem] sm:h-[13rem] rounded-[1.5rem] overflow-hidden ring-1 ring-white/10 shadow-2xl bg-white/5">
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[19rem] h-[19rem] lg:w-[21rem] lg:h-[21rem] rounded-[2rem] overflow-hidden ring-1 ring-white/15 shadow-2xl shadow-black/50 bg-white/5">
                   <Image
                     src={featured.image}
                     alt={featured.name}
                     fill
-                    sizes="220px"
+                    sizes="360px"
                     priority
                     className="object-cover"
                     referrerPolicy="no-referrer"
@@ -186,41 +154,57 @@ export default async function HomePage() {
                 </div>
 
                 {/* Rank badge */}
-                <div className="absolute left-1/2 top-1/2 -translate-x-[5rem] -translate-y-[5rem] sm:-translate-x-[6.5rem] sm:-translate-y-[6.5rem] flex items-center gap-1 bg-gradient-to-r from-amber-400 to-yellow-300 text-[#3a2a00] text-[9px] sm:text-xs font-black px-2 py-0.5 rounded-full shadow">
+                <div className="absolute left-1/2 top-1/2 -translate-x-[9.5rem] -translate-y-[9.5rem] flex items-center gap-1 bg-gradient-to-r from-amber-400 to-yellow-300 text-[#3a2a00] text-xs font-black px-3 py-1 rounded-full shadow-lg shadow-amber-500/30">
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z" /></svg>
                   {t.rankBadge}
                 </div>
 
                 {/* Ratings overlay */}
-                <div className="absolute right-2 sm:right-6 top-8 bg-white/8 backdrop-blur-md ring-1 ring-white/15 rounded-xl p-1.5">
-                  <p className="text-[8px] text-emerald-100/60 font-bold uppercase tracking-wider">{t.annRating}</p>
-                  <p className="text-xs font-rubik font-black text-white flex items-center gap-0.5">
-                    <svg viewBox="0 0 24 24" fill="#fbbf24" className="w-3.5 h-3.5"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z" /></svg>
-                    {featured.rating}
-                  </p>
+                <div className="absolute right-0 top-4 flex items-center gap-2">
+                  <div className="bg-white/8 backdrop-blur-md ring-1 ring-white/15 rounded-xl px-3 py-2">
+                    <p className="text-[10px] text-emerald-100/60 font-bold uppercase tracking-wider">{t.annRating}</p>
+                    <p className="text-base font-rubik font-black text-white flex items-center gap-1">
+                      <svg viewBox="0 0 24 24" fill="#fbbf24" className="w-4 h-4"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z" /></svg>
+                      {featured.rating}
+                    </p>
+                  </div>
+                  <span className="h-px w-10 bg-gradient-to-r from-white/40 to-transparent" />
                 </div>
 
                 {/* Score overlay */}
-                <div className="absolute left-2 sm:left-6 bottom-8 bg-white/8 backdrop-blur-md ring-1 ring-white/15 rounded-xl p-1.5">
-                  <p className="text-[8px] text-emerald-100/60 font-bold uppercase tracking-wider">{t.annScore}</p>
-                  <p className="text-xs font-rubik font-black text-emerald-300">{featured.score}/10</p>
+                <div className="absolute left-0 bottom-6 flex items-center gap-2">
+                  <span className="h-px w-10 bg-gradient-to-l from-white/40 to-transparent order-2" />
+                  <div className="bg-white/8 backdrop-blur-md ring-1 ring-white/15 rounded-xl px-3 py-2 order-1">
+                    <p className="text-[10px] text-emerald-100/60 font-bold uppercase tracking-wider">{t.annScore}</p>
+                    <p className="text-base font-rubik font-black text-emerald-300">{featured.score}/10</p>
+                  </div>
                 </div>
 
                 {/* Floating secondary cards around featured item */}
                 {sideTiles[0] && (
-                  <div className="absolute left-2 top-6 w-12 h-12 sm:w-16 sm:h-16 rounded-xl overflow-hidden ring-1 ring-white/10 shadow bg-white/5 rotate-[-8deg]">
-                    <Image src={sideTiles[0].image} alt="" fill sizes="64px" className="object-cover" referrerPolicy="no-referrer" />
+                  <div className="absolute left-0 top-2 w-24 h-24 rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-xl shadow-black/40 bg-white/5 rotate-[-8deg]">
+                    <Image src={sideTiles[0].image} alt="" fill sizes="96px" className="object-cover" referrerPolicy="no-referrer" />
                   </div>
                 )}
                 {sideTiles[1] && (
-                  <div className="absolute right-4 bottom-12 w-10 h-10 sm:w-14 sm:h-14 rounded-xl overflow-hidden ring-1 ring-white/10 shadow bg-white/5 rotate-[6deg]">
-                    <Image src={sideTiles[1].image} alt="" fill sizes="56px" className="object-cover" referrerPolicy="no-referrer" />
+                  <div className="absolute right-2 bottom-10 w-20 h-20 rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-xl shadow-black/40 bg-white/5 rotate-[6deg]">
+                    <Image src={sideTiles[1].image} alt="" fill sizes="80px" className="object-cover" referrerPolicy="no-referrer" />
+                  </div>
+                )}
+                {sideTiles[2] && (
+                  <div className="absolute left-6 bottom-0 w-16 h-16 rounded-xl overflow-hidden ring-1 ring-white/10 shadow-xl shadow-black/40 bg-white/5 rotate-[5deg]">
+                    <Image src={sideTiles[2].image} alt="" fill sizes="64px" className="object-cover" referrerPolicy="no-referrer" />
+                  </div>
+                )}
+                {sideTiles[3] && (
+                  <div className="absolute right-14 top-0 w-14 h-14 rounded-xl overflow-hidden ring-1 ring-white/10 shadow-xl shadow-black/40 bg-white/5 rotate-[-6deg]">
+                    <Image src={sideTiles[3].image} alt="" fill sizes="56px" className="object-cover" referrerPolicy="no-referrer" />
                   </div>
                 )}
               </div>
             )}
           </div>
-        </section>
-      </div>
+      </section>
 
       {/* Stats Bar */}
       <section className="grid grid-cols-1 sm:grid-cols-3 gap-4">
