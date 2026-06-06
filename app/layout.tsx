@@ -6,7 +6,8 @@ import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
 import Link from "next/link";
 import Image from "next/image";
-import { getLang, dict } from "@/lib/i18n";
+import { dict } from "@/lib/i18n";
+import { getLang } from "@/lib/i18n-server";
 import LanguageToggle from "@/components/LanguageToggle";
 
 const rubik = Rubik({

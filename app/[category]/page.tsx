@@ -5,7 +5,8 @@ import { Fragment } from "react";
 import ProductCard from "@/components/ProductCard";
 import AdBanner from "@/components/AdBanner";
 import type { Metadata } from "next";
-import { getLang, dict } from "@/lib/i18n";
+import { dict } from "@/lib/i18n";
+import { getLang } from "@/lib/i18n-server";
 
 export async function generateStaticParams() {
   return categories.map((cat) => ({ category: cat.slug }));

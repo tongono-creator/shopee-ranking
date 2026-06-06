@@ -29,12 +29,12 @@ export default function ProductCard({ product, lang = "th" }: { product: Product
   return (
     <div className={`group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 ${accentClass}`}>
       {/* IMAGE - large, full width, square */}
-      <a href={product.shopeeUrl} target="_blank" rel="noopener noreferrer sponsored" className="relative block w-full aspect-square overflow-hidden bg-slate-50">
+      <a href={product.shopeeUrl} target="_blank" rel="noopener noreferrer sponsored" className="relative block w-full aspect-square overflow-hidden bg-slate-50/50 p-4">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500"
           loading="lazy"
           referrerPolicy="no-referrer"
         />

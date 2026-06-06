@@ -2,8 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { categories } from "@/data/categories";
 import { getProducts } from "@/lib/products";
-import ProductCard from "@/components/ProductCard";
-import { getLang, dict } from "@/lib/i18n";
+import BestsellerTabs from "@/components/BestsellerTabs";
+import { dict } from "@/lib/i18n";
+import { getLang } from "@/lib/i18n-server";
 
 const statIcons = [
   (
@@ -27,11 +28,26 @@ const statIcons = [
 
 export default async function HomePage() {
   const bestsellers = await getProducts("bestsellers");
+  const homeGoods = await getProducts("home-goods");
+  const womenFashion = await getProducts("women-fashion");
+  const pets = await getProducts("pets");
+  const foodDrinks = await getProducts("food-drinks");
+  const homeAppliances = await getProducts("home-appliances");
+
+  const productsData = {
+    bestsellers,
+    "home-goods": homeGoods,
+    "women-fashion": womenFashion,
+    pets,
+    "food-drinks": foodDrinks,
+    "home-appliances": homeAppliances,
+  };
+
   const lang = await getLang();
   const t = dict[lang];
 
   const featured = bestsellers[0];
-  const sideTiles = bestsellers.slice(1, 6);
+  const sideTiles = bestsellers.slice(1, 5); // top 4 secondary items
 
   const stats = [
     { label: t.statCategoriesLabel, value: t.statCategoriesValue, icon: statIcons[0] },
@@ -40,206 +56,210 @@ export default async function HomePage() {
   ];
 
   return (
-    <div className="space-y-14">
-      {/* Hero Section — full-bleed dark cinematic + featured product + annotations */}
-      <section className="relative overflow-hidden bg-[#08130d] text-white min-h-[560px] sm:min-h-[640px] flex items-center py-14 sm:py-20 -mt-8 left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen">
-        {/* Generated atmospheric backdrop */}
-        <Image
-          src="/hero-bg.png"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover opacity-80"
-        />
-        {/* Atmospheric layers */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0c2419]/80 via-[#08130d]/85 to-[#02080a]/90" />
-        <div className="absolute -top-32 -left-20 w-[34rem] h-[34rem] bg-emerald-500/20 rounded-full blur-[130px]" />
-        <div className="absolute bottom-[-12rem] right-[-4rem] w-[32rem] h-[32rem] bg-emerald-400/10 rounded-full blur-[130px]" />
-        <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-amber-400/10 rounded-full blur-[110px]" />
-        <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "28px 28px" }} />
-
-        <div className="relative z-10 grid lg:grid-cols-[1fr_0.95fr] gap-12 items-center w-full max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-20">
-          {/* Left — copy */}
-          <div>
-            <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md ring-1 ring-white/10 px-3.5 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-100/80 mb-7">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
-              </span>
-              {t.heroBadge}
-            </div>
-            <h1 className="font-rubik font-black leading-[1.02] tracking-tight text-5xl sm:text-7xl lg:text-[5.5rem]">
-              <span className="block text-white/95">{t.heroTitle1}</span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-[#52b788] to-amber-200">
-                {t.heroTitle2}
-              </span>
-            </h1>
-            <p className="mt-7 text-emerald-50/55 text-lg sm:text-xl font-medium leading-relaxed max-w-lg">
-              {t.heroSubtitle}
+    <div className="space-y-10">
+      {/* Top Section: Sidebar + Hero Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6 items-start">
+        {/* Left Sidebar - Categories list */}
+        <aside className="hidden lg:block bg-white rounded-3xl border border-slate-100 p-5 shadow-sm space-y-5 h-fit sticky top-20">
+          <div className="border-b border-slate-100 pb-3">
+            <h3 className="font-rubik font-black text-slate-800 text-sm uppercase tracking-wider">
+              {lang === "en" ? "Categories" : "หมวดหมู่สินค้า"}
+            </h3>
+            <p className="text-slate-400 text-[10px] font-bold tracking-widest uppercase mt-0.5">
+              Premium Rankings
             </p>
-            <div className="mt-9 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
-              <a
-                href="#bestsellers"
-                className="group inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-[#06120c] font-rubik font-black px-8 py-4 rounded-full shadow-lg shadow-emerald-500/20 transition-all hover:-translate-y-0.5 active:translate-y-0 cursor-pointer text-center"
-              >
-                {t.heroCtaPrimary}
-                <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 transition-transform group-hover:translate-x-1" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14M13 6l6 6-6 6" />
-                </svg>
-              </a>
-              <Link
-                href="/bestsellers"
-                className="inline-flex items-center justify-center gap-2 text-white/85 font-bold px-7 py-4 rounded-full ring-1 ring-white/15 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors cursor-pointer text-center"
-              >
-                {t.heroCtaSecondary}
-              </Link>
-            </div>
-
-            {/* Trust row */}
-            <div className="mt-10 flex items-center justify-between sm:justify-start gap-4 sm:gap-8">
-              <div>
-                <p className="text-2xl font-rubik font-black text-white">120+</p>
-                <p className="text-xs text-emerald-100/50 font-bold uppercase tracking-wider">{t.trustProducts}</p>
-              </div>
-              <span className="h-10 w-px bg-white/10" />
-              <div>
-                <p className="text-2xl font-rubik font-black text-white">6</p>
-                <p className="text-xs text-emerald-100/50 font-bold uppercase tracking-wider">{t.trustCategories}</p>
-              </div>
-              <span className="h-10 w-px bg-white/10" />
-              <div>
-                <p className="text-2xl font-rubik font-black text-emerald-300 flex items-center gap-1">
-                  <svg viewBox="0 0 24 24" fill="#fbbf24" className="w-5 h-5"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z" /></svg>
-                  4.8
-                </p>
-                <p className="text-xs text-emerald-100/50 font-bold uppercase tracking-wider">{t.trustRating}</p>
-              </div>
-            </div>
           </div>
+          <div className="flex flex-col gap-1.5">
+            {categories.map((cat) => (
+              <Link
+                key={cat.slug}
+                href={`/${cat.slug}`}
+                className="flex items-center gap-3 p-2 rounded-2xl hover:bg-green-50 text-slate-700 font-bold text-[13px] transition-all group"
+              >
+                <div className="w-8 h-8 bg-slate-50 group-hover:bg-white rounded-xl flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform duration-300">
+                  <Image src={cat.image} alt={cat.name} width={20} height={20} className="w-5 h-5 object-contain" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="leading-tight truncate group-hover:text-[#2d6a4f]">{lang === "en" ? cat.nameEn : cat.name}</p>
+                  <p className="text-[9px] text-slate-400 font-medium truncate mt-0.5">{lang === "en" ? (cat.descriptionEn || cat.description) : cat.description}</p>
+                </div>
+                <span className="text-slate-300 group-hover:text-[#2d6a4f] transition-colors text-xs">→</span>
+              </Link>
+            ))}
+          </div>
+        </aside>
 
-          {/* Right — featured product with glow + annotations */}
-          {featured && (
-            <div className="relative flex items-center justify-center lg:block h-[320px] sm:h-[420px] lg:h-[540px] mt-8 lg:mt-0 w-full max-w-[400px] lg:max-w-none mx-auto">
-              {/* Neon ring glow */}
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[18rem] h-[18rem] sm:w-[24rem] sm:h-[24rem] lg:w-[28rem] lg:h-[28rem] rounded-full bg-emerald-400/25 blur-[60px] sm:blur-[80px] lg:blur-[100px]" />
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[15rem] h-[15rem] sm:w-[20rem] sm:h-[20rem] lg:w-[24rem] lg:h-[24rem] rounded-full ring-1 ring-emerald-300/30" />
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] lg:w-[30rem] lg:h-[30rem] rounded-full ring-1 ring-white/5" />
+        {/* Right - Hero Banner */}
+        <section className="relative overflow-hidden bg-[#08130d] text-white rounded-[2rem] min-h-[420px] sm:min-h-[480px] flex items-center p-8 sm:p-12 shadow-md">
+          {/* Atmospheric background */}
+          <Image
+            src="/hero-bg.png"
+            alt=""
+            fill
+            priority
+            sizes="(max-w-1024px) 100vw, 1000px"
+            className="object-cover opacity-80"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0c2419]/70 via-[#08130d]/80 to-[#02080a]/95" />
+          <div className="absolute -top-32 -left-20 w-[24rem] h-[24rem] bg-emerald-500/20 rounded-full blur-[100px]" />
+          <div className="absolute bottom-[-12rem] right-[-4rem] w-[24rem] h-[24rem] bg-emerald-400/10 rounded-full blur-[100px]" />
+          <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "28px 28px" }} />
 
-              {/* Featured image card */}
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[13rem] h-[13rem] sm:w-[18rem] sm:h-[18rem] lg:w-[22rem] lg:h-[22rem] rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden ring-1 ring-white/15 shadow-2xl shadow-black/50 bg-white/5">
-                <Image
-                  src={featured.image}
-                  alt={featured.name}
-                  fill
-                  sizes="(max-w-768px) 200px, (max-w-1024px) 300px, 360px"
-                  priority
-                  className="object-cover"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+          <div className="relative z-10 grid md:grid-cols-[1.1fr_0.9fr] gap-8 items-center w-full">
+            {/* Copy */}
+            <div>
+              <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md ring-1 ring-white/10 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-100/80 mb-5">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+                </span>
+                {t.heroBadge}
+              </div>
+              <h1 className="font-rubik font-black leading-[1.05] tracking-tight text-4xl sm:text-5xl lg:text-[4.2rem]">
+                <span className="block text-white/95">{t.heroTitle1}</span>
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-[#52b788] to-amber-200">
+                  {t.heroTitle2}
+                </span>
+              </h1>
+              <p className="mt-5 text-emerald-50/60 text-sm sm:text-base font-medium leading-relaxed max-w-md">
+                {t.heroSubtitle}
+              </p>
+              <div className="mt-7 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                <a
+                  href="#showcase"
+                  className="group inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-[#06120c] font-rubik font-black px-6 py-3 rounded-2xl shadow-lg shadow-emerald-500/20 transition-all hover:-translate-y-0.5 active:translate-y-0 cursor-pointer text-xs"
+                >
+                  {t.heroCtaPrimary}
+                  <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4 transition-transform group-hover:translate-x-0.5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </a>
+                <Link
+                  href="/bestsellers"
+                  className="inline-flex items-center justify-center gap-2 text-white/85 font-bold px-6 py-3 rounded-2xl ring-1 ring-white/15 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors cursor-pointer text-xs"
+                >
+                  {t.heroCtaSecondary}
+                </Link>
               </div>
 
-              {/* Rank badge */}
-              <div className="absolute left-1/2 top-1/2 -translate-x-[6.5rem] -translate-y-[6.5rem] sm:-translate-x-[8.5rem] sm:-translate-y-[8.5rem] lg:-translate-x-[10.5rem] lg:-translate-y-[10.5rem] flex items-center gap-1.5 bg-gradient-to-r from-amber-400 to-yellow-300 text-[#3a2a00] text-[10px] sm:text-xs font-black px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full shadow-lg shadow-amber-500/30">
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3 sm:w-3.5 sm:h-3.5"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z" /></svg>
-                {t.rankBadge}
+              {/* Trust row */}
+              <div className="mt-8 flex items-center justify-between sm:justify-start gap-4 sm:gap-6">
+                <div>
+                  <p className="text-lg sm:text-xl font-rubik font-black text-white">120+</p>
+                  <p className="text-[9px] text-emerald-100/50 font-bold uppercase tracking-wider">{t.trustProducts}</p>
+                </div>
+                <span className="h-8 w-px bg-white/10" />
+                <div>
+                  <p className="text-lg sm:text-xl font-rubik font-black text-white">6</p>
+                  <p className="text-[9px] text-emerald-100/50 font-bold uppercase tracking-wider">{t.trustCategories}</p>
+                </div>
+                <span className="h-8 w-px bg-white/10" />
+                <div>
+                  <p className="text-lg sm:text-xl font-rubik font-black text-emerald-300 flex items-center gap-1">
+                    <svg viewBox="0 0 24 24" fill="#fbbf24" className="w-4 h-4"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z" /></svg>
+                    4.8
+                  </p>
+                  <p className="text-[9px] text-emerald-100/50 font-bold uppercase tracking-wider">{t.trustRating}</p>
+                </div>
               </div>
+            </div>
 
-              {/* Annotation: rating (top-right) */}
-              <div className="absolute right-0 sm:right-4 lg:right-0 top-4 sm:top-8 lg:top-2 flex items-center gap-1 sm:gap-2">
-                <div className="bg-white/8 backdrop-blur-md ring-1 ring-white/15 rounded-xl p-1.5 sm:px-3 sm:py-2">
-                  <p className="text-[8px] sm:text-[10px] text-emerald-100/60 font-bold uppercase tracking-wider">{t.annRating}</p>
-                  <p className="text-xs sm:text-base font-rubik font-black text-white flex items-center gap-1">
-                    <svg viewBox="0 0 24 24" fill="#fbbf24" className="w-3 h-3 sm:w-4 sm:h-4"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z" /></svg>
+            {/* Featured product badge inside hero */}
+            {featured && (
+              <div className="relative flex items-center justify-center h-[280px] sm:h-[320px] lg:h-[360px] w-full max-w-[320px] mx-auto md:max-w-none">
+                {/* Glow ring */}
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[14rem] h-[14rem] sm:w-[18rem] sm:h-[18rem] rounded-full bg-emerald-400/20 blur-[50px]" />
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[12rem] h-[12rem] sm:w-[15rem] sm:h-[15rem] rounded-full ring-1 ring-emerald-300/20" />
+
+                {/* Main image */}
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[10rem] h-[10rem] sm:w-[13rem] sm:h-[13rem] rounded-[1.5rem] overflow-hidden ring-1 ring-white/10 shadow-2xl bg-white/5">
+                  <Image
+                    src={featured.image}
+                    alt={featured.name}
+                    fill
+                    sizes="220px"
+                    priority
+                    className="object-cover"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                </div>
+
+                {/* Rank badge */}
+                <div className="absolute left-1/2 top-1/2 -translate-x-[5rem] -translate-y-[5rem] sm:-translate-x-[6.5rem] sm:-translate-y-[6.5rem] flex items-center gap-1 bg-gradient-to-r from-amber-400 to-yellow-300 text-[#3a2a00] text-[9px] sm:text-xs font-black px-2 py-0.5 rounded-full shadow">
+                  {t.rankBadge}
+                </div>
+
+                {/* Ratings overlay */}
+                <div className="absolute right-2 sm:right-6 top-8 bg-white/8 backdrop-blur-md ring-1 ring-white/15 rounded-xl p-1.5">
+                  <p className="text-[8px] text-emerald-100/60 font-bold uppercase tracking-wider">{t.annRating}</p>
+                  <p className="text-xs font-rubik font-black text-white flex items-center gap-0.5">
+                    <svg viewBox="0 0 24 24" fill="#fbbf24" className="w-3.5 h-3.5"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z" /></svg>
                     {featured.rating}
                   </p>
                 </div>
-                <span className="h-px w-8 sm:w-12 bg-gradient-to-r from-white/40 to-transparent" />
+
+                {/* Score overlay */}
+                <div className="absolute left-2 sm:left-6 bottom-8 bg-white/8 backdrop-blur-md ring-1 ring-white/15 rounded-xl p-1.5">
+                  <p className="text-[8px] text-emerald-100/60 font-bold uppercase tracking-wider">{t.annScore}</p>
+                  <p className="text-xs font-rubik font-black text-emerald-300">{featured.score}/10</p>
+                </div>
+
+                {/* Floating secondary cards around featured item */}
+                {sideTiles[0] && (
+                  <div className="absolute left-2 top-6 w-12 h-12 sm:w-16 sm:h-16 rounded-xl overflow-hidden ring-1 ring-white/10 shadow bg-white/5 rotate-[-8deg]">
+                    <Image src={sideTiles[0].image} alt="" fill sizes="64px" className="object-cover" referrerPolicy="no-referrer" />
+                  </div>
+                )}
+                {sideTiles[1] && (
+                  <div className="absolute right-4 bottom-12 w-10 h-10 sm:w-14 sm:h-14 rounded-xl overflow-hidden ring-1 ring-white/10 shadow bg-white/5 rotate-[6deg]">
+                    <Image src={sideTiles[1].image} alt="" fill sizes="56px" className="object-cover" referrerPolicy="no-referrer" />
+                  </div>
+                )}
               </div>
-
-              {/* Annotation: score (bottom-left) */}
-              <div className="absolute left-0 sm:left-4 lg:left-0 bottom-6 sm:bottom-10 lg:bottom-6 flex items-center gap-1 sm:gap-2">
-                <span className="h-px w-8 sm:w-12 bg-gradient-to-l from-white/40 to-transparent order-2" />
-                <div className="bg-white/8 backdrop-blur-md ring-1 ring-white/15 rounded-xl p-1.5 sm:px-3 sm:py-2 order-1">
-                  <p className="text-[8px] sm:text-[10px] text-emerald-100/60 font-bold uppercase tracking-wider">{t.annScore}</p>
-                  <p className="text-xs sm:text-base font-rubik font-black text-emerald-300">{featured.score}/10</p>
-                </div>
-              </div>
-
-              {/* Annotation: highlight pill (bottom-right) */}
-              {featured.highlight && (
-                <div className="absolute right-4 sm:right-10 lg:right-6 bottom-4 sm:bottom-8 lg:bottom-2 bg-emerald-500/15 ring-1 ring-emerald-400/30 text-emerald-200 text-[10px] sm:text-xs font-bold px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full backdrop-blur-sm">
-                  {lang === "en" ? "Best Seller" : featured.highlight}
-                </div>
-              )}
-
-              {/* Floating secondary product tiles */}
-              {sideTiles[0] && (
-                <div className="absolute left-2 top-4 w-16 h-16 sm:w-24 sm:h-24 lg:w-28 lg:h-28 rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-xl shadow-black/40 bg-white/5 rotate-[-8deg]">
-                  <Image src={sideTiles[0].image} alt="" fill sizes="(max-w-768px) 64px, 112px" className="object-cover" referrerPolicy="no-referrer" />
-                </div>
-              )}
-              {sideTiles[1] && (
-                <div className="absolute right-4 bottom-16 w-14 h-14 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-xl shadow-black/40 bg-white/5 rotate-[6deg]">
-                  <Image src={sideTiles[1].image} alt="" fill sizes="(max-w-768px) 56px, 96px" className="object-cover" referrerPolicy="no-referrer" />
-                </div>
-              )}
-              {sideTiles[2] && (
-                <div className="absolute left-8 bottom-2 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-xl shadow-black/40 bg-white/5 rotate-[5deg]">
-                  <Image src={sideTiles[2].image} alt="" fill sizes="(max-w-768px) 48px, 80px" className="object-cover" referrerPolicy="no-referrer" />
-                </div>
-              )}
-              {sideTiles[3] && (
-                <div className="absolute right-12 top-2 w-10 h-10 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-xl overflow-hidden ring-1 ring-white/10 shadow-xl shadow-black/40 bg-white/5 rotate-[-6deg]">
-                  <Image src={sideTiles[3].image} alt="" fill sizes="(max-w-768px) 40px, 64px" className="object-cover" referrerPolicy="no-referrer" />
-                </div>
-              )}
-            </div>
-          )}
-        </div>
-      </section>
+            )}
+          </div>
+        </section>
+      </div>
 
       {/* Stats Bar */}
-      <section className="grid grid-cols-1 sm:grid-cols-3 gap-4 -mt-6">
+      <section className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {stats.map((stat, i) => (
           <div
             key={i}
-            className="group bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-4 hover:shadow-lg hover:shadow-green-900/5 hover:border-[#2d6a4f]/20 transition-all"
+            className="group bg-white/85 backdrop-blur-sm p-5 rounded-2xl border border-slate-100 shadow-sm flex items-center gap-4 hover:shadow-md hover:border-[#2d6a4f]/20 transition-all"
           >
-            <div className="w-12 h-12 bg-gradient-to-br from-green-50 to-emerald-100 text-[#2d6a4f] rounded-xl flex items-center justify-center ring-1 ring-green-100 group-hover:scale-105 transition-transform">
+            <div className="w-10 h-10 bg-gradient-to-br from-green-50 to-emerald-100 text-[#2d6a4f] rounded-xl flex items-center justify-center ring-1 ring-green-100 group-hover:scale-105 transition-transform">
               {stat.icon}
             </div>
             <div>
-              <p className="text-slate-400 text-xs font-bold uppercase tracking-wider">{stat.label}</p>
-              <p className="text-slate-900 font-rubik font-black text-lg leading-tight">{stat.value}</p>
+              <p className="text-slate-400 text-[10px] font-bold uppercase tracking-wider">{stat.label}</p>
+              <p className="text-slate-900 font-rubik font-black text-base leading-tight mt-0.5">{stat.value}</p>
             </div>
           </div>
         ))}
       </section>
 
-      {/* Categories Grid */}
+      {/* Categories Grid (Thumbnails) */}
       <section>
-        <div className="flex items-end justify-between mb-8">
-          <div>
-            <h2 className="text-2xl font-rubik font-black text-slate-900 tracking-tight">{t.catSectionTitle}</h2>
-            <p className="text-slate-500 font-medium">{t.catSectionSubtitle}</p>
-          </div>
+        <div className="mb-6">
+          <h2 className="text-xl font-rubik font-black text-slate-900 tracking-tight">{t.catSectionTitle}</h2>
+          <p className="text-slate-500 text-xs font-medium mt-1">{t.catSectionSubtitle}</p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {categories.map((cat) => (
             <Link
               key={cat.slug}
               href={`/${cat.slug}`}
-              className="group bg-white rounded-2xl p-6 border border-gray-100 hover:border-[#2d6a4f] hover:shadow-xl hover:shadow-green-900/5 transition-all text-center flex flex-col items-center"
+              className="group bg-white rounded-2xl p-5 border border-slate-100 hover:border-[#2d6a4f] hover:shadow-md transition-all text-center flex flex-col items-center"
             >
-              <div className="mb-4 group-hover:scale-110 transition-transform duration-300 transform-gpu">
-                <Image src={cat.image} alt={cat.name} width={72} height={72} className="w-[72px] h-[72px] object-contain drop-shadow-sm" />
+              <div className="mb-3 group-hover:scale-108 transition-transform duration-300 transform-gpu">
+                <Image src={cat.image} alt={cat.name} width={56} height={56} className="w-[56px] h-[56px] object-contain drop-shadow-sm" />
               </div>
-              <p className="font-rubik font-bold text-slate-800 text-sm group-hover:text-[#2d6a4f] transition-colors leading-tight mb-1">
+              <p className="font-rubik font-bold text-slate-800 text-xs group-hover:text-[#2d6a4f] transition-colors leading-tight mb-1">
                 {lang === "en" ? cat.nameEn : cat.name}
               </p>
-              <div className="mt-auto inline-flex items-center text-[10px] font-black uppercase tracking-widest text-slate-400 group-hover:text-green-500 transition-colors">
+              <div className="mt-auto inline-flex items-center text-[9px] font-black uppercase tracking-widest text-slate-400 group-hover:text-green-500 transition-colors">
                 {t.catTop20}
               </div>
             </Link>
@@ -247,41 +267,17 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Bestsellers Preview */}
-      <section id="bestsellers" className="pt-4">
-        <div className="flex items-center justify-between mb-8">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-orange-100 rounded-xl flex items-center justify-center text-xl">🔥</div>
-            <h2 className="text-2xl font-rubik font-black text-slate-900 tracking-tight">{t.bestTitle}</h2>
-          </div>
-          <Link
-            href="/bestsellers"
-            className="hidden sm:flex items-center gap-1 text-[#2d6a4f] font-black text-sm hover:translate-x-1 transition-transform"
-          >
-            {t.bestSeeAll} <span className="text-lg">→</span>
-          </Link>
-        </div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          {bestsellers.slice(0, 3).map((product) => (
-            <ProductCard key={product.rank} product={product} lang={lang} />
-          ))}
-        </div>
-
-        <Link
-          href="/bestsellers"
-          className="mt-8 flex items-center justify-center gap-2 w-full py-5 rounded-2xl bg-white border-2 border-[#2d6a4f] text-[#2d6a4f] font-rubik font-black text-lg hover:bg-green-50 transition-all shadow-sm hover:shadow-lg active:scale-[0.99]"
-        >
-          {t.bestViewMore} <span className="text-2xl">⚡</span>
-        </Link>
+      {/* Bestsellers Showcase Section (Tabs + 5 Column Grid) */}
+      <section id="showcase" className="pt-4 border-t border-slate-100">
+        <BestsellerTabs productsData={productsData} lang={lang} />
       </section>
 
       {/* Affiliate Disclaimer */}
-      <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
-        <div className="text-3xl">ℹ️</div>
+      <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+        <div className="text-2xl">ℹ️</div>
         <div>
-          <p className="text-slate-900 font-bold text-sm mb-1">{t.disclaimerTitle}</p>
-          <p className="text-slate-500 text-xs leading-relaxed">
+          <p className="text-slate-900 font-bold text-xs mb-0.5">{t.disclaimerTitle}</p>
+          <p className="text-slate-500 text-[11px] leading-relaxed">
             {t.disclaimerBody}
           </p>
         </div>

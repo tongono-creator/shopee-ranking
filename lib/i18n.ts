@@ -1,11 +1,4 @@
-import { cookies } from "next/headers";
-
 export type Lang = "th" | "en";
-
-export async function getLang(): Promise<Lang> {
-  const store = await cookies();
-  return store.get("lang")?.value === "en" ? "en" : "th";
-}
 
 export const dict = {
   th: {
