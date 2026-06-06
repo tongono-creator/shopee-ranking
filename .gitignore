@@ -44,3 +44,9 @@ next-env.d.ts
 public/3D_glossy_*.jpeg
 public/A_premium_*.jpeg
 public/A_simple_*.jpeg
+
+# Auto-update automation
+shopee_session.json
+auto_update.log
+debug_*
+scratch_category_test.png

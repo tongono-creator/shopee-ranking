@@ -59,9 +59,13 @@ async def scrape_category(page, url, sheet_name):
         await page.wait_for_timeout(1000)
     
     print(f"  Page title: {await page.title()}")
+    print(f"  Current URL: {page.url}")
     
-    if "ตรวจสอบ" in await page.title() or "Verification" in await page.title():
-        print("  Blocked by verification!")
+    if "verify/traffic/error" in page.url or "login" in page.url or "ตรวจสอบ" in await page.title() or "Verification" in await page.title():
+        print("  [Error] Blocked by verification or redirected to login! Session may have expired.")
+        print("  Please run: python login_shopee.py")
+        await page.screenshot(path=f"debug_{sheet_name}.png")
+        return []
         
     await page.screenshot(path=f"debug_{sheet_name}.png")
     html = await page.content()
@@ -183,17 +187,31 @@ async def scrape_category(page, url, sheet_name):
 async def main():
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
-        context = await browser.new_context(
-            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-            locale="th-TH",
-            viewport={'width': 1280, 'height': 800}
-        )
+        session_file = Path("D:/Projects/shopee-ranking/shopee_session.json")
+        if session_file.exists():
+            print(f"Loading session state from {session_file}...")
+            context = await browser.new_context(
+                storage_state=str(session_file),
+                user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+                locale="th-TH",
+                viewport={'width': 1280, 'height': 800}
+            )
+        else:
+            print("Warning: No shopee_session.json found. Script might be blocked by login walls.")
+            context = await browser.new_context(
+                user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+                locale="th-TH",
+                viewport={'width': 1280, 'height': 800}
+            )
         page = await context.new_page()
         await Stealth().apply_stealth_async(page)
         
         print("Initial visit to homepage to establish session...")
-        await page.goto("https://shopee.co.th/", wait_until="networkidle", timeout=60000)
-        await asyncio.sleep(5)
+        try:
+            await page.goto("https://shopee.co.th/", wait_until="domcontentloaded", timeout=45000)
+            await asyncio.sleep(5)
+        except Exception as e:
+            print(f"Warning: Initial visit failed ({e}), continuing anyway...")
         
         all_data = {}
         for sheet_name, url in CATEGORIES:
