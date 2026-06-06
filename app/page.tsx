@@ -3,44 +3,41 @@ import Image from "next/image";
 import { categories } from "@/data/categories";
 import { getProducts } from "@/lib/products";
 import ProductCard from "@/components/ProductCard";
+import { getLang, dict } from "@/lib/i18n";
 
-const stats = [
-  {
-    label: "หมวดหมู่ยอดฮิต",
-    value: "6 หมวดหมู่",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-        <path d="M9 22V12h6v10" />
-      </svg>
-    ),
-  },
-  {
-    label: "สินค้าที่ผ่านการคัดเลือก",
-    value: "120+ รายการ",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z" />
-      </svg>
-    ),
-  },
-  {
-    label: "อัพเดทข้อมูลล่าสุด",
-    value: "อัพเดทสม่ำเสมอ",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 12a9 9 0 1 1-2.64-6.36" />
-        <path d="M21 4v5h-5" />
-      </svg>
-    ),
-  },
+const statIcons = [
+  (
+    <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+      <path d="M9 22V12h6v10" />
+    </svg>
+  ),
+  (
+    <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z" />
+    </svg>
+  ),
+  (
+    <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 12a9 9 0 1 1-2.64-6.36" />
+      <path d="M21 4v5h-5" />
+    </svg>
+  ),
 ];
 
 export default async function HomePage() {
   const bestsellers = await getProducts("bestsellers");
+  const lang = await getLang();
+  const t = dict[lang];
 
   const featured = bestsellers[0];
-  const sideTiles = bestsellers.slice(1, 4);
+  const sideTiles = bestsellers.slice(1, 6);
+
+  const stats = [
+    { label: t.statCategoriesLabel, value: t.statCategoriesValue, icon: statIcons[0] },
+    { label: t.statProductsLabel, value: t.statProductsValue, icon: statIcons[1] },
+    { label: t.statUpdateLabel, value: t.statUpdateValue, icon: statIcons[2] },
+  ];
 
   return (
     <div className="space-y-14">
@@ -70,51 +67,72 @@ export default async function HomePage() {
                 <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
               </span>
-              อัพเดทพฤษภาคม 2026
+              {t.heroBadge}
             </div>
-            <h1 className="font-rubik font-black leading-[1.04] tracking-tight text-5xl sm:text-6xl lg:text-7xl">
-              <span className="block text-white/95">สินค้าขายดี</span>
+            <h1 className="font-rubik font-black leading-[1.02] tracking-tight text-5xl sm:text-7xl lg:text-[5.5rem]">
+              <span className="block text-white/95">{t.heroTitle1}</span>
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-[#52b788] to-amber-200">
-                ตัวจริงเสียงจริง
+                {t.heroTitle2}
               </span>
             </h1>
-            <p className="mt-6 text-emerald-50/55 text-lg font-medium leading-relaxed max-w-md">
-              รวมอันดับ Top 20 จากยอดขายจริงทุกหมวด คัดเฉพาะของดี รีวิวเยี่ยม ในที่เดียว
+            <p className="mt-7 text-emerald-50/55 text-lg sm:text-xl font-medium leading-relaxed max-w-lg">
+              {t.heroSubtitle}
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-3">
               <a
                 href="#bestsellers"
-                className="group inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-[#06120c] font-rubik font-black px-7 py-3.5 rounded-full shadow-lg shadow-emerald-500/20 transition-all hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+                className="group inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-[#06120c] font-rubik font-black px-8 py-4 rounded-full shadow-lg shadow-emerald-500/20 transition-all hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
               >
-                ดูสินค้าแนะนำ
+                {t.heroCtaPrimary}
                 <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 transition-transform group-hover:translate-x-1" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M13 6l6 6-6 6" />
                 </svg>
               </a>
               <Link
                 href="/bestsellers"
-                className="inline-flex items-center gap-2 text-white/85 font-bold px-6 py-3.5 rounded-full ring-1 ring-white/15 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors cursor-pointer"
+                className="inline-flex items-center gap-2 text-white/85 font-bold px-7 py-4 rounded-full ring-1 ring-white/15 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors cursor-pointer"
               >
-                ดู 20 อันดับ
+                {t.heroCtaSecondary}
               </Link>
+            </div>
+
+            {/* Trust row */}
+            <div className="mt-10 flex items-center gap-6 sm:gap-8">
+              <div>
+                <p className="text-2xl font-rubik font-black text-white">120+</p>
+                <p className="text-xs text-emerald-100/50 font-bold uppercase tracking-wider">{t.trustProducts}</p>
+              </div>
+              <span className="h-10 w-px bg-white/10" />
+              <div>
+                <p className="text-2xl font-rubik font-black text-white">6</p>
+                <p className="text-xs text-emerald-100/50 font-bold uppercase tracking-wider">{t.trustCategories}</p>
+              </div>
+              <span className="h-10 w-px bg-white/10" />
+              <div>
+                <p className="text-2xl font-rubik font-black text-emerald-300 flex items-center gap-1">
+                  <svg viewBox="0 0 24 24" fill="#fbbf24" className="w-5 h-5"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z" /></svg>
+                  4.8
+                </p>
+                <p className="text-xs text-emerald-100/50 font-bold uppercase tracking-wider">{t.trustRating}</p>
+              </div>
             </div>
           </div>
 
           {/* Right — featured product with glow + annotations */}
           {featured && (
-            <div className="relative hidden lg:block h-[480px]">
+            <div className="relative hidden lg:block h-[540px]">
               {/* Neon ring glow */}
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-emerald-400/25 blur-[90px]" />
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full ring-1 ring-emerald-300/30" />
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[26rem] h-[26rem] rounded-full ring-1 ring-white/5" />
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[28rem] h-[28rem] rounded-full bg-emerald-400/25 blur-[100px]" />
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[24rem] h-[24rem] rounded-full ring-1 ring-emerald-300/30" />
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[30rem] h-[30rem] rounded-full ring-1 ring-white/5" />
 
               {/* Featured image card */}
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-[1.75rem] overflow-hidden ring-1 ring-white/15 shadow-2xl shadow-black/50 bg-white/5">
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[22rem] h-[22rem] rounded-[2rem] overflow-hidden ring-1 ring-white/15 shadow-2xl shadow-black/50 bg-white/5">
                 <Image
                   src={featured.image}
                   alt={featured.name}
                   fill
-                  sizes="320px"
+                  sizes="360px"
                   priority
                   className="object-cover"
                   referrerPolicy="no-referrer"
@@ -123,15 +141,15 @@ export default async function HomePage() {
               </div>
 
               {/* Rank badge */}
-              <div className="absolute left-1/2 top-1/2 -translate-x-[8.5rem] -translate-y-[8.5rem] flex items-center gap-1.5 bg-gradient-to-r from-amber-400 to-yellow-300 text-[#3a2a00] text-xs font-black px-3 py-1.5 rounded-full shadow-lg shadow-amber-500/30">
+              <div className="absolute left-1/2 top-1/2 -translate-x-[10.5rem] -translate-y-[10.5rem] flex items-center gap-1.5 bg-gradient-to-r from-amber-400 to-yellow-300 text-[#3a2a00] text-xs font-black px-3 py-1.5 rounded-full shadow-lg shadow-amber-500/30">
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z" /></svg>
-                อันดับ 1
+                {t.rankBadge}
               </div>
 
               {/* Annotation: rating (top-right) */}
-              <div className="absolute right-0 top-6 flex items-center gap-2">
+              <div className="absolute right-0 top-2 flex items-center gap-2">
                 <div className="bg-white/8 backdrop-blur-md ring-1 ring-white/15 rounded-xl px-3 py-2">
-                  <p className="text-[10px] text-emerald-100/60 font-bold uppercase tracking-wider">เรตติ้ง</p>
+                  <p className="text-[10px] text-emerald-100/60 font-bold uppercase tracking-wider">{t.annRating}</p>
                   <p className="text-base font-rubik font-black text-white flex items-center gap-1">
                     <svg viewBox="0 0 24 24" fill="#fbbf24" className="w-4 h-4"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z" /></svg>
                     {featured.rating}
@@ -141,10 +159,10 @@ export default async function HomePage() {
               </div>
 
               {/* Annotation: score (bottom-left) */}
-              <div className="absolute left-0 bottom-12 flex items-center gap-2">
+              <div className="absolute left-0 bottom-6 flex items-center gap-2">
                 <span className="h-px w-12 bg-gradient-to-l from-white/40 to-transparent order-2" />
                 <div className="bg-white/8 backdrop-blur-md ring-1 ring-white/15 rounded-xl px-3 py-2 order-1">
-                  <p className="text-[10px] text-emerald-100/60 font-bold uppercase tracking-wider">คะแนนรวม</p>
+                  <p className="text-[10px] text-emerald-100/60 font-bold uppercase tracking-wider">{t.annScore}</p>
                   <p className="text-base font-rubik font-black text-emerald-300">{featured.score}/10</p>
                 </div>
               </div>
@@ -158,13 +176,23 @@ export default async function HomePage() {
 
               {/* Floating secondary product tiles */}
               {sideTiles[0] && (
-                <div className="absolute left-0 top-0 w-24 h-24 rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-xl shadow-black/40 bg-white/5 rotate-[-8deg]">
-                  <Image src={sideTiles[0].image} alt="" fill sizes="96px" className="object-cover" referrerPolicy="no-referrer" />
+                <div className="absolute left-0 top-2 w-28 h-28 rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-xl shadow-black/40 bg-white/5 rotate-[-8deg]">
+                  <Image src={sideTiles[0].image} alt="" fill sizes="112px" className="object-cover" referrerPolicy="no-referrer" />
                 </div>
               )}
               {sideTiles[1] && (
-                <div className="absolute right-6 bottom-14 w-20 h-20 rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-xl shadow-black/40 bg-white/5 rotate-[6deg]">
-                  <Image src={sideTiles[1].image} alt="" fill sizes="80px" className="object-cover" referrerPolicy="no-referrer" />
+                <div className="absolute right-2 bottom-12 w-24 h-24 rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-xl shadow-black/40 bg-white/5 rotate-[6deg]">
+                  <Image src={sideTiles[1].image} alt="" fill sizes="96px" className="object-cover" referrerPolicy="no-referrer" />
+                </div>
+              )}
+              {sideTiles[2] && (
+                <div className="absolute left-8 bottom-0 w-20 h-20 rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-xl shadow-black/40 bg-white/5 rotate-[5deg]">
+                  <Image src={sideTiles[2].image} alt="" fill sizes="80px" className="object-cover" referrerPolicy="no-referrer" />
+                </div>
+              )}
+              {sideTiles[3] && (
+                <div className="absolute right-16 top-0 w-16 h-16 rounded-xl overflow-hidden ring-1 ring-white/10 shadow-xl shadow-black/40 bg-white/5 rotate-[-6deg]">
+                  <Image src={sideTiles[3].image} alt="" fill sizes="64px" className="object-cover" referrerPolicy="no-referrer" />
                 </div>
               )}
             </div>
@@ -201,8 +229,8 @@ export default async function HomePage() {
       <section>
         <div className="flex items-end justify-between mb-8">
           <div>
-            <h2 className="text-2xl font-rubik font-black text-slate-900 tracking-tight">เลือกหมวดหมู่ที่น่าสนใจ</h2>
-            <p className="text-slate-500 font-medium">ค้นหาอันดับสินค้าขายดีในหมวดหมู่ที่คุณต้องการ</p>
+            <h2 className="text-2xl font-rubik font-black text-slate-900 tracking-tight">{t.catSectionTitle}</h2>
+            <p className="text-slate-500 font-medium">{t.catSectionSubtitle}</p>
           </div>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -216,10 +244,10 @@ export default async function HomePage() {
                 <Image src={cat.image} alt={cat.name} width={72} height={72} className="w-[72px] h-[72px] object-contain drop-shadow-sm" />
               </div>
               <p className="font-rubik font-bold text-slate-800 text-sm group-hover:text-[#2d6a4f] transition-colors leading-tight mb-1">
-                {cat.name}
+                {lang === "en" ? cat.nameEn : cat.name}
               </p>
               <div className="mt-auto inline-flex items-center text-[10px] font-black uppercase tracking-widest text-slate-400 group-hover:text-green-500 transition-colors">
-                Top 20 →
+                {t.catTop20}
               </div>
             </Link>
           ))}
@@ -231,13 +259,13 @@ export default async function HomePage() {
         <div className="flex items-center justify-between mb-8">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-orange-100 rounded-xl flex items-center justify-center text-xl">🔥</div>
-            <h2 className="text-2xl font-rubik font-black text-slate-900 tracking-tight">สินค้าขายดีประจำเดือน</h2>
+            <h2 className="text-2xl font-rubik font-black text-slate-900 tracking-tight">{t.bestTitle}</h2>
           </div>
           <Link
             href="/bestsellers"
             className="hidden sm:flex items-center gap-1 text-[#2d6a4f] font-black text-sm hover:translate-x-1 transition-transform"
           >
-            ดูทั้งหมด 20 อันดับ <span className="text-lg">→</span>
+            {t.bestSeeAll} <span className="text-lg">→</span>
           </Link>
         </div>
         
@@ -251,7 +279,7 @@ export default async function HomePage() {
           href="/bestsellers"
           className="mt-8 flex items-center justify-center gap-2 w-full py-5 rounded-2xl bg-white border-2 border-[#2d6a4f] text-[#2d6a4f] font-rubik font-black text-lg hover:bg-green-50 transition-all shadow-sm hover:shadow-lg active:scale-[0.99]"
         >
-          เปิดดูอันดับที่ 4 - 20 ต่อ <span className="text-2xl">⚡</span>
+          {t.bestViewMore} <span className="text-2xl">⚡</span>
         </Link>
       </section>
 
@@ -259,10 +287,9 @@ export default async function HomePage() {
       <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
         <div className="text-3xl">ℹ️</div>
         <div>
-          <p className="text-slate-900 font-bold text-sm mb-1">ประกาศเกี่ยวกับการแนะนำสินค้า</p>
+          <p className="text-slate-900 font-bold text-sm mb-1">{t.disclaimerTitle}</p>
           <p className="text-slate-500 text-xs leading-relaxed">
-            เนื้อหาในหน้านี้ถูกสร้างขึ้นเพื่อแนะนำสินค้าคุณภาพบน Shopee เท่านั้น เว็บไซต์ของเรามีการใช้ลิงก์ Affiliate 
-            ซึ่งอาจทำให้เราได้รับค่าตอบแทนเล็กน้อยหากมีการสั่งซื้อผ่านลิงก์ โดยไม่มีการบวกราคาเพิ่มใดๆ กับผู้ซื้อ
+            {t.disclaimerBody}
           </p>
         </div>
       </div>

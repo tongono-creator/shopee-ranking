@@ -5,7 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { categories } from "@/data/categories";
 
-export default function CategoryNav() {
+export default function CategoryNav({ lang = "th" }: { lang?: "th" | "en" }) {
   const pathname = usePathname();
 
   return (
@@ -20,7 +20,7 @@ export default function CategoryNav() {
                 : "text-gray-600 hover:bg-[#d8f3dc] hover:text-[#2d6a4f]"
             }`}
           >
-            หน้าแรก
+            {lang === "en" ? "Home" : "หน้าแรก"}
           </Link>
           {categories.map((cat) => (
             <Link
@@ -33,7 +33,7 @@ export default function CategoryNav() {
               }`}
             >
               <Image src={cat.image} alt="" width={22} height={22} className="w-[22px] h-[22px] object-contain" />
-              {cat.name}
+              {lang === "en" ? cat.nameEn : cat.name}
             </Link>
           ))}
         </div>

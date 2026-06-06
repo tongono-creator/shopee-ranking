@@ -6,6 +6,8 @@ import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
 import Link from "next/link";
 import Image from "next/image";
+import { getLang, dict } from "@/lib/i18n";
+import LanguageToggle from "@/components/LanguageToggle";
 
 const rubik = Rubik({
   subsets: ["latin"],
@@ -20,6 +22,7 @@ const nunito = Nunito_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://shopee-ranking.vercel.app"),
   title: "ShopeeTop — สินค้าขายดีอันดับ 1",
   description:
     "รวม Top 20 สินค้าขายดีบน Shopee ไทย แยกตามหมวดหมู่ อัพเดทรายเดือน",
@@ -49,13 +52,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const lang = await getLang();
+  const t = dict[lang];
   return (
-    <html lang="th" className={`${rubik.variable} ${nunito.variable}`}>
+    <html lang={lang} className={`${rubik.variable} ${nunito.variable}`}>
       <body className={`${nunito.className} min-h-screen antialiased overflow-x-hidden`} style={{background: "var(--background)"}}>
         <header className="bg-white sticky top-0 z-50 shadow-sm border-b border-gray-100">
           <div className="w-full px-5 sm:px-8 lg:px-12 py-4 flex items-center justify-between">
@@ -63,34 +68,35 @@ export default function RootLayout({
               <Image src="/favicon.png" alt="ShopeeTop" width={44} height={44} priority className="w-11 h-11 object-contain group-hover:scale-105 transition-transform duration-200" />
               <div>
                 <h1 className="font-rubik font-black text-2xl leading-none tracking-tight text-slate-900">ShopeeTop</h1>
-                <p className="text-slate-500 text-[11px] font-bold uppercase tracking-wider mt-0.5">Premium Ranking Hub</p>
+                <p className="text-slate-500 text-[11px] font-bold uppercase tracking-wider mt-0.5">{t.brandTagline}</p>
               </div>
             </Link>
-            <div className="hidden sm:flex flex-col items-end">
-              <div className="flex items-center gap-1.5 bg-green-50 text-[#2d6a4f] rounded-full px-3 py-1 text-[11px] font-black uppercase tracking-wide">
+            <div className="flex items-center gap-3">
+              <div className="hidden sm:flex items-center gap-1.5 bg-green-50 text-[#2d6a4f] rounded-full px-3 py-1 text-[11px] font-black uppercase tracking-wide">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                 </span>
-                อัพเดท: พฤษภาคม 2026
+                {t.updateBadge}
               </div>
+              <LanguageToggle lang={lang} />
             </div>
           </div>
         </header>
-        <CategoryNav />
+        <CategoryNav lang={lang} />
         <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8">{children}</main>
         <footer className="bg-slate-900 text-slate-400 py-12 mt-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
             <Image src="/favicon.png" alt="ShopeeTop" width={56} height={56} className="w-14 h-14 object-contain mx-auto mb-4" />
             <h2 className="text-white font-rubik font-bold text-xl mb-2">ShopeeTop</h2>
             <p className="max-w-md mx-auto text-sm leading-relaxed mb-8">
-              รวบรวมและคัดสรรสินค้าคุณภาพที่มียอดขายสูงสุดบน Shopee ไทย เพื่อช่วยให้คุณตัดสินใจเลือกซื้อสินค้าที่ดีที่สุดได้อย่างมั่นใจ
+              {t.footerTagline}
             </p>
             <div className="pt-8 border-t border-slate-800 text-[11px] uppercase tracking-widest font-bold">
-              © 2026 SHOPEETOP. ALL RIGHTS RESERVED.
+              {t.footerCopyright}
             </div>
             <p className="mt-4 text-[10px] text-slate-500 px-6 italic">
-              * เว็บนี้มีลิงก์ affiliate จาก Shopee — เมื่อคุณซื้อสินค้าผ่านลิงก์นี้ เราจะได้รับค่าคอมมิชชั่นเล็กน้อยโดยไม่มีผลต่อราคาสินค้า
+              {t.footerAffiliate}
             </p>
           </div>
         </footer>
