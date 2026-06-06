@@ -46,7 +46,15 @@ export default async function HomePage() {
   const t = dict[lang];
 
   const featured = bestsellers[0];
-  const sideTiles = bestsellers.slice(1, 5); // top 4 secondary items
+  // Floating cover tiles — 1-2 per category for variety, positions avoid rating(top-right) & score(bottom-left)
+  const coverTiles = [
+    { src: bestsellers[1]?.image, pos: "left-0 top-4", size: "w-24 h-24", rot: "rotate-[-8deg]" },
+    { src: homeGoods[0]?.image, pos: "top-0 left-[42%]", size: "w-16 h-16", rot: "rotate-[5deg]" },
+    { src: womenFashion[0]?.image, pos: "right-4 bottom-[22%]", size: "w-20 h-20", rot: "rotate-[7deg]" },
+    { src: pets[0]?.image, pos: "bottom-0 right-[28%]", size: "w-20 h-20", rot: "rotate-[-5deg]" },
+    { src: homeAppliances[0]?.image, pos: "right-0 top-[36%]", size: "w-14 h-14", rot: "rotate-[6deg]" },
+    { src: foodDrinks[0]?.image, pos: "left-2 top-[60%]", size: "w-14 h-14", rot: "rotate-[-6deg]" },
+  ].filter((tile): tile is { src: string; pos: string; size: string; rot: string } => Boolean(tile.src));
 
   const stats = [
     { label: t.statCategoriesLabel, value: t.statCategoriesValue, icon: statIcons[0] },
@@ -180,27 +188,12 @@ export default async function HomePage() {
                   </div>
                 </div>
 
-                {/* Floating secondary cards around featured item */}
-                {sideTiles[0] && (
-                  <div className="absolute left-0 top-2 w-24 h-24 rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-xl shadow-black/40 bg-white/5 rotate-[-8deg]">
-                    <Image src={sideTiles[0].image} alt="" fill sizes="96px" className="object-cover" referrerPolicy="no-referrer" />
+                {/* Floating cover cards — variety from each category */}
+                {coverTiles.map((tile, i) => (
+                  <div key={i} className={`absolute ${tile.pos} ${tile.size} ${tile.rot} rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-xl shadow-black/40 bg-white/5`}>
+                    <Image src={tile.src} alt="" fill sizes="96px" className="object-cover" referrerPolicy="no-referrer" />
                   </div>
-                )}
-                {sideTiles[1] && (
-                  <div className="absolute right-2 bottom-10 w-20 h-20 rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-xl shadow-black/40 bg-white/5 rotate-[6deg]">
-                    <Image src={sideTiles[1].image} alt="" fill sizes="80px" className="object-cover" referrerPolicy="no-referrer" />
-                  </div>
-                )}
-                {sideTiles[2] && (
-                  <div className="absolute left-6 bottom-0 w-16 h-16 rounded-xl overflow-hidden ring-1 ring-white/10 shadow-xl shadow-black/40 bg-white/5 rotate-[5deg]">
-                    <Image src={sideTiles[2].image} alt="" fill sizes="64px" className="object-cover" referrerPolicy="no-referrer" />
-                  </div>
-                )}
-                {sideTiles[3] && (
-                  <div className="absolute right-14 top-0 w-14 h-14 rounded-xl overflow-hidden ring-1 ring-white/10 shadow-xl shadow-black/40 bg-white/5 rotate-[-6deg]">
-                    <Image src={sideTiles[3].image} alt="" fill sizes="56px" className="object-cover" referrerPolicy="no-referrer" />
-                  </div>
-                )}
+                ))}
               </div>
             )}
           </div>
