@@ -1,4 +1,5 @@
-import { Product } from "@/lib/products";
+import Link from "next/link";
+import { Product, productSlug } from "@/lib/products";
 import { Lang } from "@/lib/i18n";
 
 const rankBadges: Record<number, string> = {
@@ -21,10 +22,21 @@ const getHighlightText = (highlight: string, lang: Lang) => {
   return highlight;
 };
 
-export default function ProductCard({ product, lang = "th" }: { product: Product; lang?: Lang }) {
+export default function ProductCard({
+  product,
+  lang = "th",
+  category,
+}: {
+  product: Product;
+  lang?: Lang;
+  category?: string;
+}) {
   const badgeClass = rankBadges[product.rank] || "bg-slate-800 text-white";
   const accentClass = cardAccents[product.rank] || "";
   const displayHighlight = getHighlightText(product.highlight, lang);
+  // Link to the in-depth review page only when this product has synthesized review data.
+  const hasReview = Boolean(category && product.model);
+  const reviewHref = hasReview ? `/review/${category}/${productSlug(product)}` : null;
 
   return (
     <div className={`group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 ${accentClass}`}>
@@ -82,6 +94,16 @@ export default function ProductCard({ product, lang = "th" }: { product: Product
             <span className="text-[11px] line-through text-slate-400">฿{product.originalPrice.toLocaleString()}</span>
           )}
         </div>
+
+        {/* Review link (review-site categories only) */}
+        {reviewHref && (
+          <Link
+            href={reviewHref}
+            className="w-full flex items-center justify-center text-[11px] font-bold py-2 rounded-lg bg-[#2d6a4f] text-white hover:bg-[#245741] transition-colors mt-1"
+          >
+            {lang === "en" ? "Read review →" : "อ่านรีวิวเต็ม →"}
+          </Link>
+        )}
 
         {/* CTA */}
         {product.lazadaUrl && (

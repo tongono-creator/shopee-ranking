@@ -53,6 +53,15 @@ export const categories = [
     description: "Top 20 เครื่องใช้ไฟฟ้าขายดีที่สุด",
     descriptionEn: "Top 20 best-selling home appliances",
   },
+  {
+    slug: "robot-vacuum",
+    name: "หุ่นยนต์ดูดฝุ่น",
+    nameEn: "Robot Vacuums",
+    icon: "🤖",
+    image: "/icons/robot-vacuum.png",
+    description: "จัดอันดับหุ่นยนต์ดูดฝุ่นจากรีวิวผู้ใช้จริง — ไม่รับสปอนเซอร์",
+    descriptionEn: "Robot vacuums ranked from real user reviews — no sponsors",
+  },
 ];
 
 export type Category = (typeof categories)[number];

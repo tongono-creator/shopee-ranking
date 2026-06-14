@@ -125,7 +125,7 @@ export default async function CategoryPage({
             {products.map((product) => (
               <Fragment key={product.rank}>
                 <div className="relative">
-                  <ProductCard product={product} lang={lang} />
+                  <ProductCard product={product} lang={lang} category={category} />
                 </div>
                 {product.rank % 5 === 0 && (
                   <div className="col-span-full py-4">
