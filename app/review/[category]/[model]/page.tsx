@@ -54,110 +54,135 @@ export default async function ReviewPage({
       : (p.pros || []).map((text) => ({ text, mentions: 0 }));
   const cons = p.consDetailed || [];
   const specs = p.specs ? Object.entries(p.specs) : [];
+  const scorePct = Math.round((p.score / 10) * 100);
 
   return (
-    <article className="max-w-3xl mx-auto space-y-8">
+    <article className="max-w-4xl mx-auto space-y-10">
       {/* Breadcrumb */}
-      <nav className="text-[12px] font-semibold text-slate-400">
-        <Link href={`/${category}`} className="hover:text-[#2d6a4f]">
+      <nav className="text-[12px] font-semibold text-slate-400 flex items-center gap-2">
+        <Link href={`/${category}`} className="hover:text-[#2d6a4f] transition-colors">
           {lang === "en" ? cat.nameEn : cat.name}
         </Link>
-        <span className="mx-2">/</span>
-        <span className="text-slate-600">{p.brand || p.name}</span>
+        <span>›</span>
+        <span className="text-slate-600 truncate">{p.brand || p.name}</span>
       </nav>
 
-      {/* Header */}
-      <header className="flex flex-col sm:flex-row gap-6 items-start border-b border-slate-100 pb-8">
-        {p.image && (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={p.image}
-            alt={p.name}
-            className="w-40 h-40 object-contain bg-slate-50 rounded-2xl p-3 flex-shrink-0"
-            referrerPolicy="no-referrer"
-          />
-        )}
-        <div className="space-y-3">
-          <div className="flex items-center gap-2">
-            <span className="bg-[#2d6a4f] text-white text-[11px] font-black px-2.5 py-1 rounded-full">
-              อันดับ {p.rank}
-            </span>
-            <span className="bg-amber-100 text-amber-800 text-[11px] font-black px-2.5 py-1 rounded-full">
-              {p.score}/10
-            </span>
-          </div>
-          <h1 className="text-2xl sm:text-3xl font-rubik font-black text-slate-900 leading-tight">
-            {p.name}
-          </h1>
-          <div className="flex items-baseline gap-2">
-            <span className="text-2xl font-black text-slate-900">
-              ฿{p.price.toLocaleString()}
-            </span>
-            {p.originalPrice > p.price && (
-              <span className="text-sm line-through text-slate-400">
-                ฿{p.originalPrice.toLocaleString()}
+      {/* HERO */}
+      <header className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0f3d2e] via-[#1c5240] to-[#2d6a4f] text-white p-6 sm:p-10">
+        <div className="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-white/5 blur-2xl" />
+        <div className="absolute -left-10 -bottom-20 w-72 h-72 rounded-full bg-emerald-300/10 blur-3xl" />
+        <div className="relative flex flex-col sm:flex-row gap-8 items-center sm:items-start">
+          {p.image && (
+            <div className="flex-shrink-0 bg-white rounded-3xl p-4 shadow-2xl">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={p.image}
+                alt={p.name}
+                className="w-44 h-44 sm:w-52 sm:h-52 object-contain"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+          )}
+          <div className="flex-1 space-y-4 text-center sm:text-left">
+            <div className="flex items-center justify-center sm:justify-start gap-2">
+              <span className="bg-amber-400 text-amber-950 text-[11px] font-black px-3 py-1 rounded-full uppercase tracking-wide">
+                อันดับ {p.rank}
               </span>
-            )}
-          </div>
-          {p.rating > 0 && (
-            <p className="text-[13px] text-slate-500 font-semibold">
-              ⭐ {p.rating} · จาก {p.reviewCount || 0} รีวิวจริง
-              {p.reviewSources && p.reviewSources.length > 0 && (
-                <span className="text-slate-400">
-                  {" "}
-                  ({p.reviewSources.join(", ")})
+              {p.brand && (
+                <span className="bg-white/15 backdrop-blur text-white text-[11px] font-bold px-3 py-1 rounded-full">
+                  {p.brand}
                 </span>
               )}
-            </p>
-          )}
+            </div>
+            <h1 className="text-2xl sm:text-4xl font-rubik font-black leading-tight">
+              {p.name}
+            </h1>
+
+            {/* Score + price row */}
+            <div className="flex items-center justify-center sm:justify-start gap-6 pt-2">
+              {/* Score ring */}
+              <div className="relative w-20 h-20 flex-shrink-0">
+                <svg viewBox="0 0 36 36" className="w-full h-full -rotate-90">
+                  <circle cx="18" cy="18" r="16" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="3" />
+                  <circle
+                    cx="18" cy="18" r="16" fill="none" stroke="#fbbf24" strokeWidth="3"
+                    strokeDasharray={`${scorePct} 100`} strokeLinecap="round"
+                    pathLength={100}
+                  />
+                </svg>
+                <div className="absolute inset-0 flex flex-col items-center justify-center">
+                  <span className="text-xl font-black leading-none">{p.score}</span>
+                  <span className="text-[9px] text-white/60 font-semibold">/ 10</span>
+                </div>
+              </div>
+              <div className="text-left">
+                <div className="flex items-baseline gap-2">
+                  <span className="text-3xl font-rubik font-black">฿{p.price.toLocaleString()}</span>
+                  {p.originalPrice > p.price && (
+                    <span className="text-sm line-through text-white/50">
+                      ฿{p.originalPrice.toLocaleString()}
+                    </span>
+                  )}
+                </div>
+                {p.rating > 0 && (
+                  <p className="text-[13px] text-white/70 font-semibold mt-1">
+                    ⭐ {p.rating} · {p.reviewCount || 0} รีวิวจริง
+                  </p>
+                )}
+              </div>
+            </div>
+          </div>
         </div>
       </header>
 
-      {/* No-sponsor trust banner */}
-      <div className="bg-green-50 border border-green-100 rounded-2xl px-4 py-3 text-[13px] text-[#2d6a4f] font-semibold">
-        ✓ จัดอันดับจากรีวิวผู้ใช้จริง ไม่รับสปอนเซอร์
+      {/* No-sponsor trust */}
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 bg-green-50 border border-green-100 rounded-2xl px-5 py-3 text-[13px] text-[#2d6a4f] font-semibold">
+        <span>✓ จัดอันดับจากรีวิวผู้ใช้จริง</span>
+        <span>✓ ไม่รับสปอนเซอร์</span>
+        {p.reviewSources && p.reviewSources.length > 0 && (
+          <span className="text-slate-400 font-normal">แหล่ง: {p.reviewSources.join(", ")}</span>
+        )}
         {p.lastReviewed && (
-          <span className="text-slate-400 font-normal">
-            {" "}
-            · อัพเดท {p.lastReviewed}
-          </span>
+          <span className="text-slate-400 font-normal ml-auto">อัพเดท {p.lastReviewed}</span>
         )}
       </div>
 
-      {/* Summary */}
+      {/* Verdict / summary */}
       {p.reviewSummary && (
-        <section className="space-y-2">
-          <h2 className="text-lg font-rubik font-black text-slate-900">สรุปรีวิว</h2>
-          <p className="text-slate-600 leading-relaxed">{p.reviewSummary}</p>
-        </section>
-      )}
-
-      {/* Best for */}
-      {p.bestFor && (
-        <section className="bg-slate-50 rounded-2xl p-5">
-          <h2 className="text-[13px] font-black uppercase tracking-wider text-slate-400 mb-1">
-            เหมาะกับใคร
+        <section className="relative bg-white border border-slate-100 rounded-3xl p-6 sm:p-8 shadow-sm">
+          <div className="absolute top-6 left-6 text-6xl text-slate-100 font-serif leading-none select-none">“</div>
+          <h2 className="text-[11px] font-black uppercase tracking-[0.2em] text-[#2d6a4f] mb-3 relative">
+            สรุปรีวิว
           </h2>
-          <p className="text-slate-800 font-semibold">{p.bestFor}</p>
+          <p className="text-slate-700 text-lg leading-relaxed relative">{p.reviewSummary}</p>
+          {p.bestFor && (
+            <div className="mt-5 pt-5 border-t border-slate-100 flex items-start gap-3">
+              <span className="text-2xl">🎯</span>
+              <div>
+                <div className="text-[11px] font-black uppercase tracking-wider text-slate-400">เหมาะกับใคร</div>
+                <p className="text-slate-800 font-bold">{p.bestFor}</p>
+              </div>
+            </div>
+          )}
         </section>
       )}
 
       {/* Pros / Cons */}
-      <section className="grid sm:grid-cols-2 gap-4">
-        <div className="bg-white border border-green-100 rounded-2xl p-5">
-          <h2 className="text-base font-rubik font-black text-green-700 mb-3">
-            ข้อดี
-          </h2>
-          <ul className="space-y-2">
+      <section className="grid sm:grid-cols-2 gap-5">
+        <div className="bg-white border-2 border-green-100 rounded-3xl overflow-hidden">
+          <div className="bg-green-50 px-6 py-4 flex items-center gap-2">
+            <span className="w-7 h-7 rounded-full bg-green-500 text-white flex items-center justify-center font-black">+</span>
+            <h2 className="text-base font-rubik font-black text-green-800">ข้อดี</h2>
+          </div>
+          <ul className="p-6 space-y-3">
             {pros.map((pt, i) => (
-              <li key={i} className="flex items-start gap-2 text-[14px] text-slate-700">
-                <span className="text-green-500 mt-0.5">+</span>
-                <span>
+              <li key={i} className="flex items-start gap-3 text-[14px] text-slate-700">
+                <span className="text-green-500 font-black mt-0.5">✓</span>
+                <span className="flex-1">
                   {pt.text}
                   {pt.mentions > 0 && (
-                    <span className="text-slate-400 text-[12px]">
-                      {" "}
-                      ({pt.mentions} คนพูดถึง)
+                    <span className="ml-2 inline-block bg-green-100 text-green-700 text-[11px] font-bold px-2 py-0.5 rounded-full">
+                      {pt.mentions} คนพูดถึง
                     </span>
                   )}
                 </span>
@@ -166,20 +191,20 @@ export default async function ReviewPage({
           </ul>
         </div>
         {cons.length > 0 && (
-          <div className="bg-white border border-red-100 rounded-2xl p-5">
-            <h2 className="text-base font-rubik font-black text-red-600 mb-3">
-              ข้อเสีย
-            </h2>
-            <ul className="space-y-2">
+          <div className="bg-white border-2 border-red-100 rounded-3xl overflow-hidden">
+            <div className="bg-red-50 px-6 py-4 flex items-center gap-2">
+              <span className="w-7 h-7 rounded-full bg-red-400 text-white flex items-center justify-center font-black">−</span>
+              <h2 className="text-base font-rubik font-black text-red-700">ข้อเสีย</h2>
+            </div>
+            <ul className="p-6 space-y-3">
               {cons.map((pt, i) => (
-                <li key={i} className="flex items-start gap-2 text-[14px] text-slate-700">
-                  <span className="text-red-400 mt-0.5">−</span>
-                  <span>
+                <li key={i} className="flex items-start gap-3 text-[14px] text-slate-700">
+                  <span className="text-red-400 font-black mt-0.5">✕</span>
+                  <span className="flex-1">
                     {pt.text}
                     {pt.mentions > 0 && (
-                      <span className="text-slate-400 text-[12px]">
-                        {" "}
-                        ({pt.mentions} คนพูดถึง)
+                      <span className="ml-2 inline-block bg-red-100 text-red-700 text-[11px] font-bold px-2 py-0.5 rounded-full">
+                        {pt.mentions} คนพูดถึง
                       </span>
                     )}
                   </span>
@@ -192,28 +217,38 @@ export default async function ReviewPage({
 
       {/* Specs */}
       {specs.length > 0 && (
-        <section className="space-y-3">
-          <h2 className="text-lg font-rubik font-black text-slate-900">สเปค</h2>
-          <table className="w-full text-[14px]">
-            <tbody>
-              {specs.map(([k, v]) => (
-                <tr key={k} className="border-b border-slate-100">
-                  <td className="py-2.5 text-slate-400 font-semibold w-2/5">{k}</td>
-                  <td className="py-2.5 text-slate-800">{v}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <section className="space-y-4">
+          <h2 className="text-xl font-rubik font-black text-slate-900">สเปคโดยละเอียด</h2>
+          <div className="bg-white border border-slate-100 rounded-3xl overflow-hidden">
+            <table className="w-full text-[14px]">
+              <tbody>
+                {specs.map(([k, v], i) => (
+                  <tr key={k} className={i % 2 ? "bg-slate-50/50" : ""}>
+                    <td className="py-3.5 px-6 text-slate-400 font-semibold w-2/5">{k}</td>
+                    <td className="py-3.5 px-6 text-slate-800 font-medium">{v}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </section>
       )}
 
-      {/* CTA */}
-      <div className="sticky bottom-4">
+      {/* Compare link */}
+      <Link
+        href={`/compare/${category}`}
+        className="block text-center text-[#2d6a4f] font-bold hover:underline"
+      >
+        เทียบกับรุ่นอื่น →
+      </Link>
+
+      {/* Sticky CTA */}
+      <div className="sticky bottom-4 z-10">
         <a
           href={p.shopeeUrl}
           target="_blank"
           rel="noopener noreferrer sponsored"
-          className="block w-full text-center bg-[#ee4d2d] text-white font-black text-lg py-4 rounded-2xl shadow-lg hover:bg-[#d73211] transition-colors"
+          className="block w-full text-center bg-[#ee4d2d] text-white font-black text-lg py-4 rounded-2xl shadow-xl shadow-orange-500/20 hover:bg-[#d73211] transition-colors"
         >
           ดูราคาล่าสุดบน Shopee →
         </a>

@@ -59,6 +59,9 @@ export default async function ComparePage({
     }
   }
 
+  const bestScore = Math.max(...products.map((p) => p.score));
+  const lowestPrice = Math.min(...products.map((p) => p.price));
+
   return (
     <div className="space-y-6">
       <header>
@@ -79,6 +82,17 @@ export default async function ComparePage({
               </th>
               {products.map((p) => (
                 <th key={p.rank} className="p-3 text-center align-top">
+                  {p.image && (
+                    <Link href={`/review/${category}/${productSlug(p)}`} className="block">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={p.image}
+                        alt={p.name}
+                        className="w-20 h-20 object-contain mx-auto mb-2 bg-slate-50 rounded-xl p-1.5"
+                        referrerPolicy="no-referrer"
+                      />
+                    </Link>
+                  )}
                   <Link
                     href={`/review/${category}/${productSlug(p)}`}
                     className="font-rubik font-black text-slate-900 hover:text-[#2d6a4f] line-clamp-2 block"
@@ -94,8 +108,14 @@ export default async function ComparePage({
             <tr className="border-t border-slate-100">
               <td className="p-3 text-slate-400 font-semibold">คะแนนรวม</td>
               {products.map((p) => (
-                <td key={p.rank} className="p-3 text-center font-black text-[#2d6a4f]">
+                <td
+                  key={p.rank}
+                  className={`p-3 text-center font-black ${
+                    p.score === bestScore ? "text-[#2d6a4f] bg-green-50" : "text-slate-600"
+                  }`}
+                >
                   {p.score}/10
+                  {p.score === bestScore && <span className="ml-1">🏆</span>}
                 </td>
               ))}
             </tr>
@@ -110,8 +130,14 @@ export default async function ComparePage({
             <tr className="border-t border-slate-100">
               <td className="p-3 text-slate-400 font-semibold">ราคา</td>
               {products.map((p) => (
-                <td key={p.rank} className="p-3 text-center font-black">
+                <td
+                  key={p.rank}
+                  className={`p-3 text-center font-black ${
+                    p.price === lowestPrice ? "text-[#2d6a4f] bg-green-50" : ""
+                  }`}
+                >
                   ฿{p.price.toLocaleString()}
+                  {p.price === lowestPrice && <span className="ml-1">💰</span>}
                 </td>
               ))}
             </tr>
