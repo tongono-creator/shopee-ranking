@@ -126,7 +126,7 @@ export default async function ReviewPage({
                 </div>
                 {p.rating > 0 && (
                   <p className="text-[13px] text-white/70 font-semibold mt-1">
-                    ⭐ {p.rating} · {p.reviewCount || 0} รีวิวจริง
+                    ⭐ {p.rating} · เรตติ้งจาก Shopee
                   </p>
                 )}
               </div>

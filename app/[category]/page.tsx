@@ -73,15 +73,7 @@ export default async function CategoryPage({
                   priceCurrency: 'THB',
                   availability: 'https://schema.org/InStock',
                   url: p.shopeeUrl
-                },
-                ...(p.rating > 0 ? {
-                  aggregateRating: {
-                    '@type': 'AggregateRating',
-                    ratingValue: p.rating,
-                    bestRating: 5,
-                    reviewCount: 100
-                  }
-                } : {})
+                }
               }
             }))
           })
