@@ -24,25 +24,40 @@ const nunito = Nunito_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://shopee-ranking.vercel.app"),
-  title: "ShopeeTop — สินค้าขายดีอันดับ 1",
+  title: {
+    default: "สินค้าขายดีใน Shopee 2026 — รวม Top 20 ทุกหมวด | ShopeeTop",
+    template: "%s | ShopeeTop",
+  },
   description:
-    "รวม Top 20 สินค้าขายดีบน Shopee ไทย แยกตามหมวดหมู่ อัพเดทรายเดือน",
-  keywords: "shopee, สินค้าขายดี, top10, top20, ของดีราคาถูก",
+    "รวมสินค้าขายดีใน Shopee ไทย Top 20 ทุกหมวด — เครื่องใช้ในบ้าน เสื้อผ้าแฟชั่นผู้หญิง สัตว์เลี้ยง อาหารและเครื่องดื่ม คัดจากยอดขายจริง รีวิวเยี่ยม อัพเดททุกเดือน",
+  keywords: [
+    "สินค้าขายดี shopee",
+    "สินค้าขายดีใน shopee",
+    "ของขายดี shopee",
+    "shopee top 20",
+    "สินค้าขายดีประจำเดือน",
+    "ของดีราคาถูก shopee",
+    "อันดับสินค้าขายดี",
+    "shopee ขายดี 2026",
+  ],
+  alternates: { canonical: "/" },
   icons: {
     icon: "/favicon.png",
     apple: "/favicon.png",
   },
   openGraph: {
-    title: "ShopeeTop — สินค้าขายดีอันดับ 1",
-    description: "รวมสินค้าขายดีบน Shopee อัพเดทรายเดือน",
+    title: "สินค้าขายดีใน Shopee 2026 — รวม Top 20 ทุกหมวด | ShopeeTop",
+    description:
+      "รวมสินค้าขายดีใน Shopee ไทย Top 20 ทุกหมวด คัดจากยอดขายจริง รีวิวเยี่ยม อัพเดททุกเดือน",
     locale: "th_TH",
     type: "website",
+    siteName: "ShopeeTop",
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ShopeeTop — สินค้าขายดีอันดับ 1",
-    description: "รวมสินค้าขายดีบน Shopee อัพเดทรายเดือน",
+    title: "สินค้าขายดีใน Shopee 2026 — รวม Top 20 ทุกหมวด | ShopeeTop",
+    description: "รวมสินค้าขายดีใน Shopee ไทย Top 20 ทุกหมวด อัพเดททุกเดือน",
     images: ["/og-image.png"],
   },
   verification: {

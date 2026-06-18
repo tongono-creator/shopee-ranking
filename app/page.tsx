@@ -62,8 +62,40 @@ export default async function HomePage() {
     { label: t.statUpdateLabel, value: t.statUpdateValue, icon: statIcons[2] },
   ];
 
+  const SITE = "https://shopee-ranking.vercel.app";
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        name: "ShopeeTop",
+        alternateName: "สินค้าขายดีใน Shopee",
+        url: `${SITE}/`,
+        description:
+          "รวมสินค้าขายดีใน Shopee ไทย Top 20 ทุกหมวด คัดจากยอดขายจริง อัพเดททุกเดือน",
+        inLanguage: "th-TH",
+      },
+      {
+        "@type": "ItemList",
+        name: "สินค้าขายดีใน Shopee — Top 20 ประจำเดือน",
+        itemListOrder: "https://schema.org/ItemListOrderDescending",
+        numberOfItems: bestsellers.length,
+        itemListElement: bestsellers.slice(0, 10).map((p) => ({
+          "@type": "ListItem",
+          position: p.rank,
+          name: p.name,
+          url: p.shopeeUrl,
+        })),
+      },
+    ],
+  };
+
   return (
     <div className="space-y-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero Banner — full width */}
       <section className="relative overflow-hidden bg-[#08130d] text-white rounded-[2rem] min-h-[460px] sm:min-h-[540px] flex items-center p-8 sm:p-14 shadow-md">
           {/* Atmospheric background */}
