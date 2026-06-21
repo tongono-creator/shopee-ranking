@@ -12,16 +12,17 @@ from openpyxl import load_workbook
 
 sys.stdout.reconfigure(encoding="utf-8")
 
-SRC_DIR = Path(r"D:/Ai Auto Flow/affiliate.shopee")
+SRC_DIR = Path(r"D:/Ai Auto Flow/21-06-2026")
 JSON_DIR = Path(__file__).parent / "data" / "products"
 
-# Thai filename -> slug (only the 5 categories that match the live site)
+# Thai filename -> slug
 FILE_MAP = {
     "สินค้าขายดี": "bestsellers",
     "เครื่องใช้ในบ้าน": "home-goods",
     "เสื้อผ้าแฟชั่นผู้หญิง": "women-fashion",
     "สัตว์เลี้ยง": "pets",
     "อาหารและเครื่องดื่ม": "food-drinks",
+    "ความงามและของใช้ส่วนตัว": "beauty",
 }
 
 SCORE_DEFAULT = {1: 9.8, 2: 9.5, 3: 9.2, 4: 8.9, 5: 8.6, 6: 8.3,

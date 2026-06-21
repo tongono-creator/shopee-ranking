@@ -29,9 +29,9 @@ export const dict = {
     rankBadge: "อันดับ 1",
 
     statCategoriesLabel: "หมวดหมู่ยอดฮิต",
-    statCategoriesValue: "6 หมวดหมู่",
+    statCategoriesValue: "8 หมวดหมู่",
     statProductsLabel: "สินค้าที่ผ่านการคัดเลือก",
-    statProductsValue: "120+ รายการ",
+    statProductsValue: "160+ รายการ",
     statUpdateLabel: "อัพเดทข้อมูลล่าสุด",
     statUpdateValue: "อัพเดทสม่ำเสมอ",
 
@@ -81,9 +81,9 @@ export const dict = {
     rankBadge: "Rank 1",
 
     statCategoriesLabel: "Popular Categories",
-    statCategoriesValue: "6 Categories",
+    statCategoriesValue: "8 Categories",
     statProductsLabel: "Curated Products",
-    statProductsValue: "120+ items",
+    statProductsValue: "160+ items",
     statUpdateLabel: "Latest Update",
     statUpdateValue: "Always Fresh",
 

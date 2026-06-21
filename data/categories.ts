@@ -54,6 +54,15 @@ export const categories = [
     descriptionEn: "Top 20 best-selling home appliances",
   },
   {
+    slug: "beauty",
+    name: "ความงามและของใช้ส่วนตัว",
+    nameEn: "Beauty & Personal Care",
+    icon: "💄",
+    image: "/icons/beauty.png",
+    description: "Top 20 ความงามและของใช้ส่วนตัวขายดี",
+    descriptionEn: "Top 20 best-selling beauty and personal care products",
+  },
+  {
     slug: "robot-vacuum",
     name: "หุ่นยนต์ดูดฝุ่น",
     nameEn: "Robot Vacuums",

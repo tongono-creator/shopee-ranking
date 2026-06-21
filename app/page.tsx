@@ -152,12 +152,12 @@ export default async function HomePage() {
               {/* Trust row */}
               <div className="mt-8 flex items-center justify-between sm:justify-start gap-4 sm:gap-6">
                 <div>
-                  <p className="text-lg sm:text-xl font-rubik font-black text-white">120+</p>
+                  <p className="text-lg sm:text-xl font-rubik font-black text-white">160+</p>
                   <p className="text-[9px] text-emerald-100/50 font-bold uppercase tracking-wider">{t.trustProducts}</p>
                 </div>
                 <span className="h-8 w-px bg-white/10" />
                 <div>
-                  <p className="text-lg sm:text-xl font-rubik font-black text-white">6</p>
+                  <p className="text-lg sm:text-xl font-rubik font-black text-white">8</p>
                   <p className="text-[9px] text-emerald-100/50 font-bold uppercase tracking-wider">{t.trustCategories}</p>
                 </div>
                 <span className="h-8 w-px bg-white/10" />
